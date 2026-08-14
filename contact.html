@@ -1,65 +1,182 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Contact - Ahsan Web Studio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact | Ahsan Web Studio</title>
+
   <style>
-    body{
-      margin:0;
-      font-family:Arial;
-      background:#f5f7fb;
-      color:#222;
+    * {
+      box-sizing: border-box;
     }
 
-    header{
-      background:#0f172a;
-      color:white;
-      padding:18px 60px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #222;
     }
 
-    header h2{
-      color:#38bdf8;
-      margin:0;
+    header {
+      background: #0f172a;
+      color: white;
+      padding: 18px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    nav a{
-      color:white;
-      text-decoration:none;
-      margin-left:22px;
+    header h2 {
+      color: #38bdf8;
+      margin: 0;
     }
 
-    .container{
-      max-width:800px;
-      margin:70px auto;
-      padding:20px;
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 22px;
     }
 
-    .card{
-      background:white;
-      padding:40px;
-      border-radius:16px;
-      box-shadow:0 8px 25px #dbe1ee;
-      text-align:center;
+    nav a:hover {
+      color: #38bdf8;
     }
 
-    .btn{
-      background:#2563eb;
-      color:white;
-      padding:14px 26px;
-      border-radius:8px;
-      text-decoration:none;
-      display:inline-block;
-      margin-top:15px;
+    .contact-section {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
     }
 
-    footer{
-      background:#0f172a;
-      color:white;
-      text-align:center;
-      padding:22px;
-      margin-top:100px;
+    .left {
+      padding: 25px;
+    }
+
+    .left h1 {
+      font-size: 45px;
+      margin-bottom: 20px;
+    }
+
+    .left h1 span {
+      color: #2563eb;
+    }
+
+    .left p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    .profile {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid #38bdf8;
+      margin-top: 20px;
+    }
+
+    .email-box {
+      margin-top: 25px;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px #dbe1ee;
+    }
+
+    .email-button {
+      display: inline-block;
+      margin-top: 12px;
+      background: #2563eb;
+      color: white;
+      padding: 12px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .email-button:hover {
+      background: #1d4ed8;
+    }
+
+    .form-card {
+      background: white;
+      padding: 35px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px #dbe1ee;
+    }
+
+    .form-card h2 {
+      margin-top: 0;
+      font-size: 30px;
+    }
+
+    label {
+      display: block;
+      margin-top: 18px;
+      margin-bottom: 7px;
+      font-weight: bold;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #d1d5db;
+      border-radius: 7px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #2563eb;
+    }
+
+    textarea {
+      height: 130px;
+      resize: vertical;
+    }
+
+    .send-button {
+      width: 100%;
+      margin-top: 22px;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      background: #2563eb;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .send-button:hover {
+      background: #1d4ed8;
+    }
+
+    footer {
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 22px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 800px) {
+      header {
+        padding: 15px 20px;
+      }
+
+      .contact-section {
+        grid-template-columns: 1fr;
+        margin: 30px auto;
+      }
+
+      .left h1 {
+        font-size: 36px;
+      }
     }
   </style>
 </head>
@@ -76,25 +193,105 @@
   </nav>
 </header>
 
-<div class="container">
-  <div class="card">
+<section class="contact-section">
 
-    <h1>Contact Me</h1>
+  <div class="left">
 
-    <p>Website banwane ke liye mujhse contact karein.</p>
+    <h1>Let's <span>Work Together</span></h1>
 
- <p>📧 Email: ahsan2164ali@gmail.com</p>
+    <p>
+      Have a project in mind or need a professional website?
+      Feel free to contact me. I would be happy to discuss your project.
+    </p>
 
-<a class="btn" href="mailto:ahsan2164ali@gmail.com">
-  📧 Send Me an Email
-</a>
+    <img src="profile.png" alt="Ahsan Ali" class="profile">
+
+    <div class="email-box">
+      <h3>📧 Email Me</h3>
+
+      <p>
+        ahsan2164ali@gmail.com
+      </p>
+
+      <a
+        href="mailto:ahsan2164ali@gmail.com"
+        class="email-button">
+        📧 Send Me an Email
+      </a>
+    </div>
 
   </div>
-</div>
+
+
+  <div class="form-card">
+
+    <h2>Contact Me</h2>
+
+    <form onsubmit="sendEmail(event)">
+
+      <label>Name</label>
+      <input
+        type="text"
+        id="name"
+        placeholder="Your Name"
+        required>
+
+      <label>Email</label>
+      <input
+        type="email"
+        id="email"
+        placeholder="Your Email"
+        required>
+
+      <label>Subject</label>
+      <input
+        type="text"
+        id="subject"
+        placeholder="Subject"
+        required>
+
+      <label>Message</label>
+      <textarea
+        id="message"
+        placeholder="Write your message here..."
+        required></textarea>
+
+      <button type="submit" class="send-button">
+        Send Message
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
 
 <footer>
   © 2026 Ahsan Web Studio | All Rights Reserved
 </footer>
+
+
+<script>
+  function sendEmail(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value;
+
+    const body =
+      "Name: " + name +
+      "\nEmail: " + email +
+      "\n\nMessage:\n" + message;
+
+    window.location.href =
+      "mailto:ahsan2164ali@gmail.com" +
+      "?subject=" + encodeURIComponent(subject) +
+      "&body=" + encodeURIComponent(body);
+  }
+</script>
 
 </body>
 </html>
