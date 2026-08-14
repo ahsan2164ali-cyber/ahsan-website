@@ -118,11 +118,87 @@
   </div>
 </div>
 
+<style>
+  .cwh-footer {
+    background-color: #0b0f17;
+    color: #94a3b8;
+    padding: 50px 0 20px 0;
+    font-family: Arial, sans-serif;
+    border-top: 1px solid #1e293b;
+    text-align: left;
+  }
+
+  .cwh-footer .footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  .cwh-footer .col-title {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    margin-top: 0;
+  }
+
+  .cwh-footer ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .cwh-footer ul li {
+    margin-bottom: 10px;
+    list-style: none !important;
+  }
+
+  .cwh-footer a {
+    color: #94a3b8 !important;
+    text-decoration: none !important;
+    font-size: 14px;
+    transition: color 0.2s ease;
+  }
+
+  .cwh-footer a:hover {
+    color: #ffffff !important;
+  }
+
+  .cwh-footer .footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #1e293b;
+    font-size: 13px;
+    color: #64748b;
+  }
+
+  .cwh-footer .footer-bottom p {
+    margin: 4px 0;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .cwh-footer .footer-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cwh-footer .footer-container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
 <footer class="cwh-footer">
   <div class="footer-container">
     
     <div class="footer-col">
-      <h3 class="col-title">Main</h3>
+      <h4 class="col-title">Main</h4>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="index.html#about">About</a></li>
@@ -132,7 +208,7 @@
     </div>
 
     <div class="footer-col">
-      <h3 class="col-title">Services</h3>
+      <h4 class="col-title">Services</h4>
       <ul>
         <li><a href="business.html">Business Website</a></li>
         <li><a href="portfolio.html">Portfolio Website</a></li>
@@ -141,7 +217,7 @@
     </div>
 
     <div class="footer-col">
-      <h3 class="col-title">Contact</h3>
+      <h4 class="col-title">Contact</h4>
       <ul>
         <li><a href="mailto:ahsan2164ali@gmail.com">Email Me</a></li>
         <li><a href="https://wa.me/91YOURNUMBER" target="_blank">WhatsApp</a></li>
@@ -149,11 +225,11 @@
     </div>
 
     <div class="footer-col">
-      <h3 class="col-title">Social</h3>
-      <ul class="social-links">
-        <li><a href="#" target="_blank"><span class="icon">💼</span> LinkedIn</a></li>
-        <li><a href="#" target="_blank"><span class="icon">📸</span> Instagram</a></li>
-        <li><a href="#" target="_blank"><span class="icon">💻</span> GitHub</a></li>
+      <h4 class="col-title">Social</h4>
+      <ul>
+        <li><a href="#" target="_blank">💼 LinkedIn</a></li>
+        <li><a href="#" target="_blank">📸 Instagram</a></li>
+        <li><a href="#" target="_blank">💻 GitHub</a></li>
       </ul>
     </div>
 
