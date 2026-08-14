@@ -4,6 +4,20 @@
   <title>AhsanWebStudio</title>
   <link rel="icon" type="image/png" href="profile.png">
   <style>
+    .service-link{
+  text-decoration:none;
+  color:inherit;
+  display:block;
+}
+
+.service-link .card{
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.service-link .card:hover{
+  transform:translateY(-5px);
+}
   .profile-pic{
   width:140px;
   height:140px;
@@ -78,10 +92,12 @@
 <div class="section" id="services">
   <h1>My Services</h1>
   <div class="cards">
-    <div class="card">
-      <h2>Business Website</h2>
-      <p>Shop, coaching, service aur local business ke liye website.</p>
-    </div>
+    <a href="business.html" class="service-link">
+  <div class="card">
+    <h2>Business Website</h2>
+    <p>Shop, coaching, service aur local business ke liye website.</p>
+  </div>
+</a>
     <div class="card">
       <h2>Portfolio Website</h2>
       <p>Students, freelancers aur creators ke liye personal website.</p>
