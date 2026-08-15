@@ -5,15 +5,13 @@
   <link rel="icon" type="image/png" href="profile.png">
   <style>
     body {
-      <div class="welcome-screen">
+    <div class="welcome-screen">
   <div class="welcome-content">
     <img src="profile.png" alt="Ahsan Ali" class="welcome-photo">
 
-    <h1>Welcome to <span>Ahsan Web Studio</span></h1>
-
+    <h1>Welcome to</h1>
+    <h2>Ahsan Web Studio</h2>
     <p>Creative • Modern • Simple Websites</p>
-
-    <a href="#home" class="welcome-btn">Enter Website →</a>
   </div>
 </div>
   background-color: #0b0f17; /* 👈 Is code se background dark (kala) hota hai */
@@ -96,16 +94,31 @@
     grid-template-columns: 1fr !important;
     gap: 20px !important;
     text-align: center !important;
-  }
-}
     .welcome-screen{
-  min-height:100vh;
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100vh;
   background:#0f172a;
   color:white;
   display:flex;
   justify-content:center;
   align-items:center;
   text-align:center;
+  z-index:99999;
+  animation:welcomeHide 4s ease forwards;
+}
+  }
+@keyframes welcomeHide{
+  0%,75%{
+    opacity:1;
+    visibility:visible;
+  }
+
+  100%{
+    opacity:0;
+    visibility:hidden;
+  }
 }
 
 .welcome-content{
@@ -221,7 +234,7 @@
   <h1>Why Choose Me?</h1>
   <div class="cards">
     <div class="card">✅ Clean Design</div>
-    <div class="card">✅ Fast Delivery</div>
+    <div class="card">✅ Work fast</div>
     <div class="card">✅ Professional Look</div>
   </div>
 </div>
