@@ -517,7 +517,7 @@
       Ahsan <span>Web Studio</span>
     </h1>
 
-    <h2>Build Your Digital Presence 🚀</h2>
+   <h2><span id="typing-text"></span></h2>
 
     <p>
       I create clean, modern and mobile-friendly websites
@@ -859,6 +859,49 @@
 
   </footer>
 
+<script>
+const texts = [
+  "Learn Python",
+  "Learn C++",
+  "Learn Java",
+  "Build Websites",
+  "Create Something Amazing"
+];
 
+let textIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect() {
+  const element = document.getElementById("typing-text");
+  const currentText = texts[textIndex];
+
+  if (!element) return;
+
+  if (!deleting) {
+    element.textContent = currentText.substring(0, charIndex + 1);
+    charIndex++;
+
+    if (charIndex === currentText.length) {
+      deleting = true;
+      setTimeout(typeEffect, 1200);
+      return;
+    }
+
+  } else {
+    element.textContent = currentText.substring(0, charIndex - 1);
+    charIndex--;
+
+    if (charIndex === 0) {
+      deleting = false;
+      textIndex = (textIndex + 1) % texts.length;
+    }
+  }
+
+  setTimeout(typeEffect, deleting ? 60 : 100);
+}
+
+typeEffect();
+</script>
 </body>
 </html>
