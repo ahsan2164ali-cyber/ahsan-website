@@ -1,366 +1,725 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>AhsanWebStudio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ahsan Web Studio</title>
+
   <link rel="icon" type="image/png" href="profile.png">
+
   <style>
-    body {
-    <div class="welcome-screen">
-  <div class="welcome-content">
-    <img src="profile.png" alt="Ahsan Ali" class="welcome-photo">
 
-    <h1>Welcome to</h1>
-    <h2>Ahsan Web Studio</h2>
-    <p>Creative • Modern • Simple Websites</p>
-  </div>
-</div>
-  background-color: #0b0f17; /* 👈 Is code se background dark (kala) hota hai */
-  color: #ffffff;           /* 👈 Is code se text safed (white) hota hai */
-}
-    .service-link{
-  text-decoration:none;
-  color:inherit;
-  display:block;
-}
+    *{
+      box-sizing:border-box;
+    }
 
-.service-link .card{
-  cursor:pointer;
-  transition:0.3s;
-}
+    body{
+      margin:0;
+      font-family:Arial,sans-serif;
+      background:#f5f7fb;
+      color:#222;
+    }
 
-.service-link .card:hover{
-  transform:translateY(-5px);
-}
-  .profile-pic{
-  width:140px;
-  height:140px;
-  object-fit:cover;
-  border-radius:50%;
-  border:4px solid #38bdf8;
-  margin-bottom:20px;
-}
-    body{margin:0;font-family:Arial;background:#f5f7fb;color:#222}
-    header{background:#0f172a;color:white;padding:18px 60px;display:flex;justify-content:space-between;align-items:center}
-    header h2{color:#38bdf8;margin:0}
-    nav a{color:white;text-decoration:none;margin-left:22px}
-    .hero{padding:80px 60px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
-    .hero h1{font-size:50px;margin:0}
-    .hero span{color:#2563eb}
-    .hero p{font-size:18px;line-height:1.7;color:#555}
-    .btn{background:#2563eb;color:white;padding:14px 26px;border-radius:8px;text-decoration:none;display:inline-block;margin-top:15px}
-    .card{background:white;padding:28px;border-radius:14px;box-shadow:0 8px 25px #dbe1ee}
-    .section{padding:60px;text-align:center}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-top:30px}
-    footer{background:#0f172a;color:white;text-align:center;padding:22px}
-    @media(max-width:800px){header{padding:15px}.hero{grid-template-columns:1fr;padding:40px 20px}.cards{grid-template-columns:1fr}.section{padding:40px 20px}}
-    /* Mobile Responsive Styling */
-@media screen and (max-width: 768px) {
+    /* =========================
+       WELCOME SCREEN
+    ========================= */
 
-  /* 1. Header aur Nav adjustment */
-  header {
-    flex-direction: column;
-    text-align: center;
-    padding: 15px !important;
-  }
-
-  nav {
-    margin-top: 10px;
-  }
-
-  nav a {
-    margin: 0 8px !important;
-    font-size: 14px;
-  }
-
-  /* 2. Hero Section adjustment */
-  .hero {
-    grid-template-columns: 1fr !important; /* Stack elements vertically */
-    padding: 30px 15px !important;
-    text-align: center;
-  }
-
-  .hero h1 {
-    font-size: 30px !important; /* Mobile par headings chhoti rakhna */
-  }
-
-  /* 3. Cards Section Mobile Adjustment */
-  .cards {
-    grid-template-columns: 1fr !important; /* Saare cards ek ke niche ek aayenge */
-    gap: 15px !important;
-  }
-
-  /* 4. Footer adjustment */
-  .cwh-footer .footer-container {
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-    text-align: center !important;
     .welcome-screen{
-  position:fixed;
-  inset:0;
-  width:100%;
-  height:100vh;
-  background:#0f172a;
-  color:white;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  z-index:99999;
-  animation:welcomeHide 4s ease forwards;
-}
-  }
-@keyframes welcomeHide{
-  0%,75%{
-    opacity:1;
-    visibility:visible;
-  }
+      position:fixed;
+      inset:0;
+      width:100%;
+      height:100vh;
+      background:#0f172a;
+      color:white;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      z-index:99999;
+      animation:welcomeHide 4s ease forwards;
+    }
 
-  100%{
-    opacity:0;
-    visibility:hidden;
-  }
-}
+    .welcome-content{
+      width:90%;
+      max-width:700px;
+    }
 
-.welcome-content{
-  padding:30px;
-}
+    .welcome-photo{
+      width:130px;
+      height:130px;
+      object-fit:cover;
+      border-radius:50%;
+      border:4px solid #38bdf8;
+      margin-bottom:20px;
+    }
 
-.welcome-photo{
-  width:150px;
-  height:150px;
-  object-fit:cover;
-  border-radius:50%;
-  border:5px solid #38bdf8;
-  margin-bottom:25px;
-}
+    .welcome-content h1{
+      font-size:38px;
+      margin:5px 0;
+    }
 
-.welcome-content h1{
-  font-size:45px;
-  margin:10px 0;
-}
+    .welcome-content h2{
+      color:#38bdf8;
+      font-size:42px;
+      margin:5px 0 15px;
+    }
 
-.welcome-content h1 span{
-  color:#38bdf8;
-}
+    .welcome-content p{
+      font-size:17px;
+      color:#cbd5e1;
+    }
 
-.welcome-content p{
-  font-size:18px;
-  color:#cbd5e1;
-}
+    @keyframes welcomeHide{
 
-.welcome-btn{
-  display:inline-block;
-  margin-top:25px;
-  padding:14px 28px;
-  background:#2563eb;
-  color:white;
-  text-decoration:none;
-  border-radius:8px;
-}
+      0%,75%{
+        opacity:1;
+        visibility:visible;
+      }
 
-.welcome-btn:hover{
-  background:#1d4ed8;
-}
+      100%{
+        opacity:0;
+        visibility:hidden;
+      }
+
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header{
+      background:#0f172a;
+      color:white;
+      padding:18px 60px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    header h2{
+      color:#38bdf8;
+      margin:0;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin-left:22px;
+    }
+
+    nav a:hover{
+      color:#38bdf8;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero{
+      padding:80px 60px;
+      display:grid;
+      grid-template-columns:1.2fr 1fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .hero h1{
+      font-size:50px;
+      margin:0;
+    }
+
+    .hero span{
+      color:#2563eb;
+    }
+
+    .hero p{
+      font-size:18px;
+      line-height:1.7;
+      color:#555;
+    }
+
+    .profile-pic{
+      width:140px;
+      height:140px;
+      object-fit:cover;
+      border-radius:50%;
+      border:4px solid #38bdf8;
+      margin-bottom:20px;
+    }
+
+    .btn{
+      background:#2563eb;
+      color:white;
+      padding:14px 26px;
+      border-radius:8px;
+      text-decoration:none;
+      display:inline-block;
+      margin-top:15px;
+    }
+
+    .btn:hover{
+      background:#1d4ed8;
+    }
+
+
+    /* =========================
+       CARDS
+    ========================= */
+
+    .card{
+      background:white;
+      padding:28px;
+      border-radius:14px;
+      box-shadow:0 8px 25px #dbe1ee;
+    }
+
+    .section{
+      padding:60px;
+      text-align:center;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:25px;
+      margin-top:30px;
+    }
+
+    .service-link{
+      text-decoration:none;
+      color:inherit;
+      display:block;
+    }
+
+    .service-link .card{
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .service-link .card:hover{
+      transform:translateY(-5px);
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .cwh-footer{
+      background:#0b0f17;
+      color:#94a3b8;
+      padding:50px 0 20px;
+      font-family:Arial,sans-serif;
+      border-top:1px solid #1e293b;
+      text-align:left;
+    }
+
+    .cwh-footer .footer-container{
+      max-width:1000px;
+      margin:0 auto;
+      padding:0 20px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:30px;
+    }
+
+    .cwh-footer .col-title{
+      color:#ffffff;
+      font-size:16px;
+      font-weight:bold;
+      margin-bottom:16px;
+      margin-top:0;
+    }
+
+    .cwh-footer ul{
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+
+    .cwh-footer ul li{
+      margin-bottom:10px;
+      list-style:none;
+    }
+
+    .cwh-footer a{
+      color:#94a3b8;
+      text-decoration:none;
+      font-size:14px;
+      transition:color 0.2s ease;
+    }
+
+    .cwh-footer a:hover{
+      color:#ffffff;
+    }
+
+    .footer-bottom{
+      text-align:center;
+      margin-top:40px;
+      padding-top:20px;
+      border-top:1px solid #1e293b;
+      font-size:13px;
+      color:#64748b;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media(max-width:800px){
+
+      header{
+        flex-direction:column;
+        text-align:center;
+        padding:15px;
+      }
+
+      nav{
+        margin-top:10px;
+      }
+
+      nav a{
+        margin:0 8px;
+        font-size:14px;
+      }
+
+      .hero{
+        grid-template-columns:1fr;
+        padding:40px 20px;
+        text-align:center;
+      }
+
+      .hero h1{
+        font-size:30px;
+      }
+
+      .cards{
+        grid-template-columns:1fr;
+        gap:15px;
+      }
+
+      .section{
+        padding:40px 20px;
+      }
+
+      .welcome-photo{
+        width:105px;
+        height:105px;
+      }
+
+      .welcome-content h1{
+        font-size:27px;
+      }
+
+      .welcome-content h2{
+        font-size:30px;
+      }
+
+      .welcome-content p{
+        font-size:15px;
+      }
+
+      .cwh-footer .footer-container{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+
+    }
+
   </style>
 </head>
+
+
 <body>
 
-<header>
-  <h2>Ahsan Web Studio</h2>
-  <nav>
-  <a href="index.html">Home</a>
-  <a href="index.html#services">Services</a>
-  <a href="contact.html">Contact</a>
-</nav>
-</header>
 
-<div class="hero">
-  <div>
-   <img class="profile-pic" src="profile.png" alt="Ahsan Ali">
-    <h1>Professional Websites for <span>Business Growth</span></h1>
-    <p>I create clean, modern and mobile-friendly websites for small businesses, students and personal brands.</p>
-    <a class="btn" href="contact.html">Get Your Website</a>
+  <!-- WELCOME SCREEN -->
+
+  <div class="welcome-screen">
+
+    <div class="welcome-content">
+
+      <img
+        src="profile.png"
+        alt="Ahsan Ali"
+        class="welcome-photo"
+      >
+
+      <h1>Welcome to</h1>
+
+      <h2>Ahsan Web Studio</h2>
+
+      <p>
+        Creative • Modern • Simple Websites
+      </p>
+
+    </div>
+
   </div>
 
-  <div class="card">
-    <h2>Website Design Service</h2>
-    <p>HTML • CSS • Responsive Design</p>
-    <p>✅ Modern Look</p>
-    <p>✅ Mobile Friendly</p>
-    <p>✅ Budget Friendly</p>
-  </div>
-</div>
-<div class="section" id="about">
-  <h1>About Me</h1>
 
-  <div class="card" style="max-width:800px;margin:30px auto;text-align:center;">
-    <img src="profile.png" alt="Ahsan Ali"
-         style="width:130px;height:130px;object-fit:cover;border-radius:50%;border:4px solid #38bdf8;">
+  <!-- HEADER -->
 
-    <h2>Hi, I'm Ahsan Ali 👋</h2>
+  <header>
 
-    <p style="font-size:17px;line-height:1.7;color:#555;">
-      I'm a student, web creator and the founder of Ahsan Web Studio.
-      I create clean, modern and mobile-friendly websites for businesses,
-      students and personal brands.
-    </p>
+    <h2>Ahsan Web Studio</h2>
 
-    <p style="font-size:17px;line-height:1.7;color:#555;">
-      My goal is to help people build a professional presence on the web.
-    </p>
-  </div>
-</div>
-<div class="section" id="services">
-  <h1>My Services</h1>
-  <div class="cards">
-    <a href="business.html" class="service-link">
-  <div class="card">
-    <h2>Business Website</h2>
-    <p>Shop, coaching, service aur local business ke liye website.</p>
-  </div>
-</a>
+    <nav>
+
+      <a href="index.html">Home</a>
+
+      <a href="index.html#about">About</a>
+
+      <a href="index.html#services">Services</a>
+
+      <a href="contact.html">Contact</a>
+
+    </nav>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <div class="hero">
+
+    <div>
+
+      <img
+        class="profile-pic"
+        src="profile.png"
+        alt="Ahsan Ali"
+      >
+
+      <h1>
+        Professional Websites for
+        <span>Business Growth</span>
+      </h1>
+
+      <p>
+        I create clean, modern and mobile-friendly websites
+        for small businesses, students and personal brands.
+      </p>
+
+      <a
+        class="btn"
+        href="contact.html"
+      >
+        Get Your Website
+      </a>
+
+    </div>
+
+
     <div class="card">
-      <h2>Portfolio Website</h2>
-      <p>Students, freelancers aur creators ke liye personal website.</p>
-    </div>
-    <div class="card">
-      <h2>Landing Page</h2>
-      <p>Product ya service promote karne ke liye professional page.</p>
-    </div>
-  </div>
-</div>
 
-<div class="section">
-  <h1>Why Choose Me?</h1>
-  <div class="cards">
-    <div class="card">✅ Clean Design</div>
-    <div class="card">✅ Work fast</div>
-    <div class="card">✅ Professional Look</div>
-  </div>
-</div>
+      <h2>Website Design Service</h2>
 
-<style>
-  .cwh-footer {
-    background-color: #0b0f17;
-    color: #94a3b8;
-    padding: 50px 0 20px 0;
-    font-family: Arial, sans-serif;
-    border-top: 1px solid #1e293b;
-    text-align: left;
-  }
+      <p>HTML • CSS • Responsive Design</p>
 
-  .cwh-footer .footer-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-  }
+      <p>✅ Modern Look</p>
 
-  .cwh-footer .col-title {
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 16px;
-    margin-top: 0;
-  }
+      <p>✅ Mobile Friendly</p>
 
-  .cwh-footer ul {
-    list-style: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
+      <p>✅ Budget Friendly</p>
 
-  .cwh-footer ul li {
-    margin-bottom: 10px;
-    list-style: none !important;
-  }
-
-  .cwh-footer a {
-    color: #94a3b8 !important;
-    text-decoration: none !important;
-    font-size: 14px;
-    transition: color 0.2s ease;
-  }
-
-  .cwh-footer a:hover {
-    color: #ffffff !important;
-  }
-
-  .cwh-footer .footer-bottom {
-    text-align: center;
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid #1e293b;
-    font-size: 13px;
-    color: #64748b;
-  }
-
-  .cwh-footer .footer-bottom p {
-    margin: 4px 0;
-  }
-
-  /* Mobile Responsive */
-  @media (max-width: 768px) {
-    .cwh-footer .footer-container {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (max-width: 480px) {
-    .cwh-footer .footer-container {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
-
-<footer class="cwh-footer">
- <footer class="cwh-footer">
-  <div class="footer-container">
-    
-    <div class="footer-col">
-      <h4 class="col-title">Main</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#services">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4 class="col-title">Services</h4>
-      <ul>
-        <li><a href="business.html">Business Website</a></li>
-        <li><a href="portfolio.html">Portfolio Website</a></li>
-        <li><a href="landing.html">Landing Page</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4 class="col-title">Contact</h4>
-      <ul>
-        <li><a href="mailto:ahsan2164ali@gmail.com">Email Me</a></li>
-        <li><a href="https://wa.me/91YOURNUMBER" target="_blank">WhatsApp</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4 class="col-title">Social</h4>
-      <ul>
-        <li><a href="https://www.linkedin.com/in/ahsan-ali-949109400/" target="_blank">💼 LinkedIn</a></li>
-        <li><a href="https://www.instagram.com/themuslimquiz786/" target="_blank">📸 Instagram</a></li>
-        <li><a href="https://github.com/ahsan2164ali-cyber/ahsan-website" target="_blank">💻 GitHub</a></li>
-      </ul>
     </div>
 
   </div>
 
-  <div class="footer-bottom">
-    <p>Made with ❤️ and ☕ in India</p>
-    <p>© 2026 Ahsan Web Studio</p>
+
+  <!-- ABOUT -->
+
+  <div
+    class="section"
+    id="about"
+  >
+
+    <h1>About Me</h1>
+
+    <div
+      class="card"
+      style="max-width:800px;margin:30px auto;text-align:center;"
+    >
+
+      <img
+        src="profile.png"
+        alt="Ahsan Ali"
+        style="width:130px;height:130px;object-fit:cover;border-radius:50%;border:4px solid #38bdf8;"
+      >
+
+      <h2>
+        Hi, I'm Ahsan Ali 👋
+      </h2>
+
+      <p
+        style="font-size:17px;line-height:1.7;color:#555;"
+      >
+        I'm a student, web creator and the founder
+        of Ahsan Web Studio. I create clean, modern
+        and mobile-friendly websites for businesses,
+        students and personal brands.
+      </p>
+
+      <p
+        style="font-size:17px;line-height:1.7;color:#555;"
+      >
+        My goal is to help people build a professional
+        presence on the web.
+      </p>
+
+    </div>
+
   </div>
-</footer>
+
+
+  <!-- SERVICES -->
+
+  <div
+    class="section"
+    id="services"
+  >
+
+    <h1>My Services</h1>
+
+    <div class="cards">
+
+
+      <a
+        href="business.html"
+        class="service-link"
+      >
+
+        <div class="card">
+
+          <h2>Business Website</h2>
+
+          <p>
+            Shop, coaching, service aur local business
+            ke liye website.
+          </p>
+
+        </div>
+
+      </a>
+
+
+      <a
+        href="portfolio.html"
+        class="service-link"
+      >
+
+        <div class="card">
+
+          <h2>Portfolio Website</h2>
+
+          <p>
+            Students, freelancers aur creators ke liye
+            personal website.
+          </p>
+
+        </div>
+
+      </a>
+
+
+      <a
+        href="landing.html"
+        class="service-link"
+      >
+
+        <div class="card">
+
+          <h2>Landing Page</h2>
+
+          <p>
+            Product ya service promote karne ke liye
+            professional page.
+          </p>
+
+        </div>
+
+      </a>
+
+
+    </div>
+
+  </div>
+
+
+  <!-- WHY CHOOSE ME -->
+
+  <div class="section">
+
+    <h1>Why Choose Me?</h1>
+
+    <div class="cards">
+
+      <div class="card">
+        ✅ Clean Design
+      </div>
+
+      <div class="card">
+        ✅ Work Fast
+      </div>
+
+      <div class="card">
+        ✅ Professional Look
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- FOOTER -->
+
+  <footer class="cwh-footer">
+
+    <div class="footer-container">
+
+
+      <div>
+
+        <h3 class="col-title">
+          Main
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="index.html">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="index.html#about">
+              About
+            </a>
+          </li>
+
+          <li>
+            <a href="index.html#services">
+              Services
+            </a>
+          </li>
+
+          <li>
+            <a href="contact.html">
+              Contact
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div>
+
+        <h3 class="col-title">
+          Services
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="business.html">
+              Business Website
+            </a>
+          </li>
+
+          <li>
+            <a href="portfolio.html">
+              Portfolio Website
+            </a>
+          </li>
+
+          <li>
+            <a href="landing.html">
+              Landing Page
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div>
+
+        <h3 class="col-title">
+          Contact
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="mailto:ahsan2164ali@gmail.com">
+              Email Me
+            </a>
+          </li>
+
+          <li>
+            <a href="contact.html">
+              Contact Form
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div>
+
+        <h3 class="col-title">
+          Social
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="#">
+              💼 LinkedIn
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              📸 Instagram
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              💻 GitHub
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © 2026 Ahsan Web Studio | All Rights Reserved
+      </p>
+
+    </div>
+
+  </footer>
+
+
 </body>
 </html>
