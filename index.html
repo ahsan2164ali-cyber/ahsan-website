@@ -44,6 +44,49 @@
     .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-top:30px}
     footer{background:#0f172a;color:white;text-align:center;padding:22px}
     @media(max-width:800px){header{padding:15px}.hero{grid-template-columns:1fr;padding:40px 20px}.cards{grid-template-columns:1fr}.section{padding:40px 20px}}
+    /* Mobile Responsive Styling */
+@media screen and (max-width: 768px) {
+
+  /* 1. Header aur Nav adjustment */
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px !important;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  nav a {
+    margin: 0 8px !important;
+    font-size: 14px;
+  }
+
+  /* 2. Hero Section adjustment */
+  .hero {
+    grid-template-columns: 1fr !important; /* Stack elements vertically */
+    padding: 30px 15px !important;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 30px !important; /* Mobile par headings chhoti rakhna */
+  }
+
+  /* 3. Cards Section Mobile Adjustment */
+  .cards {
+    grid-template-columns: 1fr !important; /* Saare cards ek ke niche ek aayenge */
+    gap: 15px !important;
+  }
+
+  /* 4. Footer adjustment */
+  .cwh-footer .footer-container {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    text-align: center !important;
+  }
+}
   </style>
 </head>
 <body>
