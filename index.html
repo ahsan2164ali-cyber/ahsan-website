@@ -610,6 +610,47 @@ body.light-mode footer {
     width: 100%;
   }
 }
+    body.light-mode {
+  background: #f5f7fb !important;
+  color: #222 !important;
+}
+
+body.light-mode .hero,
+body.light-mode .section {
+  background: #f5f7fb !important;
+  color: #222 !important;
+}
+
+body.light-mode .card {
+  background: white !important;
+  color: #222 !important;
+}
+
+body.light-mode .card p,
+body.light-mode .hero p,
+body.light-mode .section p {
+  color: #444 !important;
+}
+
+/* Header dark rahega */
+body.light-mode header {
+  background: #0f172a !important;
+  color: white !important;
+}
+
+body.light-mode header h2 {
+  color: #38bdf8 !important;
+}
+
+body.light-mode nav a {
+  color: white !important;
+}
+
+/* Footer dark rahega */
+body.light-mode footer {
+  background: #0f172a !important;
+  color: white !important;
+}
   </style>
 </head>
 
@@ -1117,10 +1158,6 @@ typeEffect();
 </script>
 ```
 <script>
-function signupUser() {
-  alert("Signup system is coming soon!");
-}
-
 function toggleTheme() {
   document.body.classList.toggle("light-mode");
 
@@ -1131,6 +1168,10 @@ function toggleTheme() {
   } else {
     button.textContent = "🌙";
   }
+}
+
+function signupUser() {
+  alert("Signup system is coming soon!");
 }
 </script>
 </body>
