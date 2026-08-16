@@ -554,6 +554,13 @@ body{
       <a href="contact.html">Contact</a>
 
     </nav>
+```html id="x2k8qp"
+<button id="loginButton" onclick="loginWithGoogle()">
+  🔐 Login with Google
+</button>
+
+<div id="userBox" style="display:none;"></div>
+```
 
   </header>
 
@@ -943,5 +950,64 @@ function typeEffect() {
 
 typeEffect();
 </script>
+  ```html
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
+
+  import {
+    getAuth,
+    GoogleAuthProvider,
+    signInWithPopup,
+    signOut,
+    onAuthStateChanged
+  } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDXK4NKbnnkc4R4F4L8prQ06Qhdkag20IU",
+    authDomain: "ahsan-web-studio.firebaseapp.com",
+    projectId: "ahsan-web-studio",
+    storageBucket: "ahsan-web-studio.firebasestorage.app",
+    messagingSenderId: "1022583814816",
+    appId: "1:1022583814816:web:758f79f9bfe4d01f7f67c5",
+    measurementId: "G-YC4Q2RVVFB"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+  window.loginWithGoogle = async function () {
+    try {
+      await signInWithPopup(auth, provider);
+    } catch (error) {
+      console.error("Login Error:", error);
+      alert("Login failed. Please try again.");
+    }
+  };
+
+  window.logout = async function () {
+    await signOut(auth);
+  };
+
+  onAuthStateChanged(auth, (user) => {
+    const loginButton = document.getElementById("loginButton");
+    const userBox = document.getElementById("userBox");
+
+    if (user) {
+      loginButton.style.display = "none";
+      userBox.style.display = "block";
+
+      userBox.innerHTML = `
+        <span>Welcome, ${user.displayName || "User"} 👋</span>
+        <button onclick="logout()">Logout</button>
+      `;
+    } else {
+      loginButton.style.display = "inline-block";
+      userBox.style.display = "none";
+    }
+  });
+</script>
+```
+
 </body>
 </html>
