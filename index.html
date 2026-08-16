@@ -505,6 +505,95 @@ body{
   background:#172554 !important;
   color:#60a5fa !important;
 }
+    .header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-actions button {
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: white;
+  padding: 9px 15px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.header-actions button:hover {
+  background: #1e293b;
+  transform: translateY(-1px);
+}
+
+#themeToggle {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  font-size: 18px;
+  border-radius: 8px;
+}
+
+#signupButton {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+#signupButton:hover {
+  background: #1d4ed8;
+}
+
+/* LIGHT MODE */
+
+body.light-mode {
+  background: #f5f7fb;
+  color: #222;
+}
+
+body.light-mode header {
+  background: white;
+  color: #222;
+}
+
+body.light-mode header h2 {
+  color: #2563eb;
+}
+
+body.light-mode nav a {
+  color: #222;
+}
+
+body.light-mode .header-actions button {
+  background: white;
+  color: #222;
+  border-color: #cbd5e1;
+}
+
+body.light-mode .header-actions #signupButton {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+body.light-mode .card {
+  background: white;
+  color: #222;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .header-actions {
+    justify-content: center;
+    width: 100%;
+  }
+}
   </style>
 </head>
 
@@ -540,28 +629,33 @@ body{
   <!-- HEADER -->
 
   <header>
+  <h2>Ahsan Web Studio</h2>
 
-    <h2>Ahsan Web Studio</h2>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#services">Services</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-    <nav>
+  <div class="header-actions">
 
-      <a href="index.html">Home</a>
+    <button id="loginButton" onclick="loginWithGoogle()">
+      🔐 Login
+    </button>
 
-      <a href="index.html#about">About</a>
+    <button id="signupButton">
+      Signup
+    </button>
 
-      <a href="index.html#services">Services</a>
+    <button id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">
+      🌙
+    </button>
 
-      <a href="contact.html">Contact</a>
+  </div>
 
-    </nav>
-<button id="loginButton" onclick="loginWithGoogle()">
-  🔐 Login with Google
-</button>
-
-<div id="userBox" style="display:none;"></div>
-
-  </header>
-
+  <div id="userBox" style="display:none;"></div>
+</header>
 
   <!-- HERO -->
 
@@ -1006,6 +1100,18 @@ typeEffect();
   });
 </script>
 ```
+<script>
+function toggleTheme() {
+  document.body.classList.toggle("light-mode");
 
+  const button = document.getElementById("themeToggle");
+
+  if (document.body.classList.contains("light-mode")) {
+    button.textContent = "☀️";
+  } else {
+    button.textContent = "🌙";
+  }
+}
+</script>
 </body>
 </html>
