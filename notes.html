@@ -1,233 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download Handbooks</title>
-    <!-- Google Fonts & FontAwesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <title>Python Crash Course - Notes</title>
     <style>
-        :root {
-            --bg-color: #0b0f19;
-            --card-bg: #111827;
-            --border-color: #1f2937;
-            --border-hover: #374151;
-            --text-primary: #ffffff;
-            --text-secondary: #9ca3af;
-            --btn-bg: #1f2937;
-            --btn-hover: #374151;
-            --icon-bg: #0284c7;
-            --icon-color: #38bdf8;
-        }
-
-        .light-theme {
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --border-color: #e2e8f0;
-            --border-hover: #cbd5e1;
-            --text-primary: #0f172a;
-            --text-secondary: #64748b;
-            --btn-bg: #0f172a;
-            --btn-hover: #1e293b;
-            --icon-bg: #e0f2fe;
-            --icon-color: #0284c7;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            min-height: 100vh;
-            padding: 40px 20px;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
         }
-
-        .top-bar {
+        .container {
             max-width: 900px;
-            margin: 0 auto 20px auto;
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        .theme-toggle {
-            background: transparent;
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            padding: 8px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 600;
-        }
-
-        .title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 40px;
-        }
-
-        .grid-container {
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-        }
-
-        /* CodeWithHarry Style Card */
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 35px 25px 25px 25px;
-            width: 100%;
-            max-width: 340px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--border-hover);
-        }
-
-        .icon-circle {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 25px;
-            font-size: 4rem;
-            background-color: var(--icon-bg);
-            color: var(--icon-color);
-        }
-
-        .card-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .card-subtitle {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            margin-bottom: 25px;
-        }
-
-        .download-btn {
-            width: 100%;
-            background-color: var(--btn-bg);
-            color: #ffffff;
-            border: 1px solid var(--border-hover);
-            padding: 12px 0;
-            border-radius: 6px;
-            font-weight: 600;
-            text-decoration: none;
-            display: block;
-            transition: background-color 0.2s ease;
-        }
-
-        .download-btn:hover {
-            background-color: var(--btn-hover);
-        }
-
-        /* PDF Viewer Container */
-        .pdf-section {
-            width: 100%;
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
+            margin: auto;
+            background: #fff;
             padding: 20px;
-        }
-
-        .pdf-section h3 {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .pdf-container {
-            width: 100%;
-            height: 600px;
             border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            background: #000000;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .btn-download {
+            display: inline-block;
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .btn-download:hover {
+            background-color: #219150;
+        }
         iframe {
             width: 100%;
-            height: 100%;
-            border: none;
+            height: 600px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        ul {
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
 
-    <div class="top-bar">
-        <button class="theme-toggle" onclick="toggleTheme()">
-            <i class="fa-solid fa-moon"></i> <span id="theme-text">Dark Mode</span>
-        </button>
-    </div>
+<div class="container">
+    <h1>Python Crash Course Notes</h1>
+    <p><strong>Author:</strong> Eric Matthes</p>
+    
+    <!-- PDF Download Button -->
+    <a href="Python-Crash-Course.pdf" download class="btn-download">📥 PDF Download Karein</a>
 
-    <h1 class="title">Download Handbooks</h1>
+    <!-- Notes Summary -->
+    <h3>📌 Key Content Summary:</h3>
+    <ul>
+        <li><strong>Part 1: Basics</strong> - Environment Setup, Variables, Data Types, Lists, Loops, Functions, Classes, PEP 8, and Unit Testing.</li>
+        <li><strong>Part 2: Projects</strong>
+            <ul>
+                <li><strong>Alien Invasion:</strong> Pygame ke sath 2D Space Arcade game.</li>
+                <li><strong>Data Visualization:</strong> Matplotlib aur Pygal se graphs aur API integration.</li>
+                <li><strong>Web Applications:</strong> Django framework ke sath Web app development.</li>
+            </ul>
+        </li>
+    </ul>
 
-    <div class="grid-container">
-        
-        <!-- CodeWithHarry Style Python Card -->
-        <div class="card">
-            <div class="icon-circle">
-                <i class="fa-brands fa-python"></i>
-            </div>
-            <h2 class="card-title">Python Handbook</h2>
-            <p class="card-subtitle">Download Handbook Here</p>
-            <a href="Python-Crash-Course.pdf" download class="download-btn">Download</a>
-        </div>
-
-        <!-- PDF Preview First -->
-        <div class="pdf-section">
-            <h3><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> Document Preview</h3>
-            <div class="pdf-container">
-                <iframe src="Python-Crash-Course.pdf"></iframe>
-            </div>
-        </div>
-
-    </div>
-
-    <script>
-        function toggleTheme() {
-            document.body.classList.toggle('light-theme');
-            const themeText = document.getElementById('theme-text');
-            const icon = document.querySelector('.theme-toggle i');
-            
-            if (document.body.classList.contains('light-theme')) {
-                themeText.textContent = 'Light Mode';
-                icon.className = 'fa-solid fa-sun';
-            } else {
-                themeText.textContent = 'Dark Mode';
-                icon.className = 'fa-solid fa-moon';
-            }
-        }
-    </script>
+    <h3>📄 PDF Viewer:</h3>
+    <!-- Embed PDF -->
+    <iframe src="Python-Crash-Course.pdf"></iframe>
+</div>
 
 </body>
 </html>
