@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,12 +18,12 @@
   >
 
   <title>
-    Landing Page | Ahsan Web Studio
+    Portfolio Website | Ahsan Web Studio
   </title>
 
   <meta
     name="description"
-    content="High-converting and modern landing pages for products, services and promotions by Ahsan Web Studio."
+    content="Professional portfolio websites for students, freelancers and creators by Ahsan Web Studio."
   >
 
   <style>
@@ -40,14 +40,10 @@
 
     body {
       font-family: Arial, sans-serif;
-
       background: #0b1120;
-
       color: #f8fafc;
-
       transition: 0.3s ease;
     }
-
 
     /* =========================
        NAVBAR
@@ -55,50 +51,36 @@
 
     header {
       min-height: 72px;
-
       padding: 0 6%;
 
       display: flex;
-
       align-items: center;
-
       justify-content: space-between;
 
       background: #111827;
-
-      border-bottom:
-        1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
 
       position: sticky;
-
       top: 0;
-
       z-index: 100;
     }
 
     .logo {
       color: #38bdf8;
-
       font-size: 25px;
-
       font-weight: bold;
     }
 
     nav {
       display: flex;
-
-      align-items: center;
-
       gap: 28px;
+      align-items: center;
     }
 
     nav a {
       color: #f8fafc;
-
       text-decoration: none;
-
       font-size: 16px;
-
       transition: 0.3s;
     }
 
@@ -107,52 +89,43 @@
     }
 
     .theme-btn {
-      width: 42px;
+      border: 1px solid #334155;
+      background: #0f172a;
+      color: white;
 
+      width: 42px;
       height: 42px;
 
       border-radius: 10px;
-
-      border: 1px solid #334155;
-
-      background: #0f172a;
-
-      color: white;
+      cursor: pointer;
 
       font-size: 20px;
-
-      cursor: pointer;
     }
-
 
     /* =========================
        HERO
     ========================= */
 
     .hero {
-      min-height: 650px;
+      min-height: 620px;
 
       padding: 80px 7%;
 
       display: grid;
-
-      grid-template-columns:
-        1.05fr 0.95fr;
+      grid-template-columns: 1.1fr 0.9fr;
 
       align-items: center;
-
       gap: 60px;
 
       background:
         radial-gradient(
           circle at 10% 20%,
-          rgba(56,189,248,0.13),
+          rgba(56,189,248,0.12),
           transparent 30%
         ),
-
         radial-gradient(
           circle at 90% 80%,
-          rgba(99,102,241,0.14),
+          rgba(99,102,241,0.12),
           transparent 30%
         );
     }
@@ -162,28 +135,24 @@
 
       padding: 8px 15px;
 
-      margin-bottom: 20px;
-
       border-radius: 30px;
 
       color: #7dd3fc;
 
-      background:
-        rgba(56,189,248,0.08);
+      background: rgba(56,189,248,0.08);
 
-      border:
-        1px solid rgba(56,189,248,0.3);
+      border: 1px solid rgba(56,189,248,0.3);
 
       font-size: 13px;
-
       font-weight: bold;
 
       letter-spacing: 1px;
+
+      margin-bottom: 20px;
     }
 
     .hero h1 {
-      font-size:
-        clamp(42px, 6vw, 72px);
+      font-size: clamp(42px, 6vw, 72px);
 
       line-height: 1.05;
 
@@ -191,8 +160,6 @@
     }
 
     .hero h1 span {
-      display: block;
-
       color: #38bdf8;
     }
 
@@ -238,26 +205,23 @@
       transform: translateY(-3px);
 
       box-shadow:
-        0 12px 30px
-        rgba(37,99,235,0.3);
+        0 12px 30px rgba(37,99,235,0.3);
     }
 
     .btn-outline {
       background: transparent;
 
-      border:
-        1px solid #38bdf8;
+      border: 1px solid #38bdf8;
 
       color: #38bdf8;
     }
 
-
     /* =========================
-       PREVIEW CARD
+       IMAGE CARD
     ========================= */
 
     .preview-card {
-      min-height: 450px;
+      min-height: 430px;
 
       padding: 25px;
 
@@ -265,12 +229,10 @@
 
       background: #111827;
 
-      border:
-        1px solid rgba(148,163,184,0.12);
+      border: 1px solid rgba(148,163,184,0.12);
 
       box-shadow:
-        0 25px 60px
-        rgba(0,0,0,0.25);
+        0 25px 60px rgba(0,0,0,0.25);
 
       display: flex;
 
@@ -279,23 +241,19 @@
       justify-content: center;
 
       transition: 0.4s;
-
-      overflow: hidden;
     }
 
     .preview-card:hover {
       transform: translateY(-8px);
 
-      border-color:
-        rgba(56,189,248,0.35);
+      border-color: rgba(56,189,248,0.35);
     }
 
     .preview-card img {
       width: 100%;
+      max-width: 420px;
 
-      max-width: 440px;
-
-      max-height: 390px;
+      max-height: 370px;
 
       object-fit: contain;
 
@@ -305,23 +263,19 @@
     }
 
     .preview-card:hover img {
-      transform: scale(1.04);
+      transform: scale(1.03);
     }
 
-
     /* =========================
-       BENEFITS
+       FEATURES
     ========================= */
 
     .section {
       padding: 80px 7%;
-
       text-align: center;
     }
 
     .section-label {
-      display: block;
-
       color: #38bdf8;
 
       font-size: 13px;
@@ -331,6 +285,8 @@
       letter-spacing: 3px;
 
       margin-bottom: 12px;
+
+      display: block;
     }
 
     .section h2 {
@@ -340,17 +296,16 @@
     }
 
     .section-intro {
+      color: #94a3b8;
+
       max-width: 650px;
 
-      margin:
-        0 auto 45px;
-
-      color: #94a3b8;
+      margin: 0 auto 45px;
 
       line-height: 1.7;
     }
 
-    .benefits {
+    .features {
       display: grid;
 
       grid-template-columns:
@@ -361,117 +316,48 @@
       text-align: left;
     }
 
-    .benefit {
+    .feature {
       padding: 30px;
-
-      border-radius: 20px;
 
       background: #111827;
 
-      border:
-        1px solid
-        rgba(148,163,184,0.1);
+      border-radius: 20px;
+
+      border: 1px solid rgba(148,163,184,0.1);
 
       transition: 0.3s;
     }
 
-    .benefit:hover {
+    .feature:hover {
       transform: translateY(-8px);
 
-      border-color:
-        rgba(56,189,248,0.35);
+      border-color: rgba(56,189,248,0.35);
     }
 
-    .benefit-icon {
+    .feature-icon {
       font-size: 32px;
 
       margin-bottom: 18px;
     }
 
-    .benefit h3 {
+    .feature h3 {
       margin-bottom: 12px;
     }
 
-    .benefit p {
+    .feature p {
       color: #94a3b8;
 
       line-height: 1.7;
     }
-
-
-    /* =========================
-       HOW IT WORKS
-    ========================= */
-
-    .steps {
-      max-width: 900px;
-
-      margin: 0 auto;
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap: 25px;
-    }
-
-    .step {
-      padding: 30px;
-
-      border-radius: 20px;
-
-      background: #111827;
-
-      border:
-        1px solid
-        rgba(148,163,184,0.1);
-    }
-
-    .step-number {
-      width: 48px;
-
-      height: 48px;
-
-      margin: 0 auto 18px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      border-radius: 50%;
-
-      background: #2563eb;
-
-      color: white;
-
-      font-weight: bold;
-
-      font-size: 18px;
-    }
-
-    .step h3 {
-      margin-bottom: 10px;
-    }
-
-    .step p {
-      color: #94a3b8;
-
-      line-height: 1.6;
-    }
-
 
     /* =========================
        CTA
     ========================= */
 
     .cta {
-      margin:
-        30px 7% 80px;
+      margin: 30px 7% 80px;
 
-      padding: 60px 30px;
+      padding: 55px 30px;
 
       text-align: center;
 
@@ -484,13 +370,11 @@
           #0f172a
         );
 
-      border:
-        1px solid
-        rgba(56,189,248,0.2);
+      border: 1px solid rgba(56,189,248,0.2);
     }
 
     .cta h2 {
-      font-size: 38px;
+      font-size: 36px;
 
       margin-bottom: 15px;
     }
@@ -499,10 +383,7 @@
       color: #cbd5e1;
 
       margin-bottom: 25px;
-
-      line-height: 1.7;
     }
-
 
     /* =========================
        FOOTER
@@ -517,15 +398,12 @@
 
       color: #94a3b8;
 
-      border-top:
-        1px solid
-        rgba(255,255,255,0.06);
+      border-top: 1px solid rgba(255,255,255,0.06);
     }
 
     footer strong {
       color: #38bdf8;
     }
-
 
     /* =========================
        LIGHT MODE
@@ -539,8 +417,7 @@
 
     body.light-mode header,
     body.light-mode .preview-card,
-    body.light-mode .benefit,
-    body.light-mode .step,
+    body.light-mode .feature,
     body.light-mode footer {
       background: white;
     }
@@ -560,8 +437,7 @@
     }
 
     body.light-mode .hero p,
-    body.light-mode .benefit p,
-    body.light-mode .step p,
+    body.light-mode .feature p,
     body.light-mode .section-intro {
       color: #64748b;
     }
@@ -574,7 +450,6 @@
       color: #475569;
     }
 
-
     /* =========================
        MOBILE
     ========================= */
@@ -582,8 +457,7 @@
     @media (max-width: 800px) {
 
       header {
-        padding:
-          15px 5%;
+        padding: 15px 5%;
 
         flex-wrap: wrap;
 
@@ -605,13 +479,11 @@
 
         text-align: center;
 
-        padding:
-          65px 6%;
+        padding: 65px 6%;
       }
 
       .hero p {
         margin-left: auto;
-
         margin-right: auto;
       }
 
@@ -619,8 +491,7 @@
         justify-content: center;
       }
 
-      .benefits,
-      .steps {
+      .features {
         grid-template-columns: 1fr;
       }
 
@@ -687,8 +558,8 @@
 
       <button
         class="theme-btn"
-        id="themeButton"
         onclick="toggleTheme()"
+        id="themeButton"
       >
         🌙
       </button>
@@ -705,24 +576,19 @@
     <div>
 
       <span class="badge">
-        🚀 HIGH-CONVERTING LANDING PAGES
+        💼 PROFESSIONAL PORTFOLIO
       </span>
 
       <h1>
-
-        Turn Visitors Into
-        <span>Customers.</span>
-
+        Build a Portfolio
+        <span>That Gets Noticed.</span>
       </h1>
 
       <p>
-
-        Get a modern, focused and responsive
-        landing page designed to showcase your
-        product, service or promotion clearly.
-
+        Showcase your skills, projects and achievements
+        with a clean, modern and mobile-friendly
+        portfolio website.
       </p>
-
 
       <div class="buttons">
 
@@ -748,8 +614,8 @@
     <div class="preview-card">
 
       <img
-        src="landing.png"
-        alt="Landing Page Preview"
+        src="portfolio.png"
+        alt="Portfolio Website Preview"
       >
 
     </div>
@@ -757,161 +623,77 @@
   </section>
 
 
-  <!-- BENEFITS -->
+  <!-- FEATURES -->
 
   <section class="section">
 
     <span class="section-label">
-      WHY A LANDING PAGE
+      WHY PORTFOLIO
     </span>
 
     <h2>
-      Designed With One Goal in Mind
+      Everything You Need to Stand Out
     </h2>
 
     <p class="section-intro">
-
-      A focused landing page helps visitors
-      understand your offer quickly and guides
-      them toward taking action.
-
+      A professional portfolio helps you present
+      your work, skills and achievements in one
+      impressive place.
     </p>
 
 
-    <div class="benefits">
+    <div class="features">
 
 
-      <div class="benefit">
+      <div class="feature">
 
-        <div class="benefit-icon">
-          🎯
+        <div class="feature-icon">
+          🎨
         </div>
 
         <h3>
-          Focused Message
+          Clean Design
         </h3>
 
         <p>
-          Present your product or service with
-          a clear and easy-to-understand message.
+          Modern layouts that make your work easy
+          to understand and enjoyable to explore.
         </p>
 
       </div>
 
 
-      <div class="benefit">
+      <div class="feature">
 
-        <div class="benefit-icon">
+        <div class="feature-icon">
           📱
         </div>
 
         <h3>
-          Fully Responsive
+          Mobile Friendly
         </h3>
 
         <p>
-          Your landing page works smoothly across
-          phones, tablets and desktop screens.
+          Your portfolio looks great on phones,
+          tablets and desktop screens.
         </p>
 
       </div>
 
 
-      <div class="benefit">
+      <div class="feature">
 
-        <div class="benefit-icon">
+        <div class="feature-icon">
           ⚡
         </div>
 
         <h3>
-          Fast Experience
+          Fast & Professional
         </h3>
 
         <p>
-          Clean code and modern design provide
-          visitors with a smooth browsing experience.
-        </p>
-
-      </div>
-
-
-    </div>
-
-  </section>
-
-
-  <!-- PROCESS -->
-
-  <section class="section">
-
-    <span class="section-label">
-      SIMPLE PROCESS
-    </span>
-
-    <h2>
-      How We Build Your Page
-    </h2>
-
-    <p class="section-intro">
-
-      From idea to finished website, the process
-      stays simple and straightforward.
-
-    </p>
-
-
-    <div class="steps">
-
-
-      <div class="step">
-
-        <div class="step-number">
-          01
-        </div>
-
-        <h3>
-          Understand
-        </h3>
-
-        <p>
-          We understand your business, product,
-          service and target audience.
-        </p>
-
-      </div>
-
-
-      <div class="step">
-
-        <div class="step-number">
-          02
-        </div>
-
-        <h3>
-          Design
-        </h3>
-
-        <p>
-          We create a clean layout focused on
-          your message and goals.
-        </p>
-
-      </div>
-
-
-      <div class="step">
-
-        <div class="step-number">
-          03
-        </div>
-
-        <h3>
-          Launch
-        </h3>
-
-        <p>
-          Your responsive landing page is prepared
-          and ready for visitors.
+          A lightweight website designed to give
+          visitors a smooth browsing experience.
         </p>
 
       </div>
@@ -927,12 +709,12 @@
   <section class="cta">
 
     <h2>
-      Have a Product or Service to Promote?
+      Ready to Build Your Portfolio?
     </h2>
 
     <p>
-      Let's create a modern landing page for
-      your next idea or promotion.
+      Let's create a professional online presence
+      that represents you and your work.
     </p>
 
     <a
@@ -950,7 +732,6 @@
   <footer>
 
     © 2026
-
     <strong>
       Ahsan Web Studio
     </strong>
@@ -964,19 +745,13 @@
 
     function toggleTheme() {
 
-      document.body.classList.toggle(
-        "light-mode"
-      );
+      document.body.classList.toggle("light-mode");
 
       const button =
-        document.getElementById(
-          "themeButton"
-        );
+        document.getElementById("themeButton");
 
       if (
-        document.body.classList.contains(
-          "light-mode"
-        )
+        document.body.classList.contains("light-mode")
       ) {
 
         button.textContent = "☀️";
@@ -995,4 +770,4 @@
 </body>
 
 </html>
-
+```
