@@ -3,250 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Crash Course - Premium Notes</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Download Handbooks</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        :root {
-            --bg-color: #090d16;
-            --card-bg: #111827;
-            --border-color: #1f2937;
-            --text-primary: #f9fafb;
-            --text-secondary: #9ca3af;
-            --accent-color: #38bdf8;
-            --btn-bg: #0284c7;
-            --btn-hover: #0369a1;
-        }
-
-        .light-theme {
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --border-color: #e2e8f0;
-            --text-primary: #0f172a;
-            --text-secondary: #64748b;
-            --accent-color: #0284c7;
-            --btn-bg: #0f172a;
-            --btn-hover: #1e293b;
-        }
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+            color: #ffffff;
+            min-height: 100vh;
             padding: 40px 20px;
         }
 
-        .container {
-            max-width: 950px;
-            margin: 0 auto;
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            border: 1px solid var(--border-color);
-        }
-
-        .top-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-        }
-
-        .badge {
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent-color);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .theme-toggle {
-            background: transparent;
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            padding: 8px 14px;
-            border-radius: 8px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 500;
-        }
-
-        .header {
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
-
-        h1 {
-            font-size: 2.4rem;
+        .title {
+            text-align: center;
+            font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 40px;
         }
 
-        .meta-info {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
+        .grid-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
         }
 
-        .pdf-section h2 {
-            font-size: 1.25rem;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .pdf-container {
-            width: 100%;
-            height: 700px;
+        .card {
+            background-color: #111827;
+            border: 1px solid #1f2937;
             border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            background: #000;
+            padding: 30px 20px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.2s ease, border-color 0.2s ease;
         }
 
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: #374151;
         }
 
-        .action-bar {
-            margin: 30px 0;
-        }
-
-        .btn-download {
+        .icon-circle {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            width: 100%;
-            background-color: var(--btn-bg);
-            color: #ffffff;
-            padding: 16px 24px;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 1rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            margin-bottom: 20px;
+            font-size: 3.5rem;
         }
 
-        .btn-download:hover {
-            background-color: var(--btn-hover);
-            transform: translateY(-2px);
-        }
+        /* Brand Colors for Icons */
+        .python-bg { background-color: #1e293b; color: #38bdf8; }
+        .c-bg { background-color: #3b82f6; color: #ffffff; }
+        .html-bg { background-color: #ea580c; color: #ffffff; }
+        .mysql-bg { background-color: #0284c7; color: #ffffff; }
+        .mongodb-bg { background-color: #ffffff; color: #16a34a; }
+        .git-bg { background-color: #ffffff; color: #f97316; }
 
-        .summary-section {
-            background: var(--bg-color);
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-        }
-
-        .summary-section h2 {
-            font-size: 1.25rem;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .summary-section ul {
-            list-style: none;
-        }
-
-        .summary-section li {
-            margin-bottom: 12px;
-            color: var(--text-secondary);
-        }
-
-        .summary-section ul ul {
-            margin-top: 8px;
-            padding-left: 20px;
-            list-style: disc;
-        }
-
-        .summary-section ul ul li {
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 700;
             margin-bottom: 6px;
+        }
+
+        .card-subtitle {
+            color: #9ca3af;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .download-btn {
+            width: 100%;
+            background-color: #1f2937;
+            color: #ffffff;
+            border: 1px solid #374151;
+            padding: 10px 0;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.2s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #374151;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="top-bar">
-        <span class="badge">Python Resource</span>
-        <button class="theme-toggle" onclick="toggleTheme()">
-            <i class="fa-solid fa-moon"></i> <span id="theme-text">Dark Mode</span>
-        </button>
-    </div>
+    <h1 class="title">Download Handbooks</h1>
 
-    <div class="header">
-        <h1>Python Crash Course</h1>
-        <div class="meta-info">
-            <p><i class="fa-solid fa-user-pen"></i> <strong>Author:</strong> Eric Matthes</p>
-        </div>
-    </div>
-
-    <!-- Section 1: PDF Viewer -->
-    <div class="pdf-section">
-        <h2><i class="fa-solid fa-book-open" style="color: var(--accent-color);"></i> PDF Preview</h2>
-        <div class="pdf-container">
-            <iframe src="Python-Crash-Course.pdf"></iframe>
-        </div>
-    </div>
-
-    <!-- Section 2: Download Button -->
-    <div class="action-bar">
-        <a href="Python-Crash-Course.pdf" download class="btn-download">
-            <i class="fa-solid fa-file-arrow-down"></i> Download PDF Document
-        </a>
-    </div>
-
-    <!-- Section 3: Summary -->
-    <div class="summary-section">
-        <h2><i class="fa-solid fa-layer-group" style="color: var(--accent-color);"></i> Chapter Overview</h2>
-        <ul>
-            <li><strong style="color: var(--text-primary);">Part 1: Core Fundamentals</strong> — Covers environment setup, variables, data structures, control flow, functions, OOP, file handling, and PEP 8 standards.</li>
-            <li><strong style="color: var(--text-primary);">Part 2: Practical Projects</strong>
-                <ul>
-                    <li><strong>Space Invaders Game:</strong> Built using 2D architecture in <code>pygame</code>.</li>
-                    <li><strong>Data Visualization:</strong> Generating interactive plots with <code>matplotlib</code> & <code>Pygal</code>.</li>
-                    <li><strong>Web Applications:</strong> Developing & deploying web apps using Django.</li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-</div>
-
-<script>
-    function toggleTheme() {
-        document.body.classList.toggle('light-theme');
-        const themeText = document.getElementById('theme-text');
-        const icon = document.querySelector('.theme-toggle i');
+    <div class="grid-container">
         
-        if (document.body.classList.contains('light-theme')) {
-            themeText.textContent = 'Light Mode';
-            icon.className = 'fa-solid fa-sun';
-        } else {
-            themeText.textContent = 'Dark Mode';
-            icon.className = 'fa-solid fa-moon';
-        }
-    }
-</script>
+        <!-- Python Card -->
+        <div class="card">
+            <div class="icon-circle python-bg">
+                <i class="fa-brands fa-python"></i>
+            </div>
+            <h2 class="card-title">Python Handbook</h2>
+            <p class="card-subtitle">Download Handbook Here</p>
+            <a href="Python-Crash-Course.pdf" download class="download-btn">Download</a>
+        </div>
+
+        <!-- C Card -->
+        <div class="card">
+            <div class="icon-circle c-bg">
+                <span style="font-weight: 700; font-size: 3rem;">C</span>
+            </div>
+            <h2 class="card-title">C Handbook</h2>
+            <p class="card-subtitle">Download Handbook Here</p>
+            <a href="#" download class="download-btn">Download</a>
+        </div>
+
+        <!-- HTML Card -->
+        <div class="card">
+            <div class="icon-circle html-bg">
+                <i class="fa-brands fa-html5"></i>
+            </div>
+            <h2 class="card-title">HTML Handbook</h2>
+            <p class="card-subtitle">Download Handbook Here</p>
+            <a href="#" download class="download-btn">Download</a>
+        </div>
+
+        <!-- MySQL Card -->
+        <div class="card">
+            <div class="icon-circle mysql-bg">
+                <i class="fa-solid fa-database"></i>
+            </div>
+            <h2 class="card-title">MySQL Handbook</h2>
+            <p class="card-subtitle">Download Handbook Here</p>
+            <a href="#" download class="download-btn">Download</a>
+        </div>
+
+        <!-- MongoDB Card -->
+        <div class="card">
+            <div class="icon-circle mongodb-bg">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+            <h2 class="card-title">MongoDB Handbook</h2>
+            <p class="card-subtitle">Download Handbook Here</p>
+            <a href="#" download class="download-btn">Download</a>
+        </div>
+
+        <!-- Git Card -->
+        <div class="card">
+            <div class="icon-circle git-bg">
+                <i class="fa-brands fa-git-alt"></i>
+            </div>
+            <h2 class="card-title">Git Handbook</h2>
+            <p class="card-subtitle">Download Handbook Here</p>
+            <a href="#" download class="download-btn">Download</a>
+        </div>
+
+    </div>
 
 </body>
 </html>
