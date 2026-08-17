@@ -1,667 +1,791 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Ahsan Web Studio - Notes Hub</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 
     <style>
-        :root {
-            --bg-color: #090d16;
-            --card-bg: #111827;
-            --border-color: #1f2937;
-            --text-primary: #f9fafb;
-            --text-secondary: #9ca3af;
-            --accent-color: #38bdf8;
-            --btn-bg: #0284c7;
-            --btn-hover: #0369a1;
-        }
-
-        .light-theme {
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --border-color: #e2e8f0;
-            --text-primary: #0f172a;
-            --text-secondary: #64748b;
-            --accent-color: #0284c7;
-            --btn-bg: #0f172a;
-            --btn-hover: #1e293b;
-        }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            transition: background-color 0.3s ease, color 0.3s ease;
         }
+
 
         body {
+
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            line-height: 1.6;
-            padding: 20px;
+
+            background: #090d16;
+
+            color: #ffffff;
+
+            min-height: 100vh;
+
+            padding: 40px 20px;
+
         }
 
-        /* Progress Bar */
-        .progress-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            z-index: 1000;
-        }
 
-        .progress-bar {
-            height: 4px;
-            background: var(--accent-color);
-            width: 0%;
-        }
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
 
         .container {
-            max-width: 950px;
-            margin: 20px auto;
-            background: var(--card-bg);
-            padding: 35px;
-            border-radius: 20px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
-            border: 1px solid var(--border-color);
+
+            max-width: 1260px;
+
+            margin: auto;
+
         }
 
-        /* Top Bar */
-        .top-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .page-header {
+
+            text-align: center;
+
+            margin-bottom: 45px;
+
         }
 
-        .badge {
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent-color);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
 
-        .theme-toggle {
-            background: transparent;
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            padding: 8px 14px;
-            border-radius: 8px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 500;
-        }
+        .page-header h1 {
 
-        /* Header */
-        .header {
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 20px;
-            margin-bottom: 25px;
-        }
+            font-size: 2.5rem;
 
-        h1 {
-            font-size: 2.2rem;
             font-weight: 700;
-            margin-bottom: 8px;
+
+            margin-bottom: 10px;
+
         }
 
-        .meta-info {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
 
-        /* Tabs */
-        .nav-tabs {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 25px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
-            flex-wrap: wrap;
-        }
+        .page-header p {
 
-        .tab-btn {
-            background: transparent;
-            border: none;
-            color: var(--text-secondary);
-            padding: 10px 18px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            border-radius: 8px;
-        }
+            color: #9ca3af;
 
-        .tab-btn:hover {
-            color: var(--accent-color);
-        }
-
-        .tab-btn.active {
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent-color);
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        /* PDF */
-        .pdf-container {
-            width: 100%;
-            height: 650px;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            background: #000;
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* Download */
-        .action-bar {
-            margin: 25px 0;
-        }
-
-        .btn-download {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-            background-color: var(--btn-bg);
-            color: #ffffff;
-            padding: 14px 24px;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: 600;
             font-size: 1rem;
+
         }
 
-        .btn-download:hover {
-            background-color: var(--btn-hover);
+
+        .brand {
+
+            color: #38bdf8;
+
         }
 
-        /* Search */
-        .search-box {
-            width: 100%;
-            padding: 12px 16px;
+
+        /* =========================
+           NOTES GRID
+        ========================= */
+
+        .notes-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 24px;
+
+        }
+
+
+        /* =========================
+           NOTE CARD
+        ========================= */
+
+        .note-card {
+
+            background: #0d121d;
+
+            border: 1px solid #1f2937;
+
             border-radius: 8px;
-            border: 1px solid var(--border-color);
-            background: var(--bg-color);
-            color: var(--text-primary);
-            margin-bottom: 20px;
-            font-size: 0.95rem;
+
+            min-height: 300px;
+
+            padding: 24px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            text-align: center;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                background 0.25s ease;
+
         }
 
-        /* Notes */
-        .summary-section {
-            background: var(--bg-color);
-            padding: 25px;
+
+        .note-card:hover {
+
+            transform: translateY(-5px);
+
+            border-color: #38bdf8;
+
+            background: #111827;
+
+        }
+
+
+        /* =========================
+           ICON CIRCLE
+        ========================= */
+
+        .icon-box {
+
+            width: 128px;
+
+            height: 128px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin: 0 auto 22px;
+
+            font-size: 65px;
+
+        }
+
+
+        /* Python */
+
+        .python-icon {
+
+            background: #3776ab;
+
+            color: #ffd343;
+
+        }
+
+
+        /* HTML */
+
+        .html-icon {
+
+            background: #e44d26;
+
+            color: #ffffff;
+
+        }
+
+
+        /* =========================
+           CARD TITLE
+        ========================= */
+
+        .note-card h2 {
+
+            font-size: 1.1rem;
+
+            margin-bottom: 12px;
+
+            font-weight: 700;
+
+        }
+
+
+        .note-card p {
+
+            color: #9ca3af;
+
+            font-size: 0.9rem;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        /* =========================
+           OPEN BUTTON
+        ========================= */
+
+        .open-btn {
+
+            margin-top: auto;
+
+            width: 100%;
+
+            padding: 11px 15px;
+
+            border: none;
+
+            border-radius: 6px;
+
+            background: #202a3a;
+
+            color: #ffffff;
+
+            font-size: 0.9rem;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: background 0.2s ease;
+
+        }
+
+
+        .open-btn:hover {
+
+            background: #2c3a50;
+
+        }
+
+
+        /* =========================
+           PDF VIEWER
+        ========================= */
+
+        .pdf-viewer {
+
+            display: none;
+
+            margin-top: 45px;
+
+            background: #111827;
+
+            border: 1px solid #1f2937;
+
             border-radius: 12px;
-            border: 1px solid var(--border-color);
+
+            padding: 20px;
+
         }
 
-        .summary-section ul {
-            list-style: none;
+
+        .pdf-viewer.active {
+
+            display: block;
+
         }
 
-        .summary-section li {
-            margin-bottom: 14px;
-            color: var(--text-secondary);
+
+        /* PDF HEADER */
+
+        .pdf-header {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            margin-bottom: 18px;
+
         }
 
-        /* Mobile */
-        @media (max-width: 700px) {
+
+        .pdf-title {
+
+            font-size: 1.25rem;
+
+            font-weight: 700;
+
+        }
+
+
+        .close-btn {
+
+            border: 1px solid #374151;
+
+            background: transparent;
+
+            color: #ffffff;
+
+            padding: 8px 14px;
+
+            border-radius: 7px;
+
+            cursor: pointer;
+
+        }
+
+
+        .close-btn:hover {
+
+            background: #1f2937;
+
+        }
+
+
+        /* PDF FRAME */
+
+        .pdf-frame {
+
+            width: 100%;
+
+            height: 700px;
+
+            border: 1px solid #374151;
+
+            border-radius: 8px;
+
+            background: #000000;
+
+        }
+
+
+        /* =========================
+           DOWNLOAD BUTTON
+        ========================= */
+
+        .download-area {
+
+            margin-top: 18px;
+
+        }
+
+
+        .download-btn {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 10px;
+
+            width: 100%;
+
+            padding: 14px;
+
+            background: #202a3a;
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            border-radius: 7px;
+
+            font-weight: 600;
+
+            transition: background 0.2s ease;
+
+        }
+
+
+        .download-btn:hover {
+
+            background: #2c3a50;
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 1000px) {
+
+            .notes-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
 
             body {
-                padding: 10px;
+
+                padding: 25px 12px;
+
             }
 
-            .container {
-                padding: 20px;
-                margin: 10px auto;
+
+            .page-header h1 {
+
+                font-size: 1.8rem;
+
             }
 
-            h1 {
-                font-size: 1.6rem;
+
+            .notes-grid {
+
+                grid-template-columns: 1fr;
+
             }
 
-            .nav-tabs {
-                flex-direction: column;
+
+            .note-card {
+
+                min-height: 290px;
+
             }
 
-            .tab-btn {
-                width: 100%;
-            }
 
-            .pdf-container {
+            .pdf-frame {
+
                 height: 550px;
+
             }
 
-            .top-bar {
-                gap: 15px;
-                flex-wrap: wrap;
+
+            .pdf-header {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
             }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- Progress Bar -->
-    <div class="progress-container">
-        <div class="progress-bar" id="myBar"></div>
+
+<div class="container">
+
+
+    <!-- =========================
+         PAGE HEADER
+    ========================= -->
+
+    <div class="page-header">
+
+        <h1>
+            <span class="brand">Ahsan Web Studio</span>
+            Notes
+        </h1>
+
+        <p>
+            Download and read my programming notes
+        </p>
+
     </div>
 
 
-    <div class="container">
 
-        <!-- Top Bar -->
-        <div class="top-bar">
+    <!-- =========================
+         NOTES CARDS
+    ========================= -->
 
-            <span class="badge">
-                <i class="fa-solid fa-book-open"></i>
-                Ahsan Web Studio
-            </span>
-
-            <button class="theme-toggle" onclick="toggleTheme()">
-
-                <i class="fa-solid fa-moon"></i>
-
-                <span id="theme-text">
-                    Dark Mode
-                </span>
-
-            </button>
-
-        </div>
+    <div class="notes-grid">
 
 
-        <!-- Header -->
-        <div class="header">
+        <!-- =====================
+             PYTHON CARD
+        ====================== -->
 
-            <h1>
-                Ahsan Web Studio Notes
-            </h1>
-
-            <div class="meta-info">
-
-                <p>
-                    <i class="fa-solid fa-user-pen"></i>
-
-                    <strong>Notes Collection:</strong>
-                    Ahsan Web Studio
-                </p>
-
-            </div>
-
-        </div>
+        <div
+            class="note-card"
+            onclick="openPDF(
+                'Python Crash Course',
+                'Python-Crash-Course.pdf'
+            )">
 
 
-        <!-- Navigation Tabs -->
-        <div class="nav-tabs">
-
-            <!-- Python Tab -->
-            <button
-                class="tab-btn active"
-                onclick="openTab(event, 'python-tab')">
+            <div class="icon-box python-icon">
 
                 <i class="fa-brands fa-python"></i>
 
+            </div>
+
+
+            <h2>
                 Python Crash Course
+            </h2>
+
+
+            <p>
+                Download Python Crash Course Notes
+            </p>
+
+
+            <button
+                class="open-btn"
+                onclick="event.stopPropagation(); openPDF(
+                    'Python Crash Course',
+                    'Python-Crash-Course.pdf'
+                )">
+
+                Open PDF
 
             </button>
 
 
-            <!-- HTML Tab -->
-            <button
-                class="tab-btn"
-                onclick="openTab(event, 'html-tab')">
+        </div>
+
+
+
+        <!-- =====================
+             HTML CARD
+        ====================== -->
+
+        <div
+            class="note-card"
+            onclick="openPDF(
+                'HTML Basic Notes',
+                'HTML_Detailed_English_Notes_Ahsan_Web_Studio.pdf'
+            )">
+
+
+            <div class="icon-box html-icon">
 
                 <i class="fa-brands fa-html5"></i>
 
+            </div>
+
+
+            <h2>
                 HTML Basic Notes
+            </h2>
 
-            </button>
+
+            <p>
+                Download Basic HTML Notes
+            </p>
 
 
-            <!-- Topics Tab -->
             <button
-                class="tab-btn"
-                onclick="openTab(event, 'summary-tab')">
+                class="open-btn"
+                onclick="event.stopPropagation(); openPDF(
+                    'HTML Basic Notes',
+                    'HTML_Detailed_English_Notes_Ahsan_Web_Studio.pdf'
+                )">
 
-                <i class="fa-solid fa-list-check"></i>
-
-                Notes & Topics
+                Open PDF
 
             </button>
 
-        </div>
-
-
-        <!-- =====================================
-             PYTHON PDF
-        ====================================== -->
-
-        <div id="python-tab" class="tab-content active">
-
-            <div class="pdf-container">
-
-                <iframe
-                    src="Python-Crash-Course.pdf"
-                    title="Python Crash Course PDF">
-                </iframe>
-
-            </div>
-
-
-            <div class="action-bar">
-
-                <a
-                    href="Python-Crash-Course.pdf"
-                    download
-                    class="btn-download">
-
-                    <i class="fa-solid fa-file-arrow-down"></i>
-
-                    Download Python Crash Course
-
-                </a>
-
-            </div>
 
         </div>
 
-
-        <!-- =====================================
-             HTML PDF
-        ====================================== -->
-
-        <div id="html-tab" class="tab-content">
-
-            <div class="pdf-container">
-
-                <iframe
-                    src="HTML_Detailed_English_Notes_Ahsan_Web_Studio.pdf"
-                    title="HTML Detailed English Notes PDF">
-                </iframe>
-
-            </div>
-
-
-            <div class="action-bar">
-
-                <a
-                    href="HTML_Detailed_English_Notes_Ahsan_Web_Studio.pdf"
-                    download
-                    class="btn-download">
-
-                    <i class="fa-solid fa-file-arrow-down"></i>
-
-                    Download Basic Notes
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- =====================================
-             NOTES & TOPICS
-        ====================================== -->
-
-        <div id="summary-tab" class="tab-content">
-
-            <input
-                type="text"
-                id="searchInput"
-                onkeyup="filterNotes()"
-                placeholder="Search topics..."
-                class="search-box"
-            >
-
-
-            <div class="summary-section">
-
-                <ul id="notesList">
-
-                    <li class="note-item">
-
-                        <strong style="color: var(--text-primary);">
-                            Python Fundamentals:
-                        </strong>
-
-                        Variables, data structures, control flow,
-                        functions, OOP and file handling.
-
-                    </li>
-
-
-                    <li class="note-item">
-
-                        <strong style="color: var(--text-primary);">
-                            Python Projects:
-                        </strong>
-
-                        Practice Python programming through
-                        real-world projects.
-
-                    </li>
-
-
-                    <li class="note-item">
-
-                        <strong style="color: var(--text-primary);">
-                            HTML Fundamentals:
-                        </strong>
-
-                        Learn HTML structure, elements, headings,
-                        paragraphs, links and images.
-
-                    </li>
-
-
-                    <li class="note-item">
-
-                        <strong style="color: var(--text-primary);">
-                            HTML Forms:
-                        </strong>
-
-                        Learn forms, input fields, buttons and
-                        form structure.
-
-                    </li>
-
-
-                    <li class="note-item">
-
-                        <strong style="color: var(--text-primary);">
-                            HTML5:
-                        </strong>
-
-                        Explore modern HTML5 elements and
-                        website structure.
-
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </div>
 
     </div>
 
 
-    <script>
 
-        /* =====================================
-           TAB SWITCHER
-        ====================================== */
+    <!-- =========================
+         PDF VIEWER
+    ========================= -->
 
-        function openTab(evt, tabName) {
-
-            var i;
-
-            var tabcontent =
-                document.getElementsByClassName("tab-content");
-
-            for (i = 0; i < tabcontent.length; i++) {
-
-                tabcontent[i].classList.remove("active");
-
-            }
+    <div
+        class="pdf-viewer"
+        id="pdfViewer">
 
 
-            var tablinks =
-                document.getElementsByClassName("tab-btn");
-
-            for (i = 0; i < tablinks.length; i++) {
-
-                tablinks[i].classList.remove("active");
-
-            }
+        <div class="pdf-header">
 
 
-            document
-                .getElementById(tabName)
-                .classList.add("active");
+            <div
+                class="pdf-title"
+                id="pdfTitle">
+
+                PDF Notes
+
+            </div>
 
 
-            evt.currentTarget.classList.add("active");
+            <button
+                class="close-btn"
+                onclick="closePDF()">
+
+                <i class="fa-solid fa-xmark"></i>
+
+                Close
+
+            </button>
+
+
+        </div>
+
+
+        <!-- PDF -->
+
+        <iframe
+            class="pdf-frame"
+            id="pdfFrame"
+            src=""
+            title="PDF Viewer">
+        </iframe>
+
+
+        <!-- DOWNLOAD -->
+
+        <div class="download-area">
+
+            <a
+                id="downloadButton"
+                class="download-btn"
+                href=""
+                download>
+
+                <i class="fa-solid fa-download"></i>
+
+                <span id="downloadText">
+                    Download PDF
+                </span>
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+
+    /* =========================
+       OPEN PDF
+    ========================= */
+
+    function openPDF(title, file) {
+
+
+        const viewer =
+            document.getElementById("pdfViewer");
+
+
+        const frame =
+            document.getElementById("pdfFrame");
+
+
+        const pdfTitle =
+            document.getElementById("pdfTitle");
+
+
+        const downloadButton =
+            document.getElementById("downloadButton");
+
+
+        const downloadText =
+            document.getElementById("downloadText");
+
+
+        /* Set title */
+
+        pdfTitle.textContent = title;
+
+
+        /* Open PDF */
+
+        frame.src = file;
+
+
+        /* Download link */
+
+        downloadButton.href = file;
+
+
+        /* Set download title */
+
+        if (title === "HTML Basic Notes") {
+
+            downloadText.textContent =
+                "Download Basic Notes";
+
+        }
+
+        else {
+
+            downloadText.textContent =
+                "Download Python Crash Course";
 
         }
 
 
-        /* =====================================
-           DARK / LIGHT MODE
-        ====================================== */
+        /* Show viewer */
 
-        function toggleTheme() {
-
-            document.body.classList.toggle("light-theme");
-
-            const themeText =
-                document.getElementById("theme-text");
-
-            const icon =
-                document.querySelector(".theme-toggle i");
+        viewer.classList.add("active");
 
 
-            if (
-                document.body.classList.contains("light-theme")
-            ) {
+        /* Scroll to PDF */
 
-                themeText.textContent = "Light Mode";
+        setTimeout(function () {
 
-                icon.className =
-                    "fa-solid fa-sun";
+            viewer.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
 
-            } else {
+        }, 100);
 
-                themeText.textContent = "Dark Mode";
-
-                icon.className =
-                    "fa-solid fa-moon";
-
-            }
-
-        }
+    }
 
 
-        /* =====================================
-           SCROLL PROGRESS
-        ====================================== */
 
-        window.onscroll = function () {
+    /* =========================
+       CLOSE PDF
+    ========================= */
 
-            var winScroll =
-                document.body.scrollTop ||
-                document.documentElement.scrollTop;
-
-            var height =
-                document.documentElement.scrollHeight -
-                document.documentElement.clientHeight;
-
-            var scrolled =
-                height > 0
-                    ? (winScroll / height) * 100
-                    : 0;
-
-            document
-                .getElementById("myBar")
-                .style.width =
-                scrolled + "%";
-
-        };
+    function closePDF() {
 
 
-        /* =====================================
-           SEARCH NOTES
-        ====================================== */
-
-        function filterNotes() {
-
-            var input =
-                document.getElementById("searchInput");
-
-            var filter =
-                input.value.toUpperCase();
-
-            var ul =
-                document.getElementById("notesList");
-
-            var li =
-                ul.getElementsByClassName("note-item");
+        const viewer =
+            document.getElementById("pdfViewer");
 
 
-            for (var i = 0; i < li.length; i++) {
-
-                var txtValue =
-                    li[i].textContent ||
-                    li[i].innerText;
+        const frame =
+            document.getElementById("pdfFrame");
 
 
-                if (
-                    txtValue
-                        .toUpperCase()
-                        .indexOf(filter) > -1
-                ) {
+        frame.src = "";
 
-                    li[i].style.display = "";
 
-                } else {
+        viewer.classList.remove("active");
 
-                    li[i].style.display = "none";
+    }
 
-                }
 
-            }
+</script>
 
-        }
-
-    </script>
 
 </body>
+
 </html>
