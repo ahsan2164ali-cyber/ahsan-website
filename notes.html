@@ -1,77 +1,175 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Crash Course - Notes</title>
+    <title>Python Crash Course - Study Notes</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f9;
-            color: #333;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
         .container {
             max-width: 900px;
-            margin: auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin: 0 auto;
+            background: #1e293b;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            border: 1px solid #334155;
         }
+
+        .header {
+            border-bottom: 1px solid #334155;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
         h1 {
-            color: #2c3e50;
-            text-align: center;
+            font-size: 2.2rem;
+            color: #38bdf8;
+            margin-bottom: 8px;
         }
+
+        .meta-info {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        .action-bar {
+            margin: 25px 0;
+        }
+
         .btn-download {
-            display: inline-block;
-            background-color: #27ae60;
-            color: white;
-            padding: 10px 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #0284c7;
+            color: #ffffff;
+            padding: 12px 24px;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            margin-bottom: 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.2s ease;
         }
+
         .btn-download:hover {
-            background-color: #219150;
+            background-color: #0369a1;
+            transform: translateY(-2px);
         }
+
+        .summary-section {
+            background: #0f172a;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #334155;
+            margin-bottom: 30px;
+        }
+
+        .summary-section h2 {
+            font-size: 1.25rem;
+            color: #f1f5f9;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .summary-section ul {
+            list-style: none;
+            padding-left: 5px;
+        }
+
+        .summary-section li {
+            margin-bottom: 12px;
+            color: #cbd5e1;
+        }
+
+        .summary-section ul ul {
+            margin-top: 8px;
+            padding-left: 20px;
+            list-style: disc;
+        }
+
+        .summary-section ul ul li {
+            margin-bottom: 6px;
+            color: #94a3b8;
+        }
+
+        .pdf-section h2 {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pdf-container {
+            width: 100%;
+            height: 650px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #334155;
+            background: #0f172a;
+        }
+
         iframe {
             width: 100%;
-            height: 600px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        ul {
-            line-height: 1.6;
+            height: 100%;
+            border: none;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Python Crash Course Notes</h1>
-    <p><strong>Author:</strong> Eric Matthes</p>
-    
-    <!-- PDF Download Button -->
-    <a href="Python_Crash_Course.pdf" download class="btn-download">📥 PDF Download Karein</a>
+    <div class="header">
+        <h1>Python Crash Course</h1>
+        <div class="meta-info">
+            <p><i class="fa-solid fa-user"></i> <strong>Author:</strong> Eric Matthes</p>
+        </div>
+    </div>
 
-    <!-- Notes Summary -->
-    <h3>📌 Key Content Summary:</h3>
-    <ul>
-        <li><strong>Part 1: Basics</strong> - Environment Setup, Variables, Data Types, Lists, Loops, Functions, Classes, PEP 8, and Unit Testing.</li>
-        <li><strong>Part 2: Projects</strong>
-            <ul>
-                <li><strong>Alien Invasion:</strong> Pygame ke sath 2D Space Arcade game.</li>
-                <li><strong>Data Visualization:</strong> Matplotlib aur Pygal se graphs aur API integration.</li>
-                <li><strong>Web Applications:</strong> Django framework ke sath Web app development.</li>
-            </ul>
-        </li>
-    </ul>
+    <div class="action-bar">
+        <a href="Python_Crash_Course.pdf" download class="btn-download">
+            <i class="fa-solid fa-download"></i> Download PDF Notes
+        </a>
+    </div>
 
-    <h3>📄 PDF Viewer:</h3>
-    <!-- Embed PDF -->
-    <iframe src="Python_Crash_Course.pdf"></iframe>
+    <div class="summary-section">
+        <h2><i class="fa-solid fa-list-check" style="color: #38bdf8;"></i> Key Content Overview</h2>
+        <ul>
+            <li><strong>Part 1: Core Fundamentals</strong> — Covers environment setup, variables, data structures, control flow, functions, object-oriented programming, file handling, and unit testing (PEP 8 standard).</li>
+            <li><strong>Part 2: Practical Projects</strong>
+                <ul>
+                    <li><strong>Space Invaders Game:</strong> Built using 2D game architecture in <code>pygame</code>.</li>
+                    <li><strong>Data Visualization:</strong> Generating plots and interactive charts using <code>matplotlib</code> and <code>Pygal</code> with web APIs.</li>
+                    <li><strong>Web Applications:</strong> Developing and deploying web apps using the Django framework.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="pdf-section">
+        <h2><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> Document Preview</h2>
+        <div class="pdf-container">
+            <iframe src="Python_Crash_Course.pdf"></iframe>
+        </div>
+    </div>
 </div>
 
 </body>
