@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download Handbooks</title>
+    <!-- Google Fonts & FontAwesome Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -19,29 +20,30 @@
             background-color: #0b0f19;
             color: #ffffff;
             min-height: 100vh;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
 
         .title {
             text-align: center;
             font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .grid-container {
             max-width: 1200px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 24px;
+            display: flex;
+            justify-content: center;
         }
 
         .card {
             background-color: #111827;
             border: 1px solid #1f2937;
             border-radius: 12px;
-            padding: 30px 20px 20px 20px;
+            padding: 35px 25px 25px 25px;
+            width: 100%;
+            max-width: 320px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -50,39 +52,33 @@
         }
 
         .card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-5px);
             border-color: #374151;
         }
 
         .icon-circle {
-            width: 110px;
-            height: 110px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
-            font-size: 3.5rem;
+            margin-bottom: 25px;
+            font-size: 4rem;
+            background-color: #0284c7;
+            color: #38bdf8;
         }
 
-        /* Brand Colors for Icons */
-        .python-bg { background-color: #1e293b; color: #38bdf8; }
-        .c-bg { background-color: #3b82f6; color: #ffffff; }
-        .html-bg { background-color: #ea580c; color: #ffffff; }
-        .mysql-bg { background-color: #0284c7; color: #ffffff; }
-        .mongodb-bg { background-color: #ffffff; color: #16a34a; }
-        .git-bg { background-color: #ffffff; color: #f97316; }
-
         .card-title {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
         .card-subtitle {
             color: #9ca3af;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
         }
 
         .download-btn {
@@ -90,7 +86,7 @@
             background-color: #1f2937;
             color: #ffffff;
             border: 1px solid #374151;
-            padding: 10px 0;
+            padding: 12px 0;
             border-radius: 6px;
             font-weight: 600;
             text-decoration: none;
@@ -109,64 +105,14 @@
 
     <div class="grid-container">
         
-        <!-- Python Card -->
+        <!-- Python Single Card -->
         <div class="card">
-            <div class="icon-circle python-bg">
+            <div class="icon-circle">
                 <i class="fa-brands fa-python"></i>
             </div>
             <h2 class="card-title">Python Handbook</h2>
             <p class="card-subtitle">Download Handbook Here</p>
             <a href="Python-Crash-Course.pdf" download class="download-btn">Download</a>
-        </div>
-
-        <!-- C Card -->
-        <div class="card">
-            <div class="icon-circle c-bg">
-                <span style="font-weight: 700; font-size: 3rem;">C</span>
-            </div>
-            <h2 class="card-title">C Handbook</h2>
-            <p class="card-subtitle">Download Handbook Here</p>
-            <a href="#" download class="download-btn">Download</a>
-        </div>
-
-        <!-- HTML Card -->
-        <div class="card">
-            <div class="icon-circle html-bg">
-                <i class="fa-brands fa-html5"></i>
-            </div>
-            <h2 class="card-title">HTML Handbook</h2>
-            <p class="card-subtitle">Download Handbook Here</p>
-            <a href="#" download class="download-btn">Download</a>
-        </div>
-
-        <!-- MySQL Card -->
-        <div class="card">
-            <div class="icon-circle mysql-bg">
-                <i class="fa-solid fa-database"></i>
-            </div>
-            <h2 class="card-title">MySQL Handbook</h2>
-            <p class="card-subtitle">Download Handbook Here</p>
-            <a href="#" download class="download-btn">Download</a>
-        </div>
-
-        <!-- MongoDB Card -->
-        <div class="card">
-            <div class="icon-circle mongodb-bg">
-                <i class="fa-solid fa-leaf"></i>
-            </div>
-            <h2 class="card-title">MongoDB Handbook</h2>
-            <p class="card-subtitle">Download Handbook Here</p>
-            <a href="#" download class="download-btn">Download</a>
-        </div>
-
-        <!-- Git Card -->
-        <div class="card">
-            <div class="icon-circle git-bg">
-                <i class="fa-brands fa-git-alt"></i>
-            </div>
-            <h2 class="card-title">Git Handbook</h2>
-            <p class="card-subtitle">Download Handbook Here</p>
-            <a href="#" download class="download-btn">Download</a>
         </div>
 
     </div>
