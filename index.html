@@ -3,666 +3,638 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" href="profile.png">
+
+  <link rel="icon" type="image/png" href="profile.png">
+
   <title>Ahsan Web Studio | Professional Websites</title>
-<meta name="description" content="Ahsan Web Studio creates clean, modern and mobile-friendly websites for businesses, students and personal brands.">
+
+  <meta
+    name="description"
+    content="Ahsan Web Studio creates clean, modern and mobile-friendly websites for businesses, students and personal brands."
+  >
 
   <style>
-
-    
-    *{
-      box-sizing:border-box;
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
-    body{
-      margin:0;
-      font-family:Arial,sans-serif;
-      background:#f5f7fb;
-      color:#222;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1120;
+      color: #e5e7eb;
+      transition: 0.3s;
     }
 
     /* =========================
        WELCOME SCREEN
     ========================= */
 
-    .welcome-screen{
-      position:fixed;
-      inset:0;
-      width:100%;
-      height:100vh;
-      background:#0f172a;
-      color:white;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      z-index:99999;
-      animation:welcomeHide 4s ease forwards;
+    .welcome-screen {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100vh;
+      background: #0f172a;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      z-index: 99999;
+      animation: welcomeHide 4s ease forwards;
     }
 
-    .welcome-content{
-      width:90%;
-      max-width:700px;
+    .welcome-content {
+      width: 90%;
+      max-width: 700px;
     }
 
-    .welcome-photo{
-      width:130px;
-      height:130px;
-      object-fit:cover;
-      border-radius:50%;
-      border:4px solid #38bdf8;
-      margin-bottom:20px;
+    .welcome-photo {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #38bdf8;
+      margin-bottom: 20px;
     }
 
-    .welcome-content h1{
-      font-size:38px;
-      margin:5px 0;
+    .welcome-content h1 {
+      font-size: 38px;
+      margin: 5px 0;
     }
 
-    .welcome-content h2{
-      color:#38bdf8;
-      font-size:42px;
-      margin:5px 0 15px;
+    .welcome-content h2 {
+      color: #38bdf8;
+      font-size: 42px;
+      margin: 5px 0 15px;
     }
 
-    .welcome-content p{
-      font-size:17px;
-      color:#cbd5e1;
+    .welcome-content p {
+      font-size: 17px;
+      color: #cbd5e1;
     }
 
-    @keyframes welcomeHide{
-
-      0%,75%{
-        opacity:1;
-        visibility:visible;
+    @keyframes welcomeHide {
+      0%, 75% {
+        opacity: 1;
+        visibility: visible;
       }
 
-      100%{
-        opacity:0;
-        visibility:hidden;
+      100% {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
       }
-
     }
-
 
     /* =========================
        HEADER
     ========================= */
 
-    header{
-      background:#0f172a;
-      color:white;
-      padding:18px 60px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
+    header {
+      background: #0f172a;
+      color: white;
+      padding: 18px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    header h2{
-      color:#38bdf8;
-      margin:0;
+    header h2 {
+      color: #38bdf8;
+      margin: 0;
+      white-space: nowrap;
     }
 
-    nav a{
-      color:white;
-      text-decoration:none;
-      margin-left:22px;
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
     }
 
-    nav a:hover{
-      color:#38bdf8;
+    nav a {
+      color: white;
+      text-decoration: none;
+      transition: 0.2s;
     }
 
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-actions button {
+      border: 1px solid #334155;
+      background: #111827;
+      color: white;
+      padding: 9px 15px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .header-actions button:hover {
+      background: #1e293b;
+      transform: translateY(-1px);
+    }
+
+    #signupButton {
+      background: #2563eb;
+      border-color: #2563eb;
+    }
+
+    #signupButton:hover {
+      background: #1d4ed8;
+    }
+
+    #themeToggle {
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      font-size: 18px;
+      border-radius: 8px;
+    }
+
+    #userBox {
+      color: white;
+      font-size: 14px;
+    }
+
+    #userBox button {
+      margin-left: 8px;
+    }
 
     /* =========================
        HERO
     ========================= */
 
-  .hero{
-  min-height:520px;
-  padding:70px 60px;
-  display:grid;
-  grid-template-columns:1.3fr 0.7fr;
-  gap:50px;
-  align-items:center;
-  background:linear-gradient(135deg,#f5f7fb,#eaf3ff);
-}
-
-.hero-content{
-  max-width:700px;
-}
-
-.welcome-text{
-  color:#2563eb !important;
-  font-size:16px !important;
-  font-weight:bold;
-  letter-spacing:3px;
-  margin-bottom:10px;
-}
-
-.hero h1{
-  font-size:58px;
-  line-height:1.1;
-  margin:0 0 15px;
-  color:#0f172a;
-}
-
-.hero h1 span{
-  color:#2563eb;
-}
-
-.hero h2{
-  font-size:28px;
-  margin:15px 0;
-  color:#0f172a;
-}
-
-.hero-content > p{
-  font-size:18px !important;
-  line-height:1.7;
-  color:#555 !important;
-  max-width:650px;
-}
-
-.hero-buttons{
-  margin-top:25px;
-}
-
-.btn{
-  background:#2563eb;
-  color:white;
-  padding:14px 25px;
-  border-radius:8px;
-  text-decoration:none;
-  display:inline-block;
-  margin-right:10px;
-  margin-top:10px;
-}
-
-.btn:hover{
-  background:#1d4ed8;
-}
-
-.btn-outline{
-  background:transparent;
-  color:#2563eb;
-  border:2px solid #2563eb;
-}
-
-.btn-outline:hover{
-  background:#2563eb;
-  color:white;
-}
-
-.hero-card{
-  background:white;
-  padding:35px;
-  border-radius:20px;
-  text-align:center;
-  box-shadow:0 10px 30px #dbe1ee;
-}
-
-.hero-photo{
-  width:150px;
-  height:150px;
-  object-fit:cover;
-  border-radius:50%;
-  border:5px solid #38bdf8;
-}
-
-.hero-card h2{
-  margin:18px 0 5px;
-}
-
-.hero-card p{
-  color:#64748b;
-}
-
-.hero-tags{
-  display:flex;
-  justify-content:center;
-  gap:8px;
-  flex-wrap:wrap;
-  margin-top:18px;
-}
-
-.hero-tags span{
-  background:#eaf3ff;
-  color:#2563eb;
-  padding:7px 12px;
-  border-radius:20px;
-  font-size:13px;
-}
-
-/* MOBILE */
-
-@media(max-width:800px){
-
-  .hero{
-    grid-template-columns:1fr;
-    padding:50px 20px;
-    text-align:center;
-  }
-
-  .hero h1{
-    font-size:40px;
-  }
-
-  .hero h2{
-    font-size:23px;
-  }
-
-  .hero-content > p{
-    font-size:16px !important;
-  }
-
-  .hero-card{
-    max-width:350px;
-    width:100%;
-    margin:auto;
-  }
-}
-
-    .profile-pic{
-      width:140px;
-      height:140px;
-      object-fit:cover;
-      border-radius:50%;
-      border:4px solid #38bdf8;
-      margin-bottom:20px;
+    .hero {
+      min-height: 520px;
+      padding: 70px 60px;
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 50px;
+      align-items: center;
+      background: #0b1120;
     }
 
-    .btn{
-      background:#2563eb;
-      color:white;
-      padding:14px 26px;
-      border-radius:8px;
-      text-decoration:none;
-      display:inline-block;
-      margin-top:15px;
+    .hero-content {
+      max-width: 700px;
     }
 
-    .btn:hover{
-      background:#1d4ed8;
+    .welcome-text {
+      color: #38bdf8;
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
     }
 
+    .hero h1 {
+      font-size: 58px;
+      line-height: 1.1;
+      margin: 0 0 15px;
+      color: #f8fafc;
+    }
+
+    .hero h1 span {
+      color: #38bdf8;
+    }
+
+    .hero h2 {
+      font-size: 28px;
+      margin: 15px 0;
+      color: #f8fafc;
+    }
+
+    .hero-content > p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: #cbd5e1;
+      max-width: 650px;
+    }
+
+    .hero-buttons {
+      margin-top: 25px;
+    }
+
+    .btn {
+      background: #2563eb;
+      color: white;
+      padding: 14px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      margin-right: 10px;
+      margin-top: 10px;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #60a5fa;
+      border: 2px solid #2563eb;
+    }
+
+    .btn-outline:hover {
+      background: #2563eb;
+      color: white;
+    }
+
+    .hero-card {
+      background: #111827;
+      padding: 35px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+
+    .hero-photo {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid #38bdf8;
+    }
+
+    .hero-card h2 {
+      margin: 18px 0 5px;
+    }
+
+    .hero-card p {
+      color: #94a3b8;
+    }
+
+    .hero-tags {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .hero-tags span {
+      background: #172554;
+      color: #60a5fa;
+      padding: 7px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+    }
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    .section {
+      padding: 70px 60px;
+      text-align: center;
+      background: #0b1120;
+    }
+
+    .section h1 {
+      color: #f8fafc;
+      margin-bottom: 30px;
+    }
 
     /* =========================
        CARDS
     ========================= */
 
-    .card{
-      background:white;
-      padding:28px;
-      border-radius:14px;
-      box-shadow:0 8px 25px #dbe1ee;
-    }
-.service-image{
-  width:120px !important;
-  height:80px !important;
-  object-fit:cover !important;
-  border-radius:10px !important;
-  display:block !important;
-  margin:0 auto 15px !important;
-}
-    .section{
-      padding:60px;
-      text-align:center;
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:25px;
-      margin-top:30px;
+    .card {
+      background: #111827;
+      color: #e5e7eb;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+      transition: 0.3s;
     }
 
-    .service-link{
-      text-decoration:none;
-      color:inherit;
-      display:block;
+    .card:hover {
+      transform: translateY(-5px);
     }
 
-    .service-link .card{
-      cursor:pointer;
-      transition:0.3s;
+    .card h2 {
+      color: #f8fafc;
     }
 
-    .service-link .card:hover{
-      transform:translateY(-5px);
+    .card p {
+      color: #cbd5e1;
+      line-height: 1.6;
     }
 
+    .service-image {
+      width: 120px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto 15px;
+    }
+
+    .service-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about-card {
+      max-width: 800px;
+      margin: 30px auto;
+      text-align: center;
+    }
+
+    .about-photo {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #38bdf8;
+      margin-bottom: 20px;
+    }
+
+    .about-card p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #cbd5e1;
+    }
 
     /* =========================
        FOOTER
     ========================= */
 
-    .cwh-footer{
-      background:#0b0f17;
-      color:#94a3b8;
-      padding:50px 0 20px;
-      font-family:Arial,sans-serif;
-      border-top:1px solid #1e293b;
-      text-align:left;
+    .cwh-footer {
+      background: #070b14;
+      color: #94a3b8;
+      padding: 50px 0 20px;
+      border-top: 1px solid #1e293b;
+      text-align: left;
     }
 
-    .cwh-footer .footer-container{
-      max-width:1000px;
-      margin:0 auto;
-      padding:0 20px;
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:30px;
+    .footer-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
     }
 
-    .cwh-footer .col-title{
-      color:#ffffff;
-      font-size:16px;
-      font-weight:bold;
-      margin-bottom:16px;
-      margin-top:0;
+    .col-title {
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 16px;
+      margin-top: 0;
     }
 
-    .cwh-footer ul{
-      list-style:none;
-      padding:0;
-      margin:0;
+    .cwh-footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
 
-    .cwh-footer ul li{
-      margin-bottom:10px;
-      list-style:none;
+    .cwh-footer ul li {
+      margin-bottom: 10px;
     }
 
-    .cwh-footer a{
-      color:#94a3b8;
-      text-decoration:none;
-      font-size:14px;
-      transition:color 0.2s ease;
+    .cwh-footer a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.2s;
     }
 
-    .cwh-footer a:hover{
-      color:#ffffff;
+    .cwh-footer a:hover {
+      color: white;
     }
 
-    .footer-bottom{
-      text-align:center;
-      margin-top:40px;
-      padding-top:20px;
-      border-top:1px solid #1e293b;
-      font-size:13px;
-      color:#64748b;
+    .footer-bottom {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #1e293b;
+      font-size: 13px;
+      color: #64748b;
     }
 
+    /* =========================
+       LIGHT MODE
+    ========================= */
+
+    body.light-mode {
+      background: #f5f7fb;
+      color: #222;
+    }
+
+    body.light-mode .hero,
+    body.light-mode .section {
+      background: #f5f7fb;
+      color: #222;
+    }
+
+    body.light-mode .hero h1,
+    body.light-mode .hero h2 {
+      color: #222;
+    }
+
+    body.light-mode .hero h1 span {
+      color: #2563eb;
+    }
+
+    body.light-mode .hero-content > p {
+      color: #444;
+    }
+
+    body.light-mode .section h1 {
+      color: #222;
+    }
+
+    body.light-mode .card {
+      background: white;
+      color: #222;
+      box-shadow: 0 8px 25px #dbe1ee;
+    }
+
+    body.light-mode .card h2 {
+      color: #222;
+    }
+
+    body.light-mode .card p {
+      color: #444;
+    }
+
+    body.light-mode .hero-card {
+      background: white;
+      color: #222;
+      box-shadow: 0 10px 30px #dbe1ee;
+    }
+
+    body.light-mode .hero-card p {
+      color: #64748b;
+    }
+
+    body.light-mode .about-card p {
+      color: #444;
+    }
+
+    /* Header always dark */
+
+    body.light-mode header {
+      background: #0f172a;
+      color: white;
+    }
+
+    body.light-mode header h2 {
+      color: #38bdf8;
+    }
+
+    body.light-mode nav a {
+      color: white;
+    }
+
+    body.light-mode nav a:hover {
+      color: #38bdf8;
+    }
+
+    body.light-mode .header-actions button {
+      background: #111827;
+      color: white;
+      border-color: #334155;
+    }
+
+    body.light-mode #signupButton {
+      background: #2563eb;
+      color: white;
+    }
+
+    body.light-mode .hero-tags span {
+      background: #eaf3ff;
+      color: #2563eb;
+    }
 
     /* =========================
        MOBILE
     ========================= */
 
-    @media(max-width:800px){
+    @media (max-width: 900px) {
 
-      header{
-        flex-direction:column;
-        text-align:center;
-        padding:15px;
+      header {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 15px 20px;
       }
 
-      nav{
-        margin-top:10px;
+      nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
       }
 
-      nav a{
-        margin:0 8px;
-        font-size:14px;
+      .header-actions {
+        justify-content: center;
+        width: 100%;
       }
 
-      .hero{
-        grid-template-columns:1fr;
-        padding:40px 20px;
-        text-align:center;
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 50px 20px;
+        text-align: center;
       }
 
-      .hero h1{
-        font-size:30px;
+      .hero h1 {
+        font-size: 42px;
       }
 
-      .cards{
-        grid-template-columns:1fr;
-        gap:15px;
+      .hero h2 {
+        font-size: 23px;
       }
 
-      .section{
-        padding:40px 20px;
+      .hero-content > p {
+        font-size: 16px;
       }
 
-      .welcome-photo{
-        width:105px;
-        height:105px;
+      .hero-card {
+        max-width: 350px;
+        width: 100%;
+        margin: auto;
       }
 
-      .welcome-content h1{
-        font-size:27px;
+      .section {
+        padding: 50px 20px;
       }
 
-      .welcome-content h2{
-        font-size:30px;
+      .cards {
+        grid-template-columns: 1fr;
+        gap: 18px;
       }
 
-      .welcome-content p{
-        font-size:15px;
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
       }
-
-      .cwh-footer .footer-container{
-        grid-template-columns:1fr;
-        text-align:center;
-      }
-
     }
-/* 🌙 DARK MODE */
 
-body{
-  background:#0b1120 !important;
-  color:#e5e7eb !important;
-}
+    @media (max-width: 500px) {
 
-.hero{
-  background:#0b1120 !important;
-}
+      .hero h1 {
+        font-size: 34px;
+      }
 
-.hero h1,
-.hero h2{
-  color:#f8fafc !important;
-}
+      .welcome-content h1 {
+        font-size: 28px;
+      }
 
-.hero-content > p{
-  color:#cbd5e1 !important;
-}
+      .welcome-content h2 {
+        font-size: 30px;
+      }
 
-.card,
-.hero-card{
-  background:#111827 !important;
-  color:#e5e7eb !important;
-  box-shadow:0 8px 25px rgba(0,0,0,0.35) !important;
-}
+      .welcome-photo {
+        width: 105px;
+        height: 105px;
+      }
 
-.card p{
-  color:#cbd5e1 !important;
-}
+      nav a {
+        font-size: 14px;
+      }
 
-.section h1{
-  color:#f8fafc;
-}
-
-.contact-photo{
-  border-color:#38bdf8;
-}
-
-.service-link{
-  color:#e5e7eb !important;
-}
-
-.hero-tags span{
-  background:#172554 !important;
-  color:#60a5fa !important;
-}
-    .header-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.header-actions button {
-  border: 1px solid #334155;
-  background: #0f172a;
-  color: white;
-  padding: 9px 15px;
-  border-radius: 7px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: 0.2s;
-}
-
-.header-actions button:hover {
-  background: #1e293b;
-  transform: translateY(-1px);
-}
-
-#themeToggle {
-  width: 40px;
-  height: 40px;
-  padding: 0;
-  font-size: 18px;
-  border-radius: 8px;
-}
-
-#signupButton {
-  background: #2563eb;
-  border-color: #2563eb;
-}
-
-#signupButton:hover {
-  background: #1d4ed8;
-}
-
-/* LIGHT MODE */
-
-body.light-mode {
-  background: #f5f7fb;
-  color: #222;
-}
-
-/* Header dark hi rahega */
-body.light-mode header {
-  background: #0f172a;
-  color: white;
-}
-
-body.light-mode header h2 {
-  color: #38bdf8;
-}
-
-body.light-mode nav a {
-  color: white;
-}
-
-/* Main content light hoga */
-body.light-mode .hero p,
-body.light-mode .section p {
-  color: #444;
-}
-
-body.light-mode .card {
-  background: white;
-  color: #222;
-  box-shadow: 0 8px 25px #dbe1ee;
-}
-
-/* Login / Signup buttons */
-body.light-mode .header-actions button {
-  background: #0f172a;
-  color: white;
-  border-color: #334155;
-}
-
-body.light-mode .header-actions #signupButton {
-  background: #2563eb;
-  color: white;
-  border-color: #2563eb;
-}
-
-/* Footer dark hi rahega */
-body.light-mode footer {
-  background: #0f172a;
-  color: white;
-}
-
-/* MOBILE */
-
-@media (max-width: 768px) {
-  header {
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  .header-actions {
-    justify-content: center;
-    width: 100%;
-  }
-}
-    body.light-mode {
-  background: #f5f7fb !important;
-  color: #222 !important;
-}
-
-body.light-mode .hero,
-body.light-mode .section {
-  background: #f5f7fb !important;
-  color: #222 !important;
-}
-
-body.light-mode .card {
-  background: white !important;
-  color: #222 !important;
-}
-
-body.light-mode .card p,
-body.light-mode .hero p,
-body.light-mode .section p {
-  color: #444 !important;
-}
-    body.light-mode .hero h1,
-body.light-mode .hero h1 span,
-body.light-mode .hero h2,
-body.light-mode .hero .typing,
-body.light-mode .hero .typing-text {
-  color: #222 !important;
-}
-
-/* Header dark rahega */
-body.light-mode header {
-  background: #0f172a !important;
-  color: white !important;
-}
-
-body.light-mode header h2 {
-  color: #38bdf8 !important;
-}
-
-body.light-mode nav a {
-  color: white !important;
-}
-
-/* Footer dark rahega */
-body.light-mode footer {
-  background: #0f172a !important;
-  color: white !important;
-}
+      .header-actions button {
+        padding: 8px 12px;
+      }
+    }
   </style>
 </head>
 
-
 <body>
-
 
   <!-- WELCOME SCREEN -->
 
@@ -692,94 +664,120 @@ body.light-mode footer {
   <!-- HEADER -->
 
   <header>
-  <h2>Ahsan Web Studio</h2>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="index.html#about">About</a>
-    <a href="index.html#services">Services</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+    <h2>Ahsan Web Studio</h2>
 
-  <div class="header-actions">
+    <nav>
 
-    <button id="loginButton" onclick="loginWithGoogle()">
-      🔐 Login
-    </button>
+      <a href="index.html">Home</a>
 
-    <button id="signupButton" onclick="signupUser()">
-  Signup
-</button>
+      <a href="#about">About</a>
 
-    <button id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">
-      🌙
-    </button>
+      <a href="#services">Services</a>
 
-  </div>
+      <a href="contact.html">Contact</a>
 
-  <div id="userBox" style="display:none;"></div>
-</header>
+    </nav>
+
+    <div class="header-actions">
+
+      <button
+        id="loginButton"
+        onclick="loginWithGoogle()"
+      >
+        🔐 Login
+      </button>
+
+      <button
+        id="signupButton"
+        onclick="signupUser()"
+      >
+        Signup
+      </button>
+
+      <button
+        id="themeToggle"
+        onclick="toggleTheme()"
+        aria-label="Toggle theme"
+      >
+        🌙
+      </button>
+
+    </div>
+
+    <div
+      id="userBox"
+      style="display:none;"
+    ></div>
+
+  </header>
+
 
   <!-- HERO -->
 
   <div class="hero">
 
-  <div class="hero-content">
+    <div class="hero-content">
 
-    <p class="welcome-text">WELCOME TO</p>
+      <p class="welcome-text">
+        WELCOME TO
+      </p>
 
-    <h1>
-      Ahsan <span>Web Studio</span>
-    </h1>
+      <h1>
+        Ahsan <span>Web Studio</span>
+      </h1>
 
-   <h2><span id="typing-text"></span></h2>
+      <h2>
+        <span id="typing-text"></span>
+      </h2>
 
-    <p>
-      I create clean, modern and mobile-friendly websites
-      for businesses, students and personal brands.
-    </p>
+      <p>
+        I create clean, modern and mobile-friendly websites
+        for businesses, students and personal brands.
+      </p>
 
-    <div class="hero-buttons">
-      <a class="btn" href="#services">Explore Services</a>
-      <a class="btn btn-outline" href="contact.html">Contact Me</a>
+      <div class="hero-buttons">
+
+        <a
+          class="btn"
+          href="#services"
+        >
+          Explore Services
+        </a>
+
+        <a
+          class="btn btn-outline"
+          href="contact.html"
+        >
+          Contact Me
+        </a>
+
+      </div>
+
     </div>
 
-  </div>
 
-  <div class="hero-card">
+    <div class="hero-card">
 
-    <img
-      src="profile.png"
-      alt="Ahsan Ali"
-      class="hero-photo"
-    >
+      <img
+        src="profile.png"
+        alt="Ahsan Ali"
+        class="hero-photo"
+      >
 
-    <h2>Ahsan Ali</h2>
+      <h2>Ahsan Ali</h2>
 
-    <p>Web Creator • Student • Founder</p>
+      <p>
+        Web Creator • Student • Founder
+      </p>
 
-    <div class="hero-tags">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>Responsive</span>
-    </div>
+      <div class="hero-tags">
 
-  </div>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>Responsive</span>
 
-</div>
-
-
-    <div class="card">
-
-      <h2>Website Design Service</h2>
-
-      <p>HTML • CSS • Responsive Design</p>
-
-      <p>✅ Modern Look</p>
-
-      <p>✅ Mobile Friendly</p>
-
-      <p>✅ Budget Friendly</p>
+      </div>
 
     </div>
 
@@ -795,33 +793,26 @@ body.light-mode footer {
 
     <h1>About Me</h1>
 
-    <div
-      class="card"
-      style="max-width:800px;margin:30px auto;text-align:center;"
-    >
+    <div class="card about-card">
 
       <img
         src="profile.png"
         alt="Ahsan Ali"
-        style="width:130px;height:130px;object-fit:cover;border-radius:50%;border:4px solid #38bdf8;"
+        class="about-photo"
       >
 
       <h2>
         Hi, I'm Ahsan Ali 👋
       </h2>
 
-      <p
-        style="font-size:17px;line-height:1.7;color:#555;"
-      >
+      <p>
         I'm a student, web creator and the founder
         of Ahsan Web Studio. I create clean, modern
         and mobile-friendly websites for businesses,
         students and personal brands.
       </p>
 
-      <p
-        style="font-size:17px;line-height:1.7;color:#555;"
-      >
+      <p>
         My goal is to help people build a professional
         presence on the web.
       </p>
@@ -831,73 +822,111 @@ body.light-mode footer {
   </div>
 
 
- <!-- SERVICES -->
+  <!-- SERVICES -->
 
-<div class="section" id="services">
+  <div
+    class="section"
+    id="services"
+  >
 
-  <h1>Services</h1>
+    <h1>Services</h1>
 
-  <div class="cards">
-    <img src="ChatGPT Image Aug 15, 2026, 11_41_53 PM.png"
-         alt="Business Website"
-         class="service-image">
-
-    <h2>🌐 Business Website</h2>
-    <p>Modern websites for shops, businesses and local services.</p>
-  </div>
-  </div>
+    <div class="cards">
 
 
-  <div class="card">
-    <img src="ChatGPT Image Aug 15, 2026, 11_41_53 PM.png"
-         alt="Portfolio Website"
-         class="service-image">
+      <!-- BUSINESS WEBSITE -->
 
-    <h2>💼 Portfolio Website</h2>
-    <p>Professional portfolios for students, freelancers and creators.</p>
-  </div>
+      <a
+        href="business.html"
+        class="service-link"
+      >
 
+        <div class="card">
 
-  <div class="card">
-    <img src="ChatGPT Image Aug 15, 2026, 11_41_53 PM.png"
-         alt="Landing Page"
-         class="service-image">
+          <img
+            src="ChatGPT Image Aug 15, 2026, 11_41_53 PM.png"
+            alt="Business Website"
+            class="service-image"
+          >
 
-    <h2>🚀 Landing Page</h2>
-    <p>Attractive pages for products, services and promotions.</p>
-  </div>
+          <h2>
+            🌐 Business Website
+          </h2>
 
-</div>
-  
-</div>
+          <p>
+            Modern websites for shops,
+            businesses and local services.
+          </p>
+
+        </div>
 
       </a>
 
+
+      <!-- PORTFOLIO WEBSITE -->
 
       <a
         href="portfolio.html"
         class="service-link"
       >
 
+        <div class="card">
+
+          <img
+            src="ChatGPT Image Aug 15, 2026, 11_41_53 PM.png"
+            alt="Portfolio Website"
+            class="service-image"
+          >
+
+          <h2>
+            💼 Portfolio Website
+          </h2>
+
+          <p>
+            Professional portfolios for students,
+            freelancers and creators.
+          </p>
+
+        </div>
+
       </a>
 
+
+      <!-- LANDING PAGE -->
 
       <a
         href="landing.html"
         class="service-link"
       >
 
-       
+        <div class="card">
+
+          <img
+            src="ChatGPT Image Aug 15, 2026, 11_41_53 PM.png"
+            alt="Landing Page"
+            class="service-image"
+          >
+
+          <h2>
+            🚀 Landing Page
+          </h2>
+
+          <p>
+            Attractive pages for products,
+            services and promotions.
+          </p>
+
+        </div>
 
       </a>
-
 
     </div>
 
   </div>
 
 
-  <!-- WHY CHOOSE ME --> 
+  <!-- WHY CHOOSE ME -->
+
   <div class="section">
 
     <h1>Why Choose Me?</h1>
@@ -905,20 +934,30 @@ body.light-mode footer {
     <div class="cards">
 
       <div class="card">
-        ✅ Clean Design
+        <h2>✅ Clean Design</h2>
+        <p>
+          Modern and clean website design.
+        </p>
       </div>
 
       <div class="card">
-        ✅ Work Fast
+        <h2>⚡ Work Fast</h2>
+        <p>
+          Fast and efficient website development.
+        </p>
       </div>
 
       <div class="card">
-        ✅ Professional Look
+        <h2>💼 Professional Look</h2>
+        <p>
+          Professional websites for your online presence.
+        </p>
       </div>
 
     </div>
 
   </div>
+
 
   <!-- FOOTER -->
 
@@ -942,13 +981,13 @@ body.light-mode footer {
           </li>
 
           <li>
-            <a href="index.html#about">
+            <a href="#about">
               About
             </a>
           </li>
 
           <li>
-            <a href="index.html#services">
+            <a href="#services">
               Services
             </a>
           </li>
@@ -1050,7 +1089,6 @@ body.light-mode footer {
 
       </div>
 
-
     </div>
 
 
@@ -1064,126 +1102,332 @@ body.light-mode footer {
 
   </footer>
 
-<script>
-const texts = [
-  "Learn Python",
-  "Learn C++",
-  "Learn Css",
-  "Learn javascript",
-  "Build Websites",
-  "Create Something Amazing"
-];
 
-let textIndex = 0;
-let charIndex = 0;
-let deleting = false;
+  <!-- TYPING EFFECT -->
 
-function typeEffect() {
-  const element = document.getElementById("typing-text");
-  const currentText = texts[textIndex];
-
-  if (!element) return;
-
-  if (!deleting) {
-    element.textContent = currentText.substring(0, charIndex + 1);
-    charIndex++;
-
-    if (charIndex === currentText.length) {
-      deleting = true;
-      setTimeout(typeEffect, 1200);
-      return;
-    }
-
-  } else {
-    element.textContent = currentText.substring(0, charIndex - 1);
-    charIndex--;
-
-    if (charIndex === 0) {
-      deleting = false;
-      textIndex = (textIndex + 1) % texts.length;
-    }
-  }
-
-  setTimeout(typeEffect, deleting ? 60 : 100);
-}
-
-typeEffect();
-</script>
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
-
-  import {
-    getAuth,
-    GoogleAuthProvider,
-    signInWithPopup,
-    signOut,
-    onAuthStateChanged
-  } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyDXK4NKbnnkc4R4F4L8prQ06Qhdkag20IU",
-    authDomain: "ahsan-web-studio.firebaseapp.com",
-    projectId: "ahsan-web-studio",
-    storageBucket: "ahsan-web-studio.firebasestorage.app",
-    messagingSenderId: "1022583814816",
-    appId: "1:1022583814816:web:758f79f9bfe4d01f7f67c5",
-    measurementId: "G-YC4Q2RVVFB"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-  const provider = new GoogleAuthProvider();
-
-  window.loginWithGoogle = async function () {
-    try {
-      await signInWithPopup(auth, provider);
-    } catch (error) {
-      console.error("Login Error:", error);
-      alert("Login failed. Please try again.");
-    }
-  };
-
-  window.logout = async function () {
-    await signOut(auth);
-  };
-
-  onAuthStateChanged(auth, (user) => {
-    const loginButton = document.getElementById("loginButton");
-    const userBox = document.getElementById("userBox");
-
-    if (user) {
-      loginButton.style.display = "none";
-      userBox.style.display = "block";
-
-      userBox.innerHTML = `
-        <span>Welcome, ${user.displayName || "User"} 👋</span>
-        <button onclick="logout()">Logout</button>
-      `;
-    } else {
-      loginButton.style.display = "inline-block";
-      userBox.style.display = "none";
-    }
-  });
-</script>
-<script>
-function toggleTheme() {
-  document.body.classList.toggle("light-mode");
-
-  const button = document.getElementById("themeToggle");
-
-  if (document.body.classList.contains("light-mode")) {
-    button.textContent = "☀️";
-  } else {
-    button.textContent = "🌙";
-  }
-}
-
-function signupUser() {
-  alert("Signup system is coming soon!");
-}
-</script>
   <script>
-document.title = "Ahsan Web Studio | Professional Websites";
-</script>
+
+    const texts = [
+      "Learn Python",
+      "Learn C++",
+      "Learn CSS",
+      "Learn JavaScript",
+      "Build Websites",
+      "Create Something Amazing"
+    ];
+
+    let textIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function typeEffect() {
+
+      const element =
+        document.getElementById("typing-text");
+
+      if (!element) return;
+
+      const currentText =
+        texts[textIndex];
+
+      if (!deleting) {
+
+        element.textContent =
+          currentText.substring(
+            0,
+            charIndex + 1
+          );
+
+        charIndex++;
+
+        if (
+          charIndex ===
+          currentText.length
+        ) {
+
+          deleting = true;
+
+          setTimeout(
+            typeEffect,
+            1200
+          );
+
+          return;
+        }
+
+      } else {
+
+        element.textContent =
+          currentText.substring(
+            0,
+            charIndex - 1
+          );
+
+        charIndex--;
+
+        if (charIndex === 0) {
+
+          deleting = false;
+
+          textIndex =
+            (textIndex + 1) %
+            texts.length;
+
+        }
+
+      }
+
+      setTimeout(
+        typeEffect,
+        deleting ? 60 : 100
+      );
+
+    }
+
+    typeEffect();
+
+  </script>
+
+
+  <!-- FIREBASE LOGIN -->
+
+  <script type="module">
+
+    import {
+      initializeApp
+    } from
+    "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
+
+    import {
+      getAuth,
+      GoogleAuthProvider,
+      signInWithPopup,
+      signOut,
+      onAuthStateChanged
+    } from
+    "https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
+
+
+    const firebaseConfig = {
+
+      apiKey:
+        "AIzaSyDXK4NKbnnkc4R4F4L8prQ06Qhdkag20IU",
+
+      authDomain:
+        "ahsan-web-studio.firebaseapp.com",
+
+      projectId:
+        "ahsan-web-studio",
+
+      storageBucket:
+        "ahsan-web-studio.firebasestorage.app",
+
+      messagingSenderId:
+        "1022583814816",
+
+      appId:
+        "1:1022583814816:web:758f79f9bfe4d01f7f67c5",
+
+      measurementId:
+        "G-YC4Q2RVVFB"
+
+    };
+
+
+    const app =
+      initializeApp(firebaseConfig);
+
+    const auth =
+      getAuth(app);
+
+    const provider =
+      new GoogleAuthProvider();
+
+
+    window.loginWithGoogle =
+      async function () {
+
+        try {
+
+          await signInWithPopup(
+            auth,
+            provider
+          );
+
+        } catch (error) {
+
+          console.error(
+            "Login Error:",
+            error
+          );
+
+          alert(
+            "Login failed. Please try again."
+          );
+
+        }
+
+      };
+
+
+    window.signupUser =
+      async function () {
+
+        try {
+
+          await signInWithPopup(
+            auth,
+            provider
+          );
+
+        } catch (error) {
+
+          console.error(
+            "Signup Error:",
+            error
+          );
+
+          alert(
+            "Signup failed. Please try again."
+          );
+
+        }
+
+      };
+
+
+    window.logout =
+      async function () {
+
+        try {
+
+          await signOut(auth);
+
+        } catch (error) {
+
+          console.error(
+            "Logout Error:",
+            error
+          );
+
+        }
+
+      };
+
+
+    onAuthStateChanged(
+      auth,
+      (user) => {
+
+        const loginButton =
+          document.getElementById(
+            "loginButton"
+          );
+
+        const signupButton =
+          document.getElementById(
+            "signupButton"
+          );
+
+        const userBox =
+          document.getElementById(
+            "userBox"
+          );
+
+
+        if (user) {
+
+          loginButton.style.display =
+            "none";
+
+          signupButton.style.display =
+            "none";
+
+          userBox.style.display =
+            "block";
+
+
+          userBox.innerHTML = `
+
+            <span>
+              Welcome,
+              ${user.displayName || "User"}
+              👋
+            </span>
+
+            <button
+              onclick="logout()"
+            >
+              Logout
+            </button>
+
+          `;
+
+        } else {
+
+          loginButton.style.display =
+            "inline-block";
+
+          signupButton.style.display =
+            "inline-block";
+
+          userBox.style.display =
+            "none";
+
+        }
+
+      }
+
+    );
+
+  </script>
+
+
+  <!-- DARK / LIGHT MODE -->
+
+  <script>
+
+    function toggleTheme() {
+
+      document.body.classList.toggle(
+        "light-mode"
+      );
+
+
+      const button =
+        document.getElementById(
+          "themeToggle"
+        );
+
+
+      if (
+        document.body.classList.contains(
+          "light-mode"
+        )
+      ) {
+
+        button.textContent =
+          "☀️";
+
+      } else {
+
+        button.textContent =
+          "🌙";
+
+      }
+
+    }
+
+  </script>
+
+
+  <script>
+
+    document.title =
+      "Ahsan Web Studio | Professional Websites";
+
+  </script>
+
+
 </body>
 </html>
