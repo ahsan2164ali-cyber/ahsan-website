@@ -897,6 +897,243 @@
       }
 
     }
+```css id="v8k2rm"
+/* =========================
+   PREMIUM HERO
+========================= */
+
+.premium-hero {
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(56,189,248,0.13),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(37,99,235,0.14),
+      transparent 30%
+    ),
+    #0b1120;
+}
+
+.hero-badge {
+  display: inline-block;
+
+  padding: 8px 15px;
+
+  margin-bottom: 18px;
+
+  border: 1px solid rgba(56,189,248,0.35);
+
+  border-radius: 30px;
+
+  background: rgba(56,189,248,0.08);
+
+  color: #7dd3fc;
+
+  font-size: 14px;
+
+  font-weight: bold;
+}
+
+.premium-hero h1 {
+  letter-spacing: -2px;
+}
+
+.premium-hero h1 span {
+  display: block;
+
+  background:
+    linear-gradient(
+      90deg,
+      #38bdf8,
+      #60a5fa,
+      #818cf8
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.premium-hero h2 {
+  color: #cbd5e1;
+}
+
+.cursor {
+  color: #38bdf8;
+
+  animation: blinkCursor 0.8s infinite;
+}
+
+@keyframes blinkCursor {
+
+  0%, 50% {
+    opacity: 1;
+  }
+
+  51%, 100% {
+    opacity: 0;
+  }
+
+}
+
+.hero-stats {
+  display: flex;
+
+  gap: 30px;
+
+  margin-top: 35px;
+
+  flex-wrap: wrap;
+}
+
+.hero-stats div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.hero-stats strong {
+  color: #38bdf8;
+
+  font-size: 22px;
+}
+
+.hero-stats span {
+  color: #94a3b8;
+
+  font-size: 13px;
+}
+
+.premium-profile-card {
+  position: relative;
+
+  overflow: hidden;
+
+  min-height: 360px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+.profile-glow {
+  position: absolute;
+
+  width: 230px;
+  height: 230px;
+
+  border-radius: 50%;
+
+  background: #38bdf8;
+
+  opacity: 0.12;
+
+  filter: blur(45px);
+
+  animation: profileGlow 4s ease-in-out infinite;
+}
+
+@keyframes profileGlow {
+
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.25);
+  }
+
+}
+
+.premium-profile-card .hero-photo {
+  position: relative;
+
+  z-index: 2;
+
+  transition: 0.4s ease;
+}
+
+.premium-profile-card:hover .hero-photo {
+  transform: scale(1.06);
+
+  box-shadow:
+    0 0 40px rgba(56,189,248,0.35);
+}
+
+.premium-profile-card h2,
+.premium-profile-card p,
+.premium-profile-card .hero-tags {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* LIGHT MODE */
+
+body.light-mode .premium-hero {
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(37,99,235,0.10),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(56,189,248,0.12),
+      transparent 30%
+    ),
+    #f5f7fb;
+}
+
+body.light-mode .hero-badge {
+  color: #2563eb;
+
+  background: #eff6ff;
+
+  border-color: #bfdbfe;
+}
+
+body.light-mode .premium-hero h2 {
+  color: #475569;
+}
+
+body.light-mode .hero-stats span {
+  color: #64748b;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .hero-badge {
+    font-size: 12px;
+  }
+
+  .hero-stats {
+    justify-content: center;
+
+    gap: 22px;
+  }
+
+  .premium-profile-card {
+    min-height: 330px;
+  }
+
+}
+
 
   </style>
 </head>
@@ -992,49 +1229,103 @@
   </header>
 
 
-  <!-- HERO -->
+<!-- HERO -->
 
-  <div class="hero">
+<div class="hero premium-hero">
 
-    <div class="hero-content">
+  <div class="hero-content">
 
-      <p class="welcome-text">
-        WELCOME TO
-      </p>
+    <div class="hero-badge">
+      ✨ Welcome to Ahsan Web Studio
+    </div>
 
-      <h1>
-        Ahsan <span>Web Studio</span>
-      </h1>
+    <h1>
+      Build Your
+      <span>Digital Future</span>
+    </h1>
 
-      <h2>
-        <span id="typing-text"></span>
-      </h2>
+    <h2>
+      <span id="typing-text"></span>
+      <span class="cursor">|</span>
+    </h2>
 
-      <p>
-        I create clean, modern and mobile-friendly
-        websites for businesses, students and
-        personal brands.
-      </p>
+    <p>
+      I create clean, modern and mobile-friendly
+      websites for businesses, students and
+      personal brands.
+    </p>
 
-      <div class="hero-buttons">
+    <div class="hero-buttons">
 
-        <a
-          class="btn"
-          href="#services"
-        >
-          🚀 Explore Services
-        </a>
+      <a
+        class="btn"
+        href="#services"
+      >
+        🚀 Explore Services
+      </a>
 
-        <a
-          class="btn btn-outline"
-          href="contact.html"
-        >
-          📩 Contact Me
-        </a>
+      <a
+        class="btn btn-outline"
+        href="contact.html"
+      >
+        📩 Contact Me
+      </a>
 
+    </div>
+
+    <div class="hero-stats">
+
+      <div>
+        <strong>100%</strong>
+        <span>Responsive</span>
+      </div>
+
+      <div>
+        <strong>3+</strong>
+        <span>Services</span>
+      </div>
+
+      <div>
+        <strong>24/7</strong>
+        <span>Creative</span>
       </div>
 
     </div>
+
+  </div>
+
+
+  <div class="hero-card premium-profile-card">
+
+    <div class="profile-glow"></div>
+
+    <img
+      src="profile.png"
+      alt="Ahsan Ali"
+      class="hero-photo"
+    >
+
+    <h2>
+      Ahsan Ali
+    </h2>
+
+    <p>
+      Web Creator • Student • Founder
+    </p>
+
+    <div class="hero-tags">
+
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+
+    </div>
+
+  </div>
+
+</div>
+
+ </div>
 
 
     <div class="hero-card">
