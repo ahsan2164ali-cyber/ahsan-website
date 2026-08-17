@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>HTML Detailed English Notes-Ahsan Web Studio</title>
+    <title>HTML Detailed English Notes - Ahsan Web Studio</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -171,7 +171,7 @@
             border: none;
         }
 
-        /* Buttons */
+        /* Download Button */
         .action-bar {
             margin: 25px 0;
         }
@@ -195,7 +195,7 @@
             background-color: var(--btn-hover);
         }
 
-        /* Search */
+        /* Search Box */
         .search-box {
             width: 100%;
             padding: 12px 16px;
@@ -239,6 +239,8 @@
             font-family: monospace;
             position: relative;
             margin-top: 15px;
+            padding-right: 80px;
+            word-break: break-word;
         }
 
         .copy-btn {
@@ -254,7 +256,7 @@
             cursor: pointer;
         }
 
-        /* Mobile Responsive */
+        /* Mobile */
         @media (max-width: 700px) {
             body {
                 padding: 10px;
@@ -291,214 +293,182 @@
 
 <body>
 
-<!-- Progress Bar -->
-<div class="progress-container">
-    <div class="progress-bar" id="myBar"></div>
-</div>
-
-
-<div class="container">
-
-    <!-- Top Bar -->
-    <div class="top-bar">
-
-        <span class="badge">
-            <i class="fa-solid fa-code"></i>
-            Ahsan Web Studio
-        </span>
-
-        <button class="theme-toggle" onclick="toggleTheme()">
-            <i class="fa-solid fa-moon"></i>
-            <span id="theme-text">Dark Mode</span>
-        </button>
-
+    <!-- Top Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
     </div>
 
 
-    <!-- Header -->
-    <div class="header">
+    <div class="container">
 
-        <h1>
-            HTML Detailed English Notes
-        </h1>
+        <!-- Top Bar -->
+        <div class="top-bar">
 
-        <div class="meta-info">
-
-            <p>
-                <i class="fa-solid fa-user-pen"></i>
-
-                <strong>Created by:</strong>
+            <span class="badge">
+                <i class="fa-solid fa-code"></i>
                 Ahsan Web Studio
-            </p>
+            </span>
 
-        </div>
-
-    </div>
-
-
-    <!-- Navigation Tabs -->
-    <div class="nav-tabs">
-
-        <button
-            class="tab-btn active"
-            onclick="openTab(event, 'pdf-tab')">
-
-            <i class="fa-solid fa-file-pdf"></i>
-            PDF Viewer
-
-        </button>
-
-
-        <button
-            class="tab-btn"
-            onclick="openTab(event, 'summary-tab')">
-
-            <i class="fa-solid fa-list-check"></i>
-            Notes & Topics
-
-        </button>
-
-    </div>
-
-
-    <!-- PDF Viewer -->
-    <div id="pdf-tab" class="tab-content active">
-
-        <div class="pdf-container">
-
-            <iframe
-                src="HTML_Detailed_English_Notes_Ahsan_Web_Studio.pdf">
-            </iframe>
+            <button class="theme-toggle" onclick="toggleTheme()">
+                <i class="fa-solid fa-moon"></i>
+                <span id="theme-text">Dark Mode</span>
+            </button>
 
         </div>
 
 
-        <!-- Download Button -->
-        <div class="action-bar">
+        <!-- Header -->
+        <div class="header">
 
-            <a
-                href="HTML_Detailed_English_Notes_Ahsan_Web_Studio.pdf"
-                download
-                class="btn-download">
+            <h1>HTML Detailed English Notes</h1>
 
-                <i class="fa-solid fa-file-arrow-down"></i>
-
-                Download HTML Notes PDF
-
-            </a>
+            <div class="meta-info">
+                <p>
+                    <i class="fa-solid fa-user-pen"></i>
+                    <strong>Author:</strong> Ahsan Web Studio
+                </p>
+            </div>
 
         </div>
 
-    </div>
+
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+
+            <button
+                class="tab-btn active"
+                onclick="openTab(event, 'pdf-tab')">
+
+                <i class="fa-solid fa-file-pdf"></i>
+                PDF Viewer
+
+            </button>
+
+            <button
+                class="tab-btn"
+                onclick="openTab(event, 'summary-tab')">
+
+                <i class="fa-solid fa-list-check"></i>
+                Notes & Topics
+
+            </button>
+
+        </div>
 
 
-    <!-- Notes & Search -->
-    <div id="summary-tab" class="tab-content">
+        <!-- PDF Viewer -->
+        <div id="pdf-tab" class="tab-content active">
 
-        <input
-            type="text"
-            id="searchInput"
-            onkeyup="filterNotes()"
-            placeholder="Search HTML topics..."
-            class="search-box"
-        >
+            <div class="pdf-container">
 
+                <iframe
+                    src="HTML_Detailed_English_Notes_Ahsan_Web_Studio.pdf"
+                    title="HTML Detailed English Notes PDF">
+                </iframe>
 
-        <div class="summary-section">
-
-            <ul id="notesList">
-
-                <li class="note-item">
-
-                    <strong style="color: var(--text-primary);">
-                        HTML Fundamentals:
-                    </strong>
-
-                    Learn the basics of HTML and understand how web pages
-                    are structured.
-
-                </li>
+            </div>
 
 
-                <li class="note-item">
+            <div class="action-bar">
 
-                    <strong style="color: var(--text-primary);">
-                        HTML Elements:
-                    </strong>
+                <a
+                    href="HTML_Detailed_English_Notes_Ahsan_Web_Studio.pdf"
+                    download
+                    class="btn-download">
 
-                    Learn about headings, paragraphs, links, images,
-                    lists, tables and other HTML elements.
+                    <i class="fa-solid fa-file-arrow-down"></i>
 
-                </li>
+                    Download HTML Notes PDF
 
+                </a>
 
-                <li class="note-item">
+            </div>
 
-                    <strong style="color: var(--text-primary);">
-                        Forms:
-                    </strong>
-
-                    Understand HTML forms, input fields, buttons and
-                    form structure.
-
-                </li>
+        </div>
 
 
-                <li class="note-item">
+        <!-- Notes & Search -->
+        <div id="summary-tab" class="tab-content">
 
-                    <strong style="color: var(--text-primary);">
-                        Semantic HTML:
-                    </strong>
-
-                    Learn how semantic elements help create meaningful
-                    and well-structured websites.
-
-                </li>
-
-
-                <li class="note-item">
-
-                    <strong style="color: var(--text-primary);">
-                        HTML5:
-                    </strong>
-
-                    Explore modern HTML5 features and commonly used
-                    elements.
-
-                </li>
+            <input
+                type="text"
+                id="searchInput"
+                onkeyup="filterNotes()"
+                placeholder="Search HTML topics..."
+                class="search-box"
+            >
 
 
-                <li class="note-item">
+            <div class="summary-section">
 
-                    <strong style="color: var(--text-primary);">
-                        Practice:
-                    </strong>
+                <ul id="notesList">
 
-                    Use the PDF notes to practice HTML and build
-                    real-world web pages.
+                    <li class="note-item">
+                        <strong style="color: var(--text-primary);">
+                            HTML Fundamentals:
+                        </strong>
+                        Learn the basics of HTML and understand how web pages
+                        are structured.
+                    </li>
 
-                </li>
+                    <li class="note-item">
+                        <strong style="color: var(--text-primary);">
+                            HTML Elements:
+                        </strong>
+                        Learn about headings, paragraphs, links, images,
+                        lists, tables and other HTML elements.
+                    </li>
 
-            </ul>
+                    <li class="note-item">
+                        <strong style="color: var(--text-primary);">
+                            HTML Forms:
+                        </strong>
+                        Understand forms, input fields, buttons and form
+                        structure.
+                    </li>
+
+                    <li class="note-item">
+                        <strong style="color: var(--text-primary);">
+                            Semantic HTML:
+                        </strong>
+                        Learn how semantic elements help create meaningful
+                        and well-structured websites.
+                    </li>
+
+                    <li class="note-item">
+                        <strong style="color: var(--text-primary);">
+                            HTML5:
+                        </strong>
+                        Explore modern HTML5 features and commonly used
+                        elements.
+                    </li>
+
+                    <li class="note-item">
+                        <strong style="color: var(--text-primary);">
+                            Practice:
+                        </strong>
+                        Use the PDF notes to practice HTML and build
+                        real-world web pages.
+                    </li>
+
+                </ul>
 
 
-            <!-- PDF Information -->
-            <div class="code-box">
+                <div class="code-box">
 
-                <button
-                    class="copy-btn"
-                    onclick="copyCode()">
+                    <button
+                        class="copy-btn"
+                        onclick="copyCode()">
 
-                    Copy
+                        Copy
 
-                </button>
+                    </button>
 
+                    <code id="pdfFileName">
+                        HTML_Detailed_English_Notes_Ahsan_Web_Studio.pdf
+                    </code>
 
-                <code id="pythonCode">
-
-HTML_Detailed_English_Notes_Ahsan_Web_Studio.pdf
-
-                </code>
+                </div>
 
             </div>
 
@@ -506,188 +476,160 @@ HTML_Detailed_English_Notes_Ahsan_Web_Studio.pdf
 
     </div>
 
-</div>
 
+    <script>
 
-<script>
+        /* Tab Switcher */
 
-    /* =========================
-       Tab Switcher
-    ========================= */
+        function openTab(evt, tabName) {
 
-    function openTab(evt, tabName) {
+            var i;
+            var tabcontent;
+            var tablinks;
 
-        var i;
-        var tabcontent;
-        var tablinks;
+            tabcontent =
+                document.getElementsByClassName("tab-content");
 
-        tabcontent =
-            document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
 
-        for (i = 0; i < tabcontent.length; i++) {
+            tablinks =
+                document.getElementsByClassName("tab-btn");
 
-            tabcontent[i].classList.remove("active");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
 
+            document
+                .getElementById(tabName)
+                .classList.add("active");
+
+            evt.currentTarget.classList.add("active");
         }
 
 
-        tablinks =
-            document.getElementsByClassName("tab-btn");
+        /* Dark / Light Theme */
 
-        for (i = 0; i < tablinks.length; i++) {
+        function toggleTheme() {
 
-            tablinks[i].classList.remove("active");
+            document.body.classList.toggle("light-theme");
 
-        }
+            const themeText =
+                document.getElementById("theme-text");
 
-
-        document
-            .getElementById(tabName)
-            .classList.add("active");
-
-
-        evt.currentTarget.classList.add("active");
-
-    }
-
-
-    /* =========================
-       Dark / Light Theme
-    ========================= */
-
-    function toggleTheme() {
-
-        document.body.classList.toggle('light-theme');
-
-        const themeText =
-            document.getElementById('theme-text');
-
-        const icon =
-            document.querySelector('.theme-toggle i');
-
-
-        if (
-            document.body.classList.contains('light-theme')
-        ) {
-
-            themeText.textContent = 'Light Mode';
-
-            icon.className =
-                'fa-solid fa-sun';
-
-        } else {
-
-            themeText.textContent = 'Dark Mode';
-
-            icon.className =
-                'fa-solid fa-moon';
-
-        }
-
-    }
-
-
-    /* =========================
-       Scroll Progress Bar
-    ========================= */
-
-    window.onscroll = function() {
-
-        var winScroll =
-            document.body.scrollTop ||
-            document.documentElement.scrollTop;
-
-        var height =
-            document.documentElement.scrollHeight -
-            document.documentElement.clientHeight;
-
-        var scrolled =
-            (winScroll / height) * 100;
-
-        document
-            .getElementById("myBar")
-            .style.width = scrolled + "%";
-
-    };
-
-
-    /* =========================
-       Search Notes
-    ========================= */
-
-    function filterNotes() {
-
-        var input;
-        var filter;
-        var ul;
-        var li;
-        var txtValue;
-
-
-        input =
-            document.getElementById('searchInput');
-
-
-        filter =
-            input.value.toUpperCase();
-
-
-        ul =
-            document.getElementById("notesList");
-
-
-        li =
-            ul.getElementsByClassName('note-item');
-
-
-        for (var i = 0; i < li.length; i++) {
-
-            txtValue =
-                li[i].textContent ||
-                li[i].innerText;
-
+            const icon =
+                document.querySelector(".theme-toggle i");
 
             if (
-                txtValue
-                    .toUpperCase()
-                    .indexOf(filter) > -1
+                document.body.classList.contains("light-theme")
             ) {
 
-                li[i].style.display = "";
+                themeText.textContent = "Light Mode";
+                icon.className = "fa-solid fa-sun";
 
             } else {
 
-                li[i].style.display = "none";
+                themeText.textContent = "Dark Mode";
+                icon.className = "fa-solid fa-moon";
 
             }
+        }
+
+
+        /* Scroll Progress Bar */
+
+        window.onscroll = function () {
+
+            var winScroll =
+                document.body.scrollTop ||
+                document.documentElement.scrollTop;
+
+            var height =
+                document.documentElement.scrollHeight -
+                document.documentElement.clientHeight;
+
+            var scrolled =
+                height > 0
+                    ? (winScroll / height) * 100
+                    : 0;
+
+            document
+                .getElementById("myBar")
+                .style.width = scrolled + "%";
+
+        };
+
+
+        /* Filter Topics Search */
+
+        function filterNotes() {
+
+            var input =
+                document.getElementById("searchInput");
+
+            var filter =
+                input.value.toUpperCase();
+
+            var ul =
+                document.getElementById("notesList");
+
+            var li =
+                ul.getElementsByClassName("note-item");
+
+            for (var i = 0; i < li.length; i++) {
+
+                var txtValue =
+                    li[i].textContent ||
+                    li[i].innerText;
+
+                if (
+                    txtValue
+                        .toUpperCase()
+                        .indexOf(filter) > -1
+                ) {
+
+                    li[i].style.display = "";
+
+                } else {
+
+                    li[i].style.display = "none";
+
+                }
+            }
+        }
+
+
+        /* Copy PDF Filename */
+
+        function copyCode() {
+
+            var codeText =
+                document
+                    .getElementById("pdfFileName")
+                    .innerText
+                    .trim();
+
+            navigator.clipboard
+                .writeText(codeText)
+                .then(function () {
+
+                    alert(
+                        "PDF file name copied to clipboard!"
+                    );
+
+                })
+                .catch(function () {
+
+                    alert(
+                        "Copy failed. Please copy it manually."
+                    );
+
+                });
 
         }
 
-    }
-
-
-    /* =========================
-       Copy PDF Name
-    ========================= */
-
-    function copyCode() {
-
-        var codeText =
-            document
-                .getElementById("pythonCode")
-                .innerText;
-
-
-        navigator.clipboard.writeText(codeText);
-
-
-        alert(
-            "PDF file name copied to clipboard!"
-        );
-
-    }
-
-</script>
+    </script>
 
 </body>
 </html>
