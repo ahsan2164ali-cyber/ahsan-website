@@ -1,67 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Study Notes | Ahsan Web Studio</title>
-  <link rel="icon" type="image/png" href="profile.png">
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Crash Course - Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .btn-download {
+            display: inline-block;
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .btn-download:hover {
+            background-color: #219150;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        ul {
+            line-height: 1.6;
+        }
+    </style>
 </head>
-<body class="bg-[#0b0f17] text-gray-200 min-h-screen flex flex-col justify-between">
+<body>
 
-  <!-- Header Section -->
-  <header class="bg-[#0f172a] border-b border-gray-800 px-6 py-4 flex justify-between items-center sticky top-0 z-50">
-    <h2 class="text-xl font-bold text-sky-400">Ahsan Web Studio</h2>
-    <nav class="space-x-4">
-      <a href="index.html" class="hover:text-sky-400 transition">Home</a>
-      <a href="index.html#about" class="hover:text-sky-400 transition">About</a>
-      <a href="index.html#services" class="hover:text-sky-400 transition">Services</a>
-      <a href="notes.html" class="text-sky-400 font-semibold">Notes</a>
-      <a href="contact.html" class="hover:text-sky-400 transition">Contact</a>
-    </nav>
-  </header>
+<div class="container">
+    <h1>Python Crash Course Notes</h1>
+    <p><strong>Author:</strong> Eric Matthes</p>
+    
+    <!-- PDF Download Button -->
+    <a href="Python_Crash_Course.pdf" download class="btn-download">📥 PDF Download Karein</a>
 
-  <!-- Main Content -->
-  <main class="max-w-5xl mx-auto px-6 py-12 w-full">
-    <div class="text-center mb-12">
-      <h1 class="text-4xl font-bold text-white mb-3">Study <span class="text-sky-400">Notes & Resources</span></h1>
-      <p class="text-gray-400">Download high-quality study materials, coding resources, and guides.</p>
-    </div>
+    <!-- Notes Summary -->
+    <h3>📌 Key Content Summary:</h3>
+    <ul>
+        <li><strong>Part 1: Basics</strong> - Environment Setup, Variables, Data Types, Lists, Loops, Functions, Classes, PEP 8, and Unit Testing.</li>
+        <li><strong>Part 2: Projects</strong>
+            <ul>
+                <li><strong>Alien Invasion:</strong> Pygame ke sath 2D Space Arcade game.</li>
+                <li><strong>Data Visualization:</strong> Matplotlib aur Pygal se graphs aur API integration.</li>
+                <li><strong>Web Applications:</strong> Django framework ke sath Web app development.</li>
+            </ul>
+        </li>
+    </ul>
 
-    <!-- Notes Cards Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      
-      <!-- Note Card 1 -->
-      <div class="bg-[#0f1522] border border-gray-800 rounded-xl p-6 shadow-lg hover:border-sky-500/50 transition">
-        <span class="text-xs bg-sky-500/10 text-sky-400 border border-sky-500/20 px-2.5 py-1 rounded-full">Web Development</span>
-        <h3 class="text-xl font-bold text-white mt-4 mb-2">HTML & CSS Basics</h3>
-        <p class="text-gray-400 text-sm mb-6">Complete beginner notes for web design including layouts and styles.</p>
-        <a href="#" class="block text-center bg-sky-600 hover:bg-sky-500 text-white font-medium py-2 rounded-lg transition">📥 Download PDF</a>
-      </div>
-
-      <!-- Note Card 2 -->
-      <div class="bg-[#0f1522] border border-gray-800 rounded-xl p-6 shadow-lg hover:border-sky-500/50 transition">
-        <span class="text-xs bg-purple-500/10 text-purple-400 border border-purple-500/20 px-2.5 py-1 rounded-full">Programming</span>
-        <h3 class="text-xl font-bold text-white mt-4 mb-2">JavaScript Guide</h3>
-        <p class="text-gray-400 text-sm mb-6">Learn core JavaScript concepts, DOM manipulation, and functions.</p>
-        <a href="#" class="block text-center bg-sky-600 hover:bg-sky-500 text-white font-medium py-2 rounded-lg transition">📥 Download PDF</a>
-      </div>
-
-      <!-- Note Card 3 -->
-      <div class="bg-[#0f1522] border border-gray-800 rounded-xl p-6 shadow-lg hover:border-sky-500/50 transition">
-        <span class="text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-1 rounded-full">Tailwind CSS</span>
-        <h3 class="text-xl font-bold text-white mt-4 mb-2">Tailwind Cheatsheet</h3>
-        <p class="text-gray-400 text-sm mb-6">Quick reference guide for fast styling using utility classes.</p>
-        <a href="#" class="block text-center bg-sky-600 hover:bg-sky-500 text-white font-medium py-2 rounded-lg transition">📥 Download PDF</a>
-      </div>
-
-    </div>
-  </main>
-
-  <!-- Footer Section -->
-  <footer class="bg-[#070b14] border-t border-gray-800 text-center py-6 text-gray-500 text-sm">
-    <p>© 2026 Ahsan Web Studio | All Rights Reserved</p>
-  </footer>
+    <h3>📄 PDF Viewer:</h3>
+    <!-- Embed PDF -->
+    <iframe src="Python_Crash_Course.pdf"></iframe>
+</div>
 
 </body>
 </html>
