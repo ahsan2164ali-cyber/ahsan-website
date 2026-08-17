@@ -5,8 +5,7 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Ahsan Web Studio - Notes Hub</title>
 
@@ -24,15 +23,15 @@
     <style>
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
 
         body {
 
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: "Plus Jakarta Sans", sans-serif;
 
             background: #090d16;
 
@@ -50,6 +49,8 @@
         ========================= */
 
         .container {
+
+            width: 100%;
 
             max-width: 1260px;
 
@@ -73,7 +74,7 @@
 
         .page-header h1 {
 
-            font-size: 2.5rem;
+            font-size: 2.4rem;
 
             font-weight: 700;
 
@@ -82,24 +83,24 @@
         }
 
 
-        .page-header p {
-
-            color: #9ca3af;
-
-            font-size: 1rem;
-
-        }
-
-
-        .brand {
+        .page-header h1 span {
 
             color: #38bdf8;
 
         }
 
 
+        .page-header p {
+
+            color: #9ca3af;
+
+            font-size: 0.95rem;
+
+        }
+
+
         /* =========================
-           NOTES GRID
+           CARDS GRID
         ========================= */
 
         .notes-grid {
@@ -107,7 +108,7 @@
             display: grid;
 
             grid-template-columns:
-                repeat(4, 1fr);
+                repeat(4, minmax(0, 1fr));
 
             gap: 24px;
 
@@ -122,7 +123,7 @@
 
             background: #0d121d;
 
-            border: 1px solid #1f2937;
+            border: 1px solid #202938;
 
             border-radius: 8px;
 
@@ -143,7 +144,8 @@
             transition:
                 transform 0.25s ease,
                 border-color 0.25s ease,
-                background 0.25s ease;
+                background 0.25s ease,
+                box-shadow 0.25s ease;
 
         }
 
@@ -156,11 +158,14 @@
 
             background: #111827;
 
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.25);
+
         }
 
 
         /* =========================
-           ICON CIRCLE
+           ICON
         ========================= */
 
         .icon-box {
@@ -177,9 +182,9 @@
 
             justify-content: center;
 
-            margin: 0 auto 22px;
+            margin-bottom: 22px;
 
-            font-size: 65px;
+            font-size: 64px;
 
         }
 
@@ -207,16 +212,16 @@
 
 
         /* =========================
-           CARD TITLE
+           CARD TEXT
         ========================= */
 
         .note-card h2 {
 
             font-size: 1.1rem;
 
-            margin-bottom: 12px;
-
             font-weight: 700;
+
+            margin-bottom: 10px;
 
         }
 
@@ -225,9 +230,11 @@
 
             color: #9ca3af;
 
-            font-size: 0.9rem;
+            font-size: 0.88rem;
 
-            margin-bottom: 22px;
+            line-height: 1.5;
+
+            margin-bottom: 20px;
 
         }
 
@@ -238,9 +245,9 @@
 
         .open-btn {
 
-            margin-top: auto;
-
             width: 100%;
+
+            margin-top: auto;
 
             padding: 11px 15px;
 
@@ -252,13 +259,17 @@
 
             color: #ffffff;
 
+            font-family: inherit;
+
             font-size: 0.9rem;
 
             font-weight: 600;
 
             cursor: pointer;
 
-            transition: background 0.2s ease;
+            transition:
+                background 0.2s ease,
+                transform 0.2s ease;
 
         }
 
@@ -266,6 +277,13 @@
         .open-btn:hover {
 
             background: #2c3a50;
+
+        }
+
+
+        .open-btn:active {
+
+            transform: scale(0.98);
 
         }
 
@@ -282,7 +300,7 @@
 
             background: #111827;
 
-            border: 1px solid #1f2937;
+            border: 1px solid #202938;
 
             border-radius: 12px;
 
@@ -291,14 +309,16 @@
         }
 
 
-        .pdf-viewer.active {
+        .pdf-viewer.show {
 
             display: block;
 
         }
 
 
-        /* PDF HEADER */
+        /* =========================
+           PDF HEADER
+        ========================= */
 
         .pdf-header {
 
@@ -317,7 +337,7 @@
 
         .pdf-title {
 
-            font-size: 1.25rem;
+            font-size: 1.2rem;
 
             font-weight: 700;
 
@@ -326,15 +346,23 @@
 
         .close-btn {
 
-            border: 1px solid #374151;
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
 
             background: transparent;
+
+            border: 1px solid #374151;
 
             color: #ffffff;
 
             padding: 8px 14px;
 
             border-radius: 7px;
+
+            font-family: inherit;
 
             cursor: pointer;
 
@@ -348,9 +376,13 @@
         }
 
 
-        /* PDF FRAME */
+        /* =========================
+           PDF FRAME
+        ========================= */
 
         .pdf-frame {
+
+            display: block;
 
             width: 100%;
 
@@ -378,17 +410,17 @@
 
         .download-btn {
 
-            display: flex;
+            width: 100%;
 
-            justify-content: center;
+            display: flex;
 
             align-items: center;
 
+            justify-content: center;
+
             gap: 10px;
 
-            width: 100%;
-
-            padding: 14px;
+            padding: 14px 20px;
 
             background: #202a3a;
 
@@ -398,9 +430,12 @@
 
             border-radius: 7px;
 
+            font-size: 0.95rem;
+
             font-weight: 600;
 
-            transition: background 0.2s ease;
+            transition:
+                background 0.2s ease;
 
         }
 
@@ -421,7 +456,7 @@
             .notes-grid {
 
                 grid-template-columns:
-                    repeat(2, 1fr);
+                    repeat(2, minmax(0, 1fr));
 
             }
 
@@ -437,6 +472,13 @@
             }
 
 
+            .page-header {
+
+                margin-bottom: 30px;
+
+            }
+
+
             .page-header h1 {
 
                 font-size: 1.8rem;
@@ -448,6 +490,8 @@
 
                 grid-template-columns: 1fr;
 
+                gap: 18px;
+
             }
 
 
@@ -458,9 +502,11 @@
             }
 
 
-            .pdf-frame {
+            .pdf-viewer {
 
-                height: 550px;
+                margin-top: 30px;
+
+                padding: 12px;
 
             }
 
@@ -470,6 +516,22 @@
                 flex-direction: column;
 
                 align-items: flex-start;
+
+            }
+
+
+            .close-btn {
+
+                width: 100%;
+
+                justify-content: center;
+
+            }
+
+
+            .pdf-frame {
+
+                height: 550px;
 
             }
 
@@ -483,307 +545,302 @@
 <body>
 
 
-<div class="container">
+    <div class="container">
 
 
-    <!-- =========================
-         PAGE HEADER
-    ========================= -->
+        <!-- =========================
+             HEADER
+        ========================= -->
 
-    <div class="page-header">
+        <header class="page-header">
 
-        <h1>
-            <span class="brand">Ahsan Web Studio</span>
-            Notes
-        </h1>
-
-        <p>
-            Download and read my programming notes
-        </p>
-
-    </div>
-
-
-
-    <!-- =========================
-         NOTES CARDS
-    ========================= -->
-
-    <div class="notes-grid">
-
-
-        <!-- =====================
-             PYTHON CARD
-        ====================== -->
-
-        <div
-            class="note-card"
-            onclick="openPDF(
-                'Python Crash Course',
-                'Python-Crash-Course.pdf'
-            )">
-
-
-            <div class="icon-box python-icon">
-
-                <i class="fa-brands fa-python"></i>
-
-            </div>
-
-
-            <h2>
-                Python Crash Course
-            </h2>
-
+            <h1>
+                <span>Ahsan Web Studio</span>
+                Notes
+            </h1>
 
             <p>
-                Download Python Crash Course Notes
+                Download and read programming notes
             </p>
 
-
-            <button
-                class="open-btn"
-                onclick="event.stopPropagation(); openPDF(
-                    'Python Crash Course',
-                    'Python-Crash-Course.pdf'
-                )">
-
-                Open PDF
-
-            </button>
+        </header>
 
 
-        </div>
+        <!-- =========================
+             NOTES CARDS
+        ========================= -->
+
+        <section class="notes-grid">
 
 
-
-        <!-- =====================
-             HTML CARD
-        ====================== -->
-
-        <div
-            class="note-card"
-            onclick="openPDF(
-                'HTML Basic Notes',
-                'HTML_Detailed_English_Notes_Ahsan_Web_Studio.pdf'
-            )">
-
-
-            <div class="icon-box html-icon">
-
-                <i class="fa-brands fa-html5"></i>
-
-            </div>
-
-
-            <h2>
-                HTML Basic Notes
-            </h2>
-
-
-            <p>
-                Download Basic HTML Notes
-            </p>
-
-
-            <button
-                class="open-btn"
-                onclick="event.stopPropagation(); openPDF(
-                    'HTML Basic Notes',
-                    'HTML_Detailed_English_Notes_Ahsan_Web_Studio.pdf'
-                )">
-
-                Open PDF
-
-            </button>
-
-
-        </div>
-
-
-    </div>
-
-
-
-    <!-- =========================
-         PDF VIEWER
-    ========================= -->
-
-    <div
-        class="pdf-viewer"
-        id="pdfViewer">
-
-
-        <div class="pdf-header">
-
+            <!-- =====================
+                 PYTHON CARD
+            ====================== -->
 
             <div
-                class="pdf-title"
-                id="pdfTitle">
+                class="note-card"
+                onclick="openPDF(
+                    'Python Crash Course',
+                    'Python-Crash-Course.pdf',
+                    'Download Python Crash Course'
+                )">
 
-                PDF Notes
+
+                <div class="icon-box python-icon">
+
+                    <i class="fa-brands fa-python"></i>
+
+                </div>
+
+
+                <h2>
+                    Python Crash Course
+                </h2>
+
+
+                <p>
+                    Download Python Crash Course Notes
+                </p>
+
+
+                <button
+                    type="button"
+                    class="open-btn"
+                    onclick="event.stopPropagation(); openPDF(
+                        'Python Crash Course',
+                        'Python-Crash-Course.pdf',
+                        'Download Python Crash Course'
+                    )">
+
+                    <i class="fa-solid fa-file-pdf"></i>
+
+                    Open PDF
+
+                </button>
+
 
             </div>
 
 
-            <button
-                class="close-btn"
-                onclick="closePDF()">
 
-                <i class="fa-solid fa-xmark"></i>
+            <!-- =====================
+                 HTML CARD
+            ====================== -->
 
-                Close
-
-            </button>
-
-
-        </div>
-
-
-        <!-- PDF -->
-
-        <iframe
-            class="pdf-frame"
-            id="pdfFrame"
-            src=""
-            title="PDF Viewer">
-        </iframe>
+            <div
+                class="note-card"
+                onclick="openPDF(
+                    'HTML Basic Notes',
+                    'HTML_Detailed_English_Notes_Ahsan_Web_Studio.pdf',
+                    'Download Basic Notes'
+                )">
 
 
-        <!-- DOWNLOAD -->
+                <div class="icon-box html-icon">
 
-        <div class="download-area">
+                    <i class="fa-brands fa-html5"></i>
 
-            <a
-                id="downloadButton"
-                class="download-btn"
-                href=""
-                download>
+                </div>
 
-                <i class="fa-solid fa-download"></i>
 
-                <span id="downloadText">
-                    Download PDF
-                </span>
+                <h2>
+                    HTML Basic Notes
+                </h2>
 
-            </a>
 
-        </div>
+                <p>
+                    Download Basic HTML Notes
+                </p>
+
+
+                <button
+                    type="button"
+                    class="open-btn"
+                    onclick="event.stopPropagation(); openPDF(
+                        'HTML Basic Notes',
+                        'HTML_Detailed_English_Notes_Ahsan_Web_Studio.pdf',
+                        'Download Basic Notes'
+                    )">
+
+                    <i class="fa-solid fa-file-pdf"></i>
+
+                    Open PDF
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =========================
+             PDF VIEWER
+        ========================= -->
+
+        <section
+            class="pdf-viewer"
+            id="pdfViewer">
+
+
+            <div class="pdf-header">
+
+
+                <div
+                    class="pdf-title"
+                    id="pdfTitle">
+
+                    PDF Notes
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="close-btn"
+                    onclick="closePDF()">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                    Close
+
+                </button>
+
+
+            </div>
+
+
+            <!-- PDF -->
+
+            <iframe
+                id="pdfFrame"
+                class="pdf-frame"
+                src=""
+                title="PDF Viewer">
+            </iframe>
+
+
+            <!-- Download -->
+
+            <div class="download-area">
+
+                <a
+                    id="downloadButton"
+                    class="download-btn"
+                    href="#"
+                    download>
+
+                    <i class="fa-solid fa-download"></i>
+
+                    <span id="downloadText">
+                        Download PDF
+                    </span>
+
+                </a>
+
+            </div>
+
+
+        </section>
 
 
     </div>
 
 
-</div>
+
+    <script>
+
+        /* =========================
+           OPEN PDF
+        ========================= */
+
+        function openPDF(title, file, downloadTitle) {
+
+            const viewer =
+                document.getElementById("pdfViewer");
+
+            const frame =
+                document.getElementById("pdfFrame");
+
+            const titleElement =
+                document.getElementById("pdfTitle");
+
+            const downloadButton =
+                document.getElementById("downloadButton");
+
+            const downloadText =
+                document.getElementById("downloadText");
 
 
+            /* PDF title */
 
-<script>
-
-
-    /* =========================
-       OPEN PDF
-    ========================= */
-
-    function openPDF(title, file) {
+            titleElement.textContent = title;
 
 
-        const viewer =
-            document.getElementById("pdfViewer");
+            /* PDF file */
+
+            frame.src = file;
 
 
-        const frame =
-            document.getElementById("pdfFrame");
+            /* Download file */
+
+            downloadButton.href = file;
 
 
-        const pdfTitle =
-            document.getElementById("pdfTitle");
-
-
-        const downloadButton =
-            document.getElementById("downloadButton");
-
-
-        const downloadText =
-            document.getElementById("downloadText");
-
-
-        /* Set title */
-
-        pdfTitle.textContent = title;
-
-
-        /* Open PDF */
-
-        frame.src = file;
-
-
-        /* Download link */
-
-        downloadButton.href = file;
-
-
-        /* Set download title */
-
-        if (title === "HTML Basic Notes") {
+            /* Download button text */
 
             downloadText.textContent =
-                "Download Basic Notes";
+                downloadTitle;
+
+
+            /* Show viewer */
+
+            viewer.classList.add("show");
+
+
+            /* Scroll to viewer */
+
+            setTimeout(function () {
+
+                viewer.scrollIntoView({
+
+                    behavior: "smooth",
+
+                    block: "start"
+
+                });
+
+            }, 100);
 
         }
 
-        else {
 
-            downloadText.textContent =
-                "Download Python Crash Course";
+        /* =========================
+           CLOSE PDF
+        ========================= */
+
+        function closePDF() {
+
+            const viewer =
+                document.getElementById("pdfViewer");
+
+            const frame =
+                document.getElementById("pdfFrame");
+
+
+            /* Stop PDF */
+
+            frame.src = "";
+
+
+            /* Hide viewer */
+
+            viewer.classList.remove("show");
 
         }
 
-
-        /* Show viewer */
-
-        viewer.classList.add("active");
-
-
-        /* Scroll to PDF */
-
-        setTimeout(function () {
-
-            viewer.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-        }, 100);
-
-    }
-
-
-
-    /* =========================
-       CLOSE PDF
-    ========================= */
-
-    function closePDF() {
-
-
-        const viewer =
-            document.getElementById("pdfViewer");
-
-
-        const frame =
-            document.getElementById("pdfFrame");
-
-
-        frame.src = "";
-
-
-        viewer.classList.remove("active");
-
-    }
-
-
-</script>
+    </script>
 
 
 </body>
