@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Notes | Ahsan Web Studio</title>
+  <link rel="icon" type="image/png" href="profile.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#0b0f17] text-gray-200 min-h-screen flex flex-col justify-between">
+
+  <!-- Header Section -->
+  <header class="bg-[#0f172a] border-b border-gray-800 px-6 py-4 flex justify-between items-center sticky top-0 z-50">
+    <h2 class="text-xl font-bold text-sky-400">Ahsan Web Studio</h2>
+    <nav class="space-x-4">
+      <a href="index.html" class="hover:text-sky-400 transition">Home</a>
+      <a href="index.html#about" class="hover:text-sky-400 transition">About</a>
+      <a href="index.html#services" class="hover:text-sky-400 transition">Services</a>
+      <a href="notes.html" class="text-sky-400 font-semibold">Notes</a>
+      <a href="contact.html" class="hover:text-sky-400 transition">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-6 py-12 w-full">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-white mb-3">Study <span class="text-sky-400">Notes & Resources</span></h1>
+      <p class="text-gray-400">Download high-quality study materials, coding resources, and guides.</p>
+    </div>
+
+    <!-- Notes Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <!-- Note Card 1 -->
+      <div class="bg-[#0f1522] border border-gray-800 rounded-xl p-6 shadow-lg hover:border-sky-500/50 transition">
+        <span class="text-xs bg-sky-500/10 text-sky-400 border border-sky-500/20 px-2.5 py-1 rounded-full">Web Development</span>
+        <h3 class="text-xl font-bold text-white mt-4 mb-2">HTML & CSS Basics</h3>
+        <p class="text-gray-400 text-sm mb-6">Complete beginner notes for web design including layouts and styles.</p>
+        <a href="#" class="block text-center bg-sky-600 hover:bg-sky-500 text-white font-medium py-2 rounded-lg transition">📥 Download PDF</a>
+      </div>
+
+      <!-- Note Card 2 -->
+      <div class="bg-[#0f1522] border border-gray-800 rounded-xl p-6 shadow-lg hover:border-sky-500/50 transition">
+        <span class="text-xs bg-purple-500/10 text-purple-400 border border-purple-500/20 px-2.5 py-1 rounded-full">Programming</span>
+        <h3 class="text-xl font-bold text-white mt-4 mb-2">JavaScript Guide</h3>
+        <p class="text-gray-400 text-sm mb-6">Learn core JavaScript concepts, DOM manipulation, and functions.</p>
+        <a href="#" class="block text-center bg-sky-600 hover:bg-sky-500 text-white font-medium py-2 rounded-lg transition">📥 Download PDF</a>
+      </div>
+
+      <!-- Note Card 3 -->
+      <div class="bg-[#0f1522] border border-gray-800 rounded-xl p-6 shadow-lg hover:border-sky-500/50 transition">
+        <span class="text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-1 rounded-full">Tailwind CSS</span>
+        <h3 class="text-xl font-bold text-white mt-4 mb-2">Tailwind Cheatsheet</h3>
+        <p class="text-gray-400 text-sm mb-6">Quick reference guide for fast styling using utility classes.</p>
+        <a href="#" class="block text-center bg-sky-600 hover:bg-sky-500 text-white font-medium py-2 rounded-lg transition">📥 Download PDF</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="bg-[#070b14] border-t border-gray-800 text-center py-6 text-gray-500 text-sm">
+    <p>© 2026 Ahsan Web Studio | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
