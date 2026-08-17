@@ -1,0 +1,998 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="favicon.png"
+  >
+
+  <title>
+    Landing Page | Ahsan Web Studio
+  </title>
+
+  <meta
+    name="description"
+    content="High-converting and modern landing pages for products, services and promotions by Ahsan Web Studio."
+  >
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+
+      background: #0b1120;
+
+      color: #f8fafc;
+
+      transition: 0.3s ease;
+    }
+
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    header {
+      min-height: 72px;
+
+      padding: 0 6%;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      background: #111827;
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.06);
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 100;
+    }
+
+    .logo {
+      color: #38bdf8;
+
+      font-size: 25px;
+
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+
+      align-items: center;
+
+      gap: 28px;
+    }
+
+    nav a {
+      color: #f8fafc;
+
+      text-decoration: none;
+
+      font-size: 16px;
+
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .theme-btn {
+      width: 42px;
+
+      height: 42px;
+
+      border-radius: 10px;
+
+      border: 1px solid #334155;
+
+      background: #0f172a;
+
+      color: white;
+
+      font-size: 20px;
+
+      cursor: pointer;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 650px;
+
+      padding: 80px 7%;
+
+      display: grid;
+
+      grid-template-columns:
+        1.05fr 0.95fr;
+
+      align-items: center;
+
+      gap: 60px;
+
+      background:
+        radial-gradient(
+          circle at 10% 20%,
+          rgba(56,189,248,0.13),
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at 90% 80%,
+          rgba(99,102,241,0.14),
+          transparent 30%
+        );
+    }
+
+    .badge {
+      display: inline-block;
+
+      padding: 8px 15px;
+
+      margin-bottom: 20px;
+
+      border-radius: 30px;
+
+      color: #7dd3fc;
+
+      background:
+        rgba(56,189,248,0.08);
+
+      border:
+        1px solid rgba(56,189,248,0.3);
+
+      font-size: 13px;
+
+      font-weight: bold;
+
+      letter-spacing: 1px;
+    }
+
+    .hero h1 {
+      font-size:
+        clamp(42px, 6vw, 72px);
+
+      line-height: 1.05;
+
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      display: block;
+
+      color: #38bdf8;
+    }
+
+    .hero p {
+      max-width: 650px;
+
+      color: #cbd5e1;
+
+      font-size: 18px;
+
+      line-height: 1.8;
+
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+
+      gap: 15px;
+
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+
+      padding: 14px 23px;
+
+      border-radius: 10px;
+
+      text-decoration: none;
+
+      font-weight: bold;
+
+      color: white;
+
+      background: #2563eb;
+
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 12px 30px
+        rgba(37,99,235,0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+
+      border:
+        1px solid #38bdf8;
+
+      color: #38bdf8;
+    }
+
+
+    /* =========================
+       PREVIEW CARD
+    ========================= */
+
+    .preview-card {
+      min-height: 450px;
+
+      padding: 25px;
+
+      border-radius: 25px;
+
+      background: #111827;
+
+      border:
+        1px solid rgba(148,163,184,0.12);
+
+      box-shadow:
+        0 25px 60px
+        rgba(0,0,0,0.25);
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      transition: 0.4s;
+
+      overflow: hidden;
+    }
+
+    .preview-card:hover {
+      transform: translateY(-8px);
+
+      border-color:
+        rgba(56,189,248,0.35);
+    }
+
+    .preview-card img {
+      width: 100%;
+
+      max-width: 440px;
+
+      max-height: 390px;
+
+      object-fit: contain;
+
+      border-radius: 15px;
+
+      transition: 0.4s;
+    }
+
+    .preview-card:hover img {
+      transform: scale(1.04);
+    }
+
+
+    /* =========================
+       BENEFITS
+    ========================= */
+
+    .section {
+      padding: 80px 7%;
+
+      text-align: center;
+    }
+
+    .section-label {
+      display: block;
+
+      color: #38bdf8;
+
+      font-size: 13px;
+
+      font-weight: bold;
+
+      letter-spacing: 3px;
+
+      margin-bottom: 12px;
+    }
+
+    .section h2 {
+      font-size: 38px;
+
+      margin-bottom: 15px;
+    }
+
+    .section-intro {
+      max-width: 650px;
+
+      margin:
+        0 auto 45px;
+
+      color: #94a3b8;
+
+      line-height: 1.7;
+    }
+
+    .benefits {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 25px;
+
+      text-align: left;
+    }
+
+    .benefit {
+      padding: 30px;
+
+      border-radius: 20px;
+
+      background: #111827;
+
+      border:
+        1px solid
+        rgba(148,163,184,0.1);
+
+      transition: 0.3s;
+    }
+
+    .benefit:hover {
+      transform: translateY(-8px);
+
+      border-color:
+        rgba(56,189,248,0.35);
+    }
+
+    .benefit-icon {
+      font-size: 32px;
+
+      margin-bottom: 18px;
+    }
+
+    .benefit h3 {
+      margin-bottom: 12px;
+    }
+
+    .benefit p {
+      color: #94a3b8;
+
+      line-height: 1.7;
+    }
+
+
+    /* =========================
+       HOW IT WORKS
+    ========================= */
+
+    .steps {
+      max-width: 900px;
+
+      margin: 0 auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 25px;
+    }
+
+    .step {
+      padding: 30px;
+
+      border-radius: 20px;
+
+      background: #111827;
+
+      border:
+        1px solid
+        rgba(148,163,184,0.1);
+    }
+
+    .step-number {
+      width: 48px;
+
+      height: 48px;
+
+      margin: 0 auto 18px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: #2563eb;
+
+      color: white;
+
+      font-weight: bold;
+
+      font-size: 18px;
+    }
+
+    .step h3 {
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      color: #94a3b8;
+
+      line-height: 1.6;
+    }
+
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+      margin:
+        30px 7% 80px;
+
+      padding: 60px 30px;
+
+      text-align: center;
+
+      border-radius: 25px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #172554,
+          #0f172a
+        );
+
+      border:
+        1px solid
+        rgba(56,189,248,0.2);
+    }
+
+    .cta h2 {
+      font-size: 38px;
+
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      color: #cbd5e1;
+
+      margin-bottom: 25px;
+
+      line-height: 1.7;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 30px 7%;
+
+      text-align: center;
+
+      background: #111827;
+
+      color: #94a3b8;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,0.06);
+    }
+
+    footer strong {
+      color: #38bdf8;
+    }
+
+
+    /* =========================
+       LIGHT MODE
+    ========================= */
+
+    body.light-mode {
+      background: #f8fafc;
+
+      color: #0f172a;
+    }
+
+    body.light-mode header,
+    body.light-mode .preview-card,
+    body.light-mode .benefit,
+    body.light-mode .step,
+    body.light-mode footer {
+      background: white;
+    }
+
+    body.light-mode nav a {
+      color: #0f172a;
+    }
+
+    body.light-mode nav a:hover {
+      color: #2563eb;
+    }
+
+    body.light-mode .theme-btn {
+      background: #f1f5f9;
+
+      color: #0f172a;
+    }
+
+    body.light-mode .hero p,
+    body.light-mode .benefit p,
+    body.light-mode .step p,
+    body.light-mode .section-intro {
+      color: #64748b;
+    }
+
+    body.light-mode .cta {
+      background: #eff6ff;
+    }
+
+    body.light-mode .cta p {
+      color: #475569;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      header {
+        padding:
+          15px 5%;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+      }
+
+      nav {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 18px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        padding:
+          65px 6%;
+      }
+
+      .hero p {
+        margin-left: auto;
+
+        margin-right: auto;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .benefits,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .preview-card {
+        min-height: 330px;
+      }
+
+    }
+
+    @media (max-width: 500px) {
+
+      .logo {
+        font-size: 20px;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      nav a {
+        font-size: 14px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .section h2,
+      .cta h2 {
+        font-size: 30px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- NAVBAR -->
+
+  <header>
+
+    <div class="logo">
+      Ahsan Web Studio
+    </div>
+
+    <nav>
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="index.html#services">
+        Services
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+      <button
+        class="theme-btn"
+        id="themeButton"
+        onclick="toggleTheme()"
+      >
+        🌙
+      </button>
+
+    </nav>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div>
+
+      <span class="badge">
+        🚀 HIGH-CONVERTING LANDING PAGES
+      </span>
+
+      <h1>
+
+        Turn Visitors Into
+        <span>Customers.</span>
+
+      </h1>
+
+      <p>
+
+        Get a modern, focused and responsive
+        landing page designed to showcase your
+        product, service or promotion clearly.
+
+      </p>
+
+
+      <div class="buttons">
+
+        <a
+          href="contact.html"
+          class="btn"
+        >
+          🚀 Get Started
+        </a>
+
+        <a
+          href="index.html#services"
+          class="btn btn-outline"
+        >
+          ← Back to Services
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="preview-card">
+
+      <img
+        src="landing.png"
+        alt="Landing Page Preview"
+      >
+
+    </div>
+
+  </section>
+
+
+  <!-- BENEFITS -->
+
+  <section class="section">
+
+    <span class="section-label">
+      WHY A LANDING PAGE
+    </span>
+
+    <h2>
+      Designed With One Goal in Mind
+    </h2>
+
+    <p class="section-intro">
+
+      A focused landing page helps visitors
+      understand your offer quickly and guides
+      them toward taking action.
+
+    </p>
+
+
+    <div class="benefits">
+
+
+      <div class="benefit">
+
+        <div class="benefit-icon">
+          🎯
+        </div>
+
+        <h3>
+          Focused Message
+        </h3>
+
+        <p>
+          Present your product or service with
+          a clear and easy-to-understand message.
+        </p>
+
+      </div>
+
+
+      <div class="benefit">
+
+        <div class="benefit-icon">
+          📱
+        </div>
+
+        <h3>
+          Fully Responsive
+        </h3>
+
+        <p>
+          Your landing page works smoothly across
+          phones, tablets and desktop screens.
+        </p>
+
+      </div>
+
+
+      <div class="benefit">
+
+        <div class="benefit-icon">
+          ⚡
+        </div>
+
+        <h3>
+          Fast Experience
+        </h3>
+
+        <p>
+          Clean code and modern design provide
+          visitors with a smooth browsing experience.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- PROCESS -->
+
+  <section class="section">
+
+    <span class="section-label">
+      SIMPLE PROCESS
+    </span>
+
+    <h2>
+      How We Build Your Page
+    </h2>
+
+    <p class="section-intro">
+
+      From idea to finished website, the process
+      stays simple and straightforward.
+
+    </p>
+
+
+    <div class="steps">
+
+
+      <div class="step">
+
+        <div class="step-number">
+          01
+        </div>
+
+        <h3>
+          Understand
+        </h3>
+
+        <p>
+          We understand your business, product,
+          service and target audience.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="step-number">
+          02
+        </div>
+
+        <h3>
+          Design
+        </h3>
+
+        <p>
+          We create a clean layout focused on
+          your message and goals.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="step-number">
+          03
+        </div>
+
+        <h3>
+          Launch
+        </h3>
+
+        <p>
+          Your responsive landing page is prepared
+          and ready for visitors.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+
+  <section class="cta">
+
+    <h2>
+      Have a Product or Service to Promote?
+    </h2>
+
+    <p>
+      Let's create a modern landing page for
+      your next idea or promotion.
+    </p>
+
+    <a
+      href="contact.html"
+      class="btn"
+    >
+      📩 Contact Ahsan Web Studio
+    </a>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026
+
+    <strong>
+      Ahsan Web Studio
+    </strong>
+
+    — All Rights Reserved.
+
+  </footer>
+
+
+  <script>
+
+    function toggleTheme() {
+
+      document.body.classList.toggle(
+        "light-mode"
+      );
+
+      const button =
+        document.getElementById(
+          "themeButton"
+        );
+
+      if (
+        document.body.classList.contains(
+          "light-mode"
+        )
+      ) {
+
+        button.textContent = "☀️";
+
+      } else {
+
+        button.textContent = "🌙";
+
+      }
+
+    }
+
+  </script>
+
+
+</body>
+
+</html>
+
