@@ -27,23 +27,33 @@
       transition: 0.3s;
     }
 
-    /* HEADER */
+    /* =========================
+       HEADER
+    ========================= */
 
     header {
-      background: #0f172a;
-      padding: 18px 60px;
+      background: rgba(15, 23, 42, 0.95);
+      padding: 15px 60px;
+
       display: flex;
       justify-content: space-between;
       align-items: center;
+
       gap: 20px;
+
       position: sticky;
       top: 0;
       z-index: 1000;
+
+      backdrop-filter: blur(12px);
+
+      border-bottom: 1px solid #1e293b;
     }
 
     header h2 {
       margin: 0;
       color: #38bdf8;
+      white-space: nowrap;
     }
 
     nav {
@@ -55,6 +65,8 @@
     nav a {
       color: white;
       text-decoration: none;
+      transition: 0.2s;
+      font-weight: 500;
     }
 
     nav a:hover {
@@ -65,209 +77,535 @@
       border: 1px solid #334155;
       background: #111827;
       color: white;
+
       width: 40px;
       height: 40px;
-      border-radius: 8px;
+
+      border-radius: 50%;
       cursor: pointer;
+
       font-size: 18px;
     }
 
-    /* HERO */
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
-      min-height: 560px;
+      min-height: 600px;
+
       padding: 80px 60px;
+
       display: grid;
+
       grid-template-columns: 1.2fr 0.8fr;
+
       align-items: center;
+
       gap: 50px;
+
+      background:
+        radial-gradient(
+          circle at 10% 20%,
+          rgba(56,189,248,0.13),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 90% 80%,
+          rgba(37,99,235,0.14),
+          transparent 30%
+        ),
+        #0b1120;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+
+      padding: 8px 15px;
+
+      margin-bottom: 18px;
+
+      border: 1px solid rgba(56,189,248,0.35);
+
+      border-radius: 30px;
+
+      background: rgba(56,189,248,0.08);
+
+      color: #7dd3fc;
+
+      font-size: 14px;
+
+      font-weight: bold;
     }
 
     .hero h1 {
-      font-size: 56px;
+      font-size: 58px;
+
       margin: 0 0 20px;
+
       line-height: 1.1;
+
+      letter-spacing: -2px;
     }
 
     .hero h1 span {
-      color: #38bdf8;
+      display: block;
+
+      background:
+        linear-gradient(
+          90deg,
+          #38bdf8,
+          #60a5fa,
+          #818cf8
+        );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .hero p {
       font-size: 18px;
+
       line-height: 1.8;
+
       color: #cbd5e1;
+
       max-width: 650px;
     }
 
+    /* =========================
+       BUTTONS
+    ========================= */
+
     .btn {
       display: inline-block;
+
       margin-top: 20px;
+
+      margin-right: 10px;
+
       padding: 14px 24px;
+
       background: #2563eb;
+
       color: white;
+
       text-decoration: none;
+
       border-radius: 8px;
-      transition: 0.2s;
+
+      transition: 0.25s;
+
+      font-weight: bold;
     }
 
     .btn:hover {
       background: #1d4ed8;
-      transform: translateY(-2px);
+
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 10px 25px rgba(37,99,235,0.25);
     }
 
-    /* FULL IMAGE - NO CROPPING */
+    .btn-outline {
+      background: transparent;
+
+      border: 2px solid #2563eb;
+
+      color: #60a5fa;
+    }
+
+    .btn-outline:hover {
+      background: #2563eb;
+
+      color: white;
+    }
+
+    /* =========================
+       PRICE BOX
+    ========================= */
+
+    .price-box {
+      margin-top: 25px;
+
+      padding: 18px 22px;
+
+      max-width: 310px;
+
+      border-radius: 14px;
+
+      background: rgba(15,23,42,0.8);
+
+      border: 1px solid #1e293b;
+
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .price-box span {
+      display: block;
+
+      color: #94a3b8;
+
+      font-size: 14px;
+
+      margin-bottom: 5px;
+    }
+
+    .price-box strong {
+      color: #38bdf8;
+
+      font-size: 32px;
+    }
+
+    /* =========================
+       HERO IMAGE
+    ========================= */
+
+    .hero-image-wrapper {
+      position: relative;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+    }
+
+    .image-glow {
+      position: absolute;
+
+      width: 280px;
+      height: 280px;
+
+      border-radius: 50%;
+
+      background: #38bdf8;
+
+      opacity: 0.12;
+
+      filter: blur(50px);
+    }
 
     .hero-image {
+      position: relative;
+
+      z-index: 2;
+
       width: 100%;
+
       max-width: 550px;
+
       height: 480px;
+
       object-fit: contain;
+
       background: #111827;
+
       padding: 5px;
+
       border-radius: 20px;
+
       display: block;
+
       margin: auto;
+
+      border: 1px solid #1e293b;
+
+      box-shadow:
+        0 20px 50px rgba(0,0,0,0.35);
+
+      transition: 0.35s;
     }
 
-    /* SECTIONS */
+    .hero-image:hover {
+      transform: translateY(-6px);
+
+      border-color: #38bdf8;
+    }
+
+    /* =========================
+       SECTIONS
+    ========================= */
 
     .section {
-      padding: 70px 60px;
+      padding: 75px 60px;
+
       text-align: center;
     }
 
     .section h2 {
       font-size: 34px;
+
       margin-bottom: 35px;
+
+      color: #f8fafc;
     }
+
+    .section-heading {
+      max-width: 700px;
+
+      margin: 0 auto 45px;
+    }
+
+    .section-label {
+      display: inline-block;
+
+      color: #38bdf8;
+
+      font-size: 13px;
+
+      font-weight: bold;
+
+      letter-spacing: 3px;
+
+      margin-bottom: 12px;
+    }
+
+    .section-heading p {
+      color: #94a3b8;
+
+      line-height: 1.7;
+
+      font-size: 17px;
+    }
+
+    /* =========================
+       CARDS
+    ========================= */
 
     .cards {
       max-width: 1100px;
+
       margin: auto;
+
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
       gap: 25px;
     }
 
     .card {
       background: #111827;
+
       padding: 30px;
+
       border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.3);
+
+      border: 1px solid #1e293b;
+
       transition: 0.3s;
+
+      height: 100%;
     }
 
     .card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-7px);
+
+      border-color: #38bdf8;
+
+      box-shadow:
+        0 15px 40px rgba(56,189,248,0.12);
     }
 
     .card h3 {
       color: #38bdf8;
+
       font-size: 21px;
     }
 
     .card p {
       color: #cbd5e1;
+
       line-height: 1.6;
     }
 
-    /* CTA */
+    /* =========================
+       CTA
+    ========================= */
 
     .cta {
-      padding: 80px 20px;
+      padding: 90px 20px;
+
       text-align: center;
-      background: #111827;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(56,189,248,0.10),
+          transparent 45%
+        ),
+        #111827;
+
+      border-top: 1px solid #1e293b;
+
+      border-bottom: 1px solid #1e293b;
     }
 
     .cta h2 {
-      font-size: 36px;
+      font-size: 38px;
+
       margin-bottom: 10px;
     }
 
     .cta p {
       color: #cbd5e1;
+
       font-size: 17px;
     }
 
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       background: #070b14;
+
       text-align: center;
+
       padding: 30px 20px;
+
       color: #94a3b8;
     }
 
-    /* LIGHT MODE */
+    footer a {
+      color: #38bdf8;
+
+      text-decoration: none;
+    }
+
+    /* =========================
+       LIGHT MODE
+    ========================= */
 
     body.light-mode {
       background: #f5f7fb;
+
       color: #222;
     }
 
     body.light-mode .hero {
-      background: #f5f7fb;
+      background:
+        radial-gradient(
+          circle at 10% 20%,
+          rgba(37,99,235,0.10),
+          transparent 30%
+        ),
+        #f5f7fb;
     }
 
     body.light-mode .hero p,
     body.light-mode .card p,
     body.light-mode .cta p {
-      color: #444;
+      color: #475569;
+    }
+
+    body.light-mode .hero h1 {
+      color: #172033;
+    }
+
+    body.light-mode .section h2 {
+      color: #172033;
+    }
+
+    body.light-mode .section-heading p {
+      color: #64748b;
     }
 
     body.light-mode .card {
       background: white;
-      box-shadow: 0 10px 30px #dbe1ee;
+
+      box-shadow:
+        0 10px 30px rgba(15,23,42,0.08);
+
+      border-color: #e2e8f0;
     }
 
     body.light-mode .cta {
       background: white;
+
+      border-color: #e2e8f0;
     }
 
     body.light-mode .hero-image {
       background: white;
+
+      border-color: #e2e8f0;
     }
 
-    /* HEADER ALWAYS DARK */
+    body.light-mode .price-box {
+      background: white;
+
+      border-color: #e2e8f0;
+    }
+
+    body.light-mode .price-box span {
+      color: #64748b;
+    }
+
+    /* HEADER */
 
     body.light-mode header {
-      background: #0f172a;
+      background: rgba(15,23,42,0.95);
     }
 
-    /* MOBILE */
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 850px) {
 
       header {
         padding: 15px 20px;
+
         flex-wrap: wrap;
+
         justify-content: center;
       }
 
       nav {
         width: 100%;
+
         justify-content: center;
+
         flex-wrap: wrap;
+
         gap: 15px;
       }
 
       .hero {
         grid-template-columns: 1fr;
+
         padding: 60px 20px;
+
         text-align: center;
       }
 
       .hero h1 {
-        font-size: 40px;
+        font-size: 42px;
       }
 
       .hero p {
         font-size: 16px;
       }
 
+      .price-box {
+        margin: 25px auto 0;
+      }
+
       .hero-image {
         max-width: 100%;
+
         height: 280px;
       }
 
@@ -278,27 +616,62 @@
       .section {
         padding: 55px 20px;
       }
+
+      .cta h2 {
+        font-size: 30px;
+      }
+
+    }
+
+    @media (max-width: 500px) {
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero-badge {
+        font-size: 12px;
+      }
+
+      .btn {
+        width: 100%;
+
+        margin-right: 0;
+      }
+
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+  ========================= -->
 
   <header>
 
-    <h2>Ahsan Web Studio</h2>
+    <h2>
+      Ahsan Web Studio
+    </h2>
 
     <nav>
 
-      <a href="index.html">Home</a>
+      <a href="index.html">
+        Home
+      </a>
 
-      <a href="index.html#about">About</a>
+      <a href="index.html#about">
+        About
+      </a>
 
-      <a href="index.html#services">Services</a>
+      <a href="index.html#services">
+        Services
+      </a>
 
-      <a href="contact.html">Contact</a>
+      <a href="contact.html">
+        Contact
+      </a>
 
     </nav>
 
@@ -313,36 +686,80 @@
   </header>
 
 
-  <!-- HERO -->
+  <!-- =========================
+       HERO
+  ========================= -->
 
   <section class="hero">
 
-    <div>
+    <div class="hero-content">
+
+      <div class="hero-badge">
+        ✨ Ahsan Web Studio
+      </div>
 
       <h1>
+
         Professional
-        <span>Business Websites</span>
+
+        <span>
+          Business Websites
+        </span>
+
       </h1>
 
       <p>
-        Give your business a professional online presence with a modern, clean, and fully mobile-friendly website.
+        Give your business a professional online presence
+        with a modern, clean, and fully mobile-friendly
+        website.
       </p>
 
       <p>
-        Ahsan Web Studio creates simple and high-quality websites tailored for small businesses, local shops, service providers, and startups.
+        Ahsan Web Studio creates simple and high-quality
+        websites tailored for small businesses, local shops,
+        service providers, and startups.
       </p>
+
+
+      <!-- PRICE -->
+
+      <div class="price-box">
+
+        <span>
+          Starting from
+        </span>
+
+        <strong>
+          $3
+        </strong>
+
+      </div>
+
+
+      <!-- BUTTONS -->
 
       <a
         href="contact.html"
         class="btn"
       >
-        🚀 Get Started
+        🚀 Hire Me
+      </a>
+
+      <a
+        href="index.html#services"
+        class="btn btn-outline"
+      >
+        ← Back to Services
       </a>
 
     </div>
 
 
-    <div>
+    <!-- IMAGE -->
+
+    <div class="hero-image-wrapper">
+
+      <div class="image-glow"></div>
 
       <img
         src="business.png"
@@ -355,20 +772,42 @@
   </section>
 
 
-  <!-- FEATURES -->
+  <!-- =========================
+       WHAT YOU GET
+  ========================= -->
 
   <section class="section">
 
-    <h2>What You Get</h2>
+    <div class="section-heading">
+
+      <span class="section-label">
+        FEATURES
+      </span>
+
+      <h2>
+        What You Get
+      </h2>
+
+      <p>
+        Everything you need for a clean and professional
+        online business presence.
+      </p>
+
+    </div>
+
 
     <div class="cards">
 
       <div class="card">
 
-        <h3>📱 Mobile Friendly</h3>
+        <h3>
+          📱 Mobile Friendly
+        </h3>
 
         <p>
-          Your website will look great and function seamlessly across mobile phones, tablets, and desktop computers.
+          Your website will look great and function
+          seamlessly across mobile phones, tablets,
+          and desktop computers.
         </p>
 
       </div>
@@ -376,10 +815,14 @@
 
       <div class="card">
 
-        <h3>🎨 Modern Design</h3>
+        <h3>
+          🎨 Modern Design
+        </h3>
 
         <p>
-          A clean, visually appealing, and professional design that creates a great first impression for your visitors.
+          A clean, visually appealing, and professional
+          design that creates a great first impression
+          for your visitors.
         </p>
 
       </div>
@@ -387,10 +830,13 @@
 
       <div class="card">
 
-        <h3>⚡ Fast & Simple</h3>
+        <h3>
+          ⚡ Fast & Simple
+        </h3>
 
         <p>
-          A fast-loading, lightweight website structured for easy navigation and smooth user experience.
+          A fast-loading, lightweight website structured
+          for easy navigation and smooth user experience.
         </p>
 
       </div>
@@ -400,20 +846,41 @@
   </section>
 
 
-  <!-- PERFECT FOR -->
+  <!-- =========================
+       PERFECT FOR
+  ========================= -->
 
   <section class="section">
 
-    <h2>Perfect For</h2>
+    <div class="section-heading">
+
+      <span class="section-label">
+        IDEAL FOR
+      </span>
+
+      <h2>
+        Perfect For
+      </h2>
+
+      <p>
+        A simple website solution for different types
+        of businesses and projects.
+      </p>
+
+    </div>
+
 
     <div class="cards">
 
       <div class="card">
 
-        <h3>🏪 Local Shops</h3>
+        <h3>
+          🏪 Local Shops
+        </h3>
 
         <p>
-          Showcase your store, services, and products online to reach more local customers effectively.
+          Showcase your store, services, and products
+          online to reach more local customers effectively.
         </p>
 
       </div>
@@ -421,10 +888,13 @@
 
       <div class="card">
 
-        <h3>💼 Small Businesses</h3>
+        <h3>
+          💼 Small Businesses
+        </h3>
 
         <p>
-          Provide essential information about your company, services, and contact details in a structured way.
+          Provide essential information about your company,
+          services, and contact details in a structured way.
         </p>
 
       </div>
@@ -432,10 +902,13 @@
 
       <div class="card">
 
-        <h3>🚀 Startups</h3>
+        <h3>
+          🚀 Startups
+        </h3>
 
         <p>
-          Build a solid digital presence and introduce your new venture or idea to the world.
+          Build a solid digital presence and introduce
+          your new venture or idea to the world.
         </p>
 
       </div>
@@ -445,7 +918,9 @@
   </section>
 
 
-  <!-- CTA -->
+  <!-- =========================
+       CTA
+  ========================= -->
 
   <section class="cta">
 
@@ -461,13 +936,22 @@
       href="contact.html"
       class="btn"
     >
-      📩 Contact Me
+      📩 Hire Me
+    </a>
+
+    <a
+      href="index.html#services"
+      class="btn btn-outline"
+    >
+      ← View All Services
     </a>
 
   </section>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer>
 
@@ -475,10 +959,18 @@
       © 2026 Ahsan Web Studio | All Rights Reserved
     </p>
 
+    <p>
+      <a href="contact.html">
+        Contact Ahsan Web Studio
+      </a>
+    </p>
+
   </footer>
 
 
-  <!-- DARK / LIGHT MODE -->
+  <!-- =========================
+       DARK / LIGHT MODE
+  ========================= -->
 
   <script>
 
