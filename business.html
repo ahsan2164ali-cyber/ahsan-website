@@ -1,108 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Business Websites | Ahsan Web Studio</title>
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="favicon.png"
+  >
+
+  <title>
+    Business Website | Ahsan Web Studio
+  </title>
 
   <meta
     name="description"
-    content="Professional business websites created by Ahsan Web Studio."
+    content="Modern and professional business websites for shops, small businesses, local services and startups by Ahsan Web Studio."
   >
 
-  <link rel="icon" type="image/png" href="profile.png">
-
   <style>
+
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
       scroll-behavior: smooth;
     }
 
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
       background: #0b1120;
-      color: #e5e7eb;
-      transition: 0.3s;
+      color: #f8fafc;
+      transition: 0.3s ease;
     }
 
+
     /* =========================
-       HEADER
+       NAVBAR
     ========================= */
 
     header {
-      background: rgba(15, 23, 42, 0.95);
-      padding: 15px 60px;
+      min-height: 72px;
+      padding: 0 6%;
 
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
 
-      gap: 20px;
+      background: #111827;
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.06);
 
       position: sticky;
       top: 0;
       z-index: 1000;
-
-      backdrop-filter: blur(12px);
-
-      border-bottom: 1px solid #1e293b;
     }
 
-    header h2 {
-      margin: 0;
+    .logo {
       color: #38bdf8;
-      white-space: nowrap;
+      font-size: 25px;
+      font-weight: bold;
     }
 
     nav {
       display: flex;
-      gap: 22px;
+      gap: 28px;
       align-items: center;
     }
 
     nav a {
-      color: white;
+      color: #f8fafc;
       text-decoration: none;
-      transition: 0.2s;
-      font-weight: 500;
+      font-size: 16px;
+      transition: 0.3s;
     }
 
     nav a:hover {
       color: #38bdf8;
     }
 
-    #themeToggle {
+    .theme-btn {
       border: 1px solid #334155;
-      background: #111827;
+
+      background: #0f172a;
+
       color: white;
 
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
 
-      border-radius: 50%;
+      border-radius: 10px;
+
       cursor: pointer;
 
-      font-size: 18px;
+      font-size: 20px;
     }
+
 
     /* =========================
        HERO
     ========================= */
 
     .hero {
-      min-height: 600px;
+      min-height: 650px;
 
-      padding: 80px 60px;
+      padding: 80px 7%;
 
       display: grid;
 
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns:
+        1.05fr 0.95fr;
 
       align-items: center;
 
-      gap: 50px;
+      gap: 60px;
 
       background:
         radial-gradient(
@@ -110,114 +132,113 @@
           rgba(56,189,248,0.13),
           transparent 30%
         ),
+
         radial-gradient(
           circle at 90% 80%,
-          rgba(37,99,235,0.14),
+          rgba(99,102,241,0.14),
           transparent 30%
-        ),
-        #0b1120;
+        );
     }
 
-    .hero-content {
-      max-width: 700px;
-    }
-
-    .hero-badge {
+    .badge {
       display: inline-block;
 
       padding: 8px 15px;
 
-      margin-bottom: 18px;
-
-      border: 1px solid rgba(56,189,248,0.35);
-
       border-radius: 30px;
-
-      background: rgba(56,189,248,0.08);
 
       color: #7dd3fc;
 
-      font-size: 14px;
+      background:
+        rgba(56,189,248,0.08);
+
+      border:
+        1px solid rgba(56,189,248,0.3);
+
+      font-size: 13px;
 
       font-weight: bold;
+
+      letter-spacing: 1px;
+
+      margin-bottom: 20px;
     }
 
     .hero h1 {
-      font-size: 58px;
+      font-size:
+        clamp(42px, 6vw, 72px);
 
-      margin: 0 0 20px;
+      line-height: 1.05;
 
-      line-height: 1.1;
-
-      letter-spacing: -2px;
+      margin-bottom: 25px;
     }
 
     .hero h1 span {
       display: block;
 
-      background:
-        linear-gradient(
-          90deg,
-          #38bdf8,
-          #60a5fa,
-          #818cf8
-        );
-
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #38bdf8;
     }
 
     .hero p {
+      max-width: 650px;
+
+      color: #cbd5e1;
+
       font-size: 18px;
 
       line-height: 1.8;
 
-      color: #cbd5e1;
-
-      max-width: 650px;
+      margin-bottom: 20px;
     }
+
 
     /* =========================
        BUTTONS
     ========================= */
 
+    .buttons {
+      display: flex;
+
+      gap: 15px;
+
+      flex-wrap: wrap;
+
+      margin-top: 10px;
+    }
+
     .btn {
       display: inline-block;
 
-      margin-top: 20px;
+      padding: 14px 23px;
 
-      margin-right: 10px;
-
-      padding: 14px 24px;
-
-      background: #2563eb;
-
-      color: white;
+      border-radius: 10px;
 
       text-decoration: none;
 
-      border-radius: 8px;
-
-      transition: 0.25s;
-
       font-weight: bold;
+
+      color: white;
+
+      background: #2563eb;
+
+      transition: 0.3s;
     }
 
     .btn:hover {
-      background: #1d4ed8;
-
       transform: translateY(-3px);
 
       box-shadow:
-        0 10px 25px rgba(37,99,235,0.25);
+        0 12px 30px
+        rgba(37,99,235,0.3);
     }
 
     .btn-outline {
       background: transparent;
 
-      border: 2px solid #2563eb;
+      border:
+        1px solid #38bdf8;
 
-      color: #60a5fa;
+      color: #38bdf8;
     }
 
     .btn-outline:hover {
@@ -226,135 +247,116 @@
       color: white;
     }
 
+
     /* =========================
-       PRICE BOX
+       PRICE
     ========================= */
 
     .price-box {
-      margin-top: 25px;
+      display: inline-flex;
 
-      padding: 18px 22px;
+      align-items: center;
 
-      max-width: 310px;
+      gap: 10px;
 
-      border-radius: 14px;
+      margin-bottom: 25px;
 
-      background: rgba(15,23,42,0.8);
+      padding: 10px 18px;
 
-      border: 1px solid #1e293b;
+      border-radius: 12px;
 
-      box-shadow:
-        0 10px 30px rgba(0,0,0,0.25);
+      background:
+        rgba(56,189,248,0.08);
+
+      border:
+        1px solid rgba(56,189,248,0.2);
     }
 
-    .price-box span {
-      display: block;
-
+    .price-label {
       color: #94a3b8;
 
       font-size: 14px;
-
-      margin-bottom: 5px;
     }
 
-    .price-box strong {
+    .price {
       color: #38bdf8;
 
-      font-size: 32px;
+      font-size: 26px;
+
+      font-weight: bold;
     }
+
 
     /* =========================
-       HERO IMAGE
+       PREVIEW CARD
     ========================= */
 
-    .hero-image-wrapper {
-      position: relative;
+    .preview-card {
+      min-height: 450px;
 
-      display: flex;
+      padding: 25px;
 
-      justify-content: center;
-
-      align-items: center;
-    }
-
-    .image-glow {
-      position: absolute;
-
-      width: 280px;
-      height: 280px;
-
-      border-radius: 50%;
-
-      background: #38bdf8;
-
-      opacity: 0.12;
-
-      filter: blur(50px);
-    }
-
-    .hero-image {
-      position: relative;
-
-      z-index: 2;
-
-      width: 100%;
-
-      max-width: 550px;
-
-      height: 480px;
-
-      object-fit: contain;
+      border-radius: 25px;
 
       background: #111827;
 
-      padding: 5px;
-
-      border-radius: 20px;
-
-      display: block;
-
-      margin: auto;
-
-      border: 1px solid #1e293b;
+      border:
+        1px solid
+        rgba(148,163,184,0.12);
 
       box-shadow:
-        0 20px 50px rgba(0,0,0,0.35);
+        0 25px 60px
+        rgba(0,0,0,0.25);
 
-      transition: 0.35s;
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      transition: 0.4s;
+
+      overflow: hidden;
     }
 
-    .hero-image:hover {
-      transform: translateY(-6px);
+    .preview-card:hover {
+      transform: translateY(-8px);
 
-      border-color: #38bdf8;
+      border-color:
+        rgba(56,189,248,0.35);
     }
+
+    .preview-card img {
+      width: 100%;
+
+      max-width: 440px;
+
+      max-height: 390px;
+
+      object-fit: contain;
+
+      border-radius: 15px;
+
+      transition: 0.4s;
+    }
+
+    .preview-card:hover img {
+      transform: scale(1.04);
+    }
+
 
     /* =========================
        SECTIONS
     ========================= */
 
     .section {
-      padding: 75px 60px;
+      padding: 80px 7%;
 
       text-align: center;
     }
 
-    .section h2 {
-      font-size: 34px;
-
-      margin-bottom: 35px;
-
-      color: #f8fafc;
-    }
-
-    .section-heading {
-      max-width: 700px;
-
-      margin: 0 auto 45px;
-    }
-
     .section-label {
-      display: inline-block;
+      display: block;
 
       color: #38bdf8;
 
@@ -367,20 +369,83 @@
       margin-bottom: 12px;
     }
 
-    .section-heading p {
+    .section h2 {
+      font-size: 38px;
+
+      margin-bottom: 15px;
+    }
+
+    .section-intro {
+      color: #94a3b8;
+
+      max-width: 650px;
+
+      margin:
+        0 auto 45px;
+
+      line-height: 1.7;
+    }
+
+
+    /* =========================
+       FEATURE CARDS
+    ========================= */
+
+    .features {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 25px;
+
+      text-align: left;
+    }
+
+    .feature {
+      padding: 30px;
+
+      background: #111827;
+
+      border-radius: 20px;
+
+      border:
+        1px solid
+        rgba(148,163,184,0.1);
+
+      transition: 0.3s;
+    }
+
+    .feature:hover {
+      transform: translateY(-8px);
+
+      border-color:
+        rgba(56,189,248,0.35);
+    }
+
+    .feature-icon {
+      font-size: 32px;
+
+      margin-bottom: 18px;
+    }
+
+    .feature h3 {
+      margin-bottom: 12px;
+    }
+
+    .feature p {
       color: #94a3b8;
 
       line-height: 1.7;
-
-      font-size: 17px;
     }
 
+
     /* =========================
-       CARDS
+       PERFECT FOR
     ========================= */
 
-    .cards {
-      max-width: 1100px;
+    .perfect-grid {
+      max-width: 1000px;
 
       margin: auto;
 
@@ -392,90 +457,105 @@
       gap: 25px;
     }
 
-    .card {
-      background: #111827;
-
+    .perfect-card {
       padding: 30px;
 
-      border-radius: 15px;
+      background: #111827;
 
-      box-shadow:
-        0 10px 30px rgba(0,0,0,0.3);
+      border-radius: 20px;
 
-      border: 1px solid #1e293b;
+      border:
+        1px solid
+        rgba(148,163,184,0.1);
 
       transition: 0.3s;
-
-      height: 100%;
     }
 
-    .card:hover {
-      transform: translateY(-7px);
+    .perfect-card:hover {
+      transform: translateY(-8px);
 
-      border-color: #38bdf8;
-
-      box-shadow:
-        0 15px 40px rgba(56,189,248,0.12);
+      border-color:
+        rgba(56,189,248,0.35);
     }
 
-    .card h3 {
-      color: #38bdf8;
+    .perfect-icon {
+      font-size: 34px;
 
-      font-size: 21px;
+      margin-bottom: 18px;
     }
 
-    .card p {
-      color: #cbd5e1;
-
-      line-height: 1.6;
+    .perfect-card h3 {
+      margin-bottom: 12px;
     }
+
+    .perfect-card p {
+      color: #94a3b8;
+
+      line-height: 1.7;
+    }
+
 
     /* =========================
        CTA
     ========================= */
 
     .cta {
-      padding: 90px 20px;
+      margin:
+        30px 7% 80px;
+
+      padding: 60px 30px;
 
       text-align: center;
 
+      border-radius: 25px;
+
       background:
-        radial-gradient(
-          circle at center,
-          rgba(56,189,248,0.10),
-          transparent 45%
-        ),
-        #111827;
+        linear-gradient(
+          135deg,
+          #172554,
+          #0f172a
+        );
 
-      border-top: 1px solid #1e293b;
-
-      border-bottom: 1px solid #1e293b;
+      border:
+        1px solid
+        rgba(56,189,248,0.2);
     }
 
     .cta h2 {
       font-size: 38px;
 
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
     .cta p {
       color: #cbd5e1;
 
-      font-size: 17px;
+      margin-bottom: 25px;
+
+      line-height: 1.7;
     }
+
 
     /* =========================
        FOOTER
     ========================= */
 
     footer {
-      background: #070b14;
+      padding: 30px 7%;
 
       text-align: center;
 
-      padding: 30px 20px;
+      background: #111827;
 
       color: #94a3b8;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,0.06);
+    }
+
+    footer strong {
+      color: #38bdf8;
     }
 
     footer a {
@@ -484,185 +564,187 @@
       text-decoration: none;
     }
 
+
     /* =========================
        LIGHT MODE
     ========================= */
 
     body.light-mode {
-      background: #f5f7fb;
+      background: #f8fafc;
 
-      color: #222;
+      color: #0f172a;
     }
 
-    body.light-mode .hero {
-      background:
-        radial-gradient(
-          circle at 10% 20%,
-          rgba(37,99,235,0.10),
-          transparent 30%
-        ),
-        #f5f7fb;
+    body.light-mode header,
+    body.light-mode .preview-card,
+    body.light-mode .feature,
+    body.light-mode .perfect-card,
+    body.light-mode footer {
+      background: white;
+    }
+
+    body.light-mode nav a {
+      color: #0f172a;
+    }
+
+    body.light-mode nav a:hover {
+      color: #2563eb;
+    }
+
+    body.light-mode .theme-btn {
+      background: #f1f5f9;
+
+      color: #0f172a;
     }
 
     body.light-mode .hero p,
-    body.light-mode .card p,
+    body.light-mode .feature p,
+    body.light-mode .perfect-card p,
+    body.light-mode .section-intro {
+      color: #64748b;
+    }
+
+    body.light-mode .cta {
+      background: #eff6ff;
+    }
+
     body.light-mode .cta p {
       color: #475569;
     }
 
-    body.light-mode .hero h1 {
-      color: #172033;
-    }
-
-    body.light-mode .section h2 {
-      color: #172033;
-    }
-
-    body.light-mode .section-heading p {
-      color: #64748b;
-    }
-
-    body.light-mode .card {
-      background: white;
-
-      box-shadow:
-        0 10px 30px rgba(15,23,42,0.08);
-
-      border-color: #e2e8f0;
-    }
-
-    body.light-mode .cta {
-      background: white;
-
-      border-color: #e2e8f0;
-    }
-
-    body.light-mode .hero-image {
-      background: white;
-
-      border-color: #e2e8f0;
-    }
-
     body.light-mode .price-box {
-      background: white;
+      background: #eff6ff;
 
+      border-color: #dbeafe;
+    }
+
+    body.light-mode .preview-card {
       border-color: #e2e8f0;
     }
 
-    body.light-mode .price-box span {
-      color: #64748b;
-    }
-
-    /* HEADER */
-
-    body.light-mode header {
-      background: rgba(15,23,42,0.95);
-    }
 
     /* =========================
        MOBILE
     ========================= */
 
-    @media (max-width: 850px) {
+    @media (max-width: 800px) {
 
       header {
-        padding: 15px 20px;
-
-        flex-wrap: wrap;
-
-        justify-content: center;
-      }
-
-      nav {
-        width: 100%;
-
-        justify-content: center;
+        padding: 15px 5%;
 
         flex-wrap: wrap;
 
         gap: 15px;
       }
 
+      nav {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 18px;
+
+        flex-wrap: wrap;
+      }
+
       .hero {
         grid-template-columns: 1fr;
 
-        padding: 60px 20px;
-
         text-align: center;
+
+        padding: 65px 6%;
+      }
+
+      .hero p {
+        margin-left: auto;
+
+        margin-right: auto;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .price-box {
+        justify-content: center;
+      }
+
+      .features,
+      .perfect-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .preview-card {
+        min-height: 330px;
+      }
+
+    }
+
+
+    @media (max-width: 500px) {
+
+      .logo {
+        font-size: 20px;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      nav a {
+        font-size: 14px;
       }
 
       .hero h1 {
         font-size: 42px;
       }
 
-      .hero p {
-        font-size: 16px;
-      }
-
-      .price-box {
-        margin: 25px auto 0;
-      }
-
-      .hero-image {
-        max-width: 100%;
-
-        height: 280px;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .section {
-        padding: 55px 20px;
-      }
-
+      .section h2,
       .cta h2 {
         font-size: 30px;
-      }
-
-    }
-
-    @media (max-width: 500px) {
-
-      .hero h1 {
-        font-size: 34px;
-      }
-
-      .hero-badge {
-        font-size: 12px;
       }
 
       .btn {
         width: 100%;
 
-        margin-right: 0;
+        text-align: center;
+      }
+
+      .price-box {
+        width: 100%;
+
+        max-width: 220px;
+
+        margin-left: auto;
+        margin-right: auto;
       }
 
     }
+
   </style>
+
 </head>
+
 
 <body>
 
+
   <!-- =========================
-       HEADER
+       NAVBAR
   ========================= -->
 
   <header>
 
-    <h2>
+    <div class="logo">
       Ahsan Web Studio
-    </h2>
+    </div>
 
     <nav>
 
       <a href="index.html">
         Home
-      </a>
-
-      <a href="index.html#about">
-        About
       </a>
 
       <a href="index.html#services">
@@ -673,15 +755,16 @@
         Contact
       </a>
 
-    </nav>
+      <button
+        class="theme-btn"
+        onclick="toggleTheme()"
+        id="themeButton"
+        aria-label="Toggle theme"
+      >
+        🌙
+      </button>
 
-    <button
-      id="themeToggle"
-      onclick="toggleTheme()"
-      aria-label="Toggle theme"
-    >
-      🌙
-    </button>
+    </nav>
 
   </header>
 
@@ -692,79 +775,75 @@
 
   <section class="hero">
 
-    <div class="hero-content">
+    <div>
 
-      <div class="hero-badge">
-        ✨ Ahsan Web Studio
-      </div>
+      <span class="badge">
+        💼 PROFESSIONAL BUSINESS WEBSITE
+      </span>
 
       <h1>
 
-        Professional
-
-        <span>
-          Business Websites
-        </span>
+        Build Your Business
+        <span>Online Presence.</span>
 
       </h1>
 
       <p>
-        Give your business a professional online presence
-        with a modern, clean, and fully mobile-friendly
-        website.
+
+        Give your business a modern, professional
+        and mobile-friendly website that helps
+        customers discover your services online.
+
       </p>
 
       <p>
-        Ahsan Web Studio creates simple and high-quality
-        websites tailored for small businesses, local shops,
-        service providers, and startups.
+
+        Perfect for local shops, small businesses,
+        service providers and startups looking for
+        a clean online presence.
+
       </p>
 
 
-      <!-- PRICE -->
-
       <div class="price-box">
 
-        <span>
+        <span class="price-label">
           Starting from
         </span>
 
-        <strong>
+        <span class="price">
           $3
-        </strong>
+        </span>
 
       </div>
 
 
-      <!-- BUTTONS -->
+      <div class="buttons">
 
-      <a
-        href="contact.html"
-        class="btn"
-      >
-        🚀 Hire Me
-      </a>
+        <a
+          href="contact.html"
+          class="btn"
+        >
+          🚀 Hire Me
+        </a>
 
-      <a
-        href="index.html#services"
-        class="btn btn-outline"
-      >
-        ← Back to Services
-      </a>
+        <a
+          href="index.html#services"
+          class="btn btn-outline"
+        >
+          ← Back to Services
+        </a>
+
+      </div>
 
     </div>
 
 
-    <!-- IMAGE -->
-
-    <div class="hero-image-wrapper">
-
-      <div class="image-glow"></div>
+    <div class="preview-card">
 
       <img
         src="business.png"
-        alt="Business Website"
-        class="hero-image"
+        alt="Business Website Preview"
       >
 
     </div>
@@ -773,73 +852,91 @@
 
 
   <!-- =========================
-       WHAT YOU GET
+       FEATURES
   ========================= -->
 
   <section class="section">
 
-    <div class="section-heading">
+    <span class="section-label">
+      WHY BUSINESS WEBSITE
+    </span>
 
-      <span class="section-label">
-        FEATURES
-      </span>
+    <h2>
+      Everything Your Business Needs
+    </h2>
 
-      <h2>
-        What You Get
-      </h2>
+    <p class="section-intro">
 
-      <p>
-        Everything you need for a clean and professional
-        online business presence.
-      </p>
+      A professional website gives your business
+      a clear place online where customers can
+      learn about your services and contact you.
 
-    </div>
+    </p>
 
 
-    <div class="cards">
+    <div class="features">
 
-      <div class="card">
+
+      <div class="feature">
+
+        <div class="feature-icon">
+          📱
+        </div>
 
         <h3>
-          📱 Mobile Friendly
+          Mobile Friendly
         </h3>
 
         <p>
-          Your website will look great and function
-          seamlessly across mobile phones, tablets,
-          and desktop computers.
+
+          Your website looks great and works smoothly
+          across mobile phones, tablets and desktop
+          computers.
+
         </p>
 
       </div>
 
 
-      <div class="card">
+      <div class="feature">
+
+        <div class="feature-icon">
+          🎨
+        </div>
 
         <h3>
-          🎨 Modern Design
+          Modern Design
         </h3>
 
         <p>
-          A clean, visually appealing, and professional
-          design that creates a great first impression
-          for your visitors.
+
+          A clean and professional design that creates
+          a strong first impression for your visitors.
+
         </p>
 
       </div>
 
 
-      <div class="card">
+      <div class="feature">
+
+        <div class="feature-icon">
+          ⚡
+        </div>
 
         <h3>
-          ⚡ Fast & Simple
+          Fast & Simple
         </h3>
 
         <p>
-          A fast-loading, lightweight website structured
-          for easy navigation and smooth user experience.
+
+          Lightweight pages with simple navigation
+          for a smooth browsing experience.
+
         </p>
 
       </div>
+
 
     </div>
 
@@ -852,66 +949,85 @@
 
   <section class="section">
 
-    <div class="section-heading">
+    <span class="section-label">
+      IDEAL FOR
+    </span>
 
-      <span class="section-label">
-        IDEAL FOR
-      </span>
+    <h2>
+      Perfect For Your Business
+    </h2>
 
-      <h2>
-        Perfect For
-      </h2>
+    <p class="section-intro">
 
-      <p>
-        A simple website solution for different types
-        of businesses and projects.
-      </p>
+      Whether you are starting something new or
+      improving your existing business presence,
+      a professional website can help.
 
-    </div>
+    </p>
 
 
-    <div class="cards">
+    <div class="perfect-grid">
 
-      <div class="card">
+
+      <div class="perfect-card">
+
+        <div class="perfect-icon">
+          🏪
+        </div>
 
         <h3>
-          🏪 Local Shops
+          Local Shops
         </h3>
 
         <p>
-          Showcase your store, services, and products
-          online to reach more local customers effectively.
+
+          Showcase your shop, services and important
+          business information online.
+
         </p>
 
       </div>
 
 
-      <div class="card">
+      <div class="perfect-card">
+
+        <div class="perfect-icon">
+          💼
+        </div>
 
         <h3>
-          💼 Small Businesses
+          Small Businesses
         </h3>
 
         <p>
-          Provide essential information about your company,
-          services, and contact details in a structured way.
+
+          Present your company, services and contact
+          information in a professional way.
+
         </p>
 
       </div>
 
 
-      <div class="card">
+      <div class="perfect-card">
+
+        <div class="perfect-icon">
+          🚀
+        </div>
 
         <h3>
-          🚀 Startups
+          Startups
         </h3>
 
         <p>
-          Build a solid digital presence and introduce
-          your new venture or idea to the world.
+
+          Introduce your new business or idea with
+          a modern digital presence.
+
         </p>
 
       </div>
+
 
     </div>
 
@@ -925,12 +1041,16 @@
   <section class="cta">
 
     <h2>
-      Ready to Build Your Website?
+      Ready to Build Your Business Website?
     </h2>
 
     <p>
-      Let's create something professional for your business.
+
+      Let's create a modern and professional
+      online presence for your business.
+
     </p>
+
 
     <a
       href="contact.html"
@@ -938,6 +1058,7 @@
     >
       📩 Hire Me
     </a>
+
 
     <a
       href="index.html#services"
@@ -956,13 +1077,23 @@
   <footer>
 
     <p>
-      © 2026 Ahsan Web Studio | All Rights Reserved
+
+      © 2026
+
+      <strong>
+        Ahsan Web Studio
+      </strong>
+
+      — All Rights Reserved.
+
     </p>
 
-    <p>
+    <p style="margin-top:10px;">
+
       <a href="contact.html">
         Contact Ahsan Web Studio
       </a>
+
     </p>
 
   </footer>
@@ -982,7 +1113,7 @@
 
       const button =
         document.getElementById(
-          "themeToggle"
+          "themeButton"
         );
 
       if (
@@ -1003,5 +1134,7 @@
 
   </script>
 
+
 </body>
+
 </html>
