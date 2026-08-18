@@ -1,10 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>🧱 Ahsan Brick Breaker</title>
+<title>Ball Catch Game | Ahsan Web Studio</title>
 
 <style>
 *{
@@ -13,281 +14,169 @@
   padding:0;
 }
 
-html,body{
-  width:100%;
-  height:100%;
-  overflow:hidden;
-  font-family:Arial,sans-serif;
-  background:#020617;
-  color:white;
-}
-
 body{
-  touch-action:none;
-}
-
-#game{
-  width:100vw;
-  height:100vh;
-  position:relative;
+  font-family:Arial,sans-serif;
+  background:#050b18;
+  color:white;
+  min-height:100vh;
   overflow:hidden;
-  background:
-    radial-gradient(circle at 50% 20%,#172554,#020617 65%);
 }
 
-/* TOP BAR */
-
-.topbar{
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-
-  height:72px;
-
-  padding:10px 18px;
-
+header{
+  height:70px;
+  background:#0f172a;
+  border-bottom:1px solid #1e293b;
   display:flex;
   align-items:center;
   justify-content:space-between;
-
-  background:rgba(2,6,23,.82);
-
-  border-bottom:1px solid rgba(255,255,255,.1);
-
-  backdrop-filter:blur(12px);
-
-  z-index:20;
+  padding:0 30px;
 }
 
 .logo{
-  font-size:20px;
-  font-weight:bold;
   color:#38bdf8;
+  font-size:23px;
+  font-weight:bold;
 }
 
-.stats{
+.back{
+  color:white;
+  text-decoration:none;
+  background:#1d4ed8;
+  padding:10px 17px;
+  border-radius:8px;
+}
+
+.game-wrapper{
+  height:calc(100vh - 70px);
   display:flex;
-  gap:10px;
+  align-items:center;
+  justify-content:center;
+  padding:15px;
 }
 
-.stat{
-  min-width:75px;
-  padding:7px 10px;
-
-  text-align:center;
-
-  border-radius:10px;
-
-  background:#0f172a;
-
-  border:1px solid #263449;
+.game-box{
+  position:relative;
+  width:min(900px,100%);
+  height:min(650px,calc(100vh - 110px));
+  background:
+    radial-gradient(circle at 50% 20%,#172554,#050b18 65%);
+  border:2px solid #1e40af;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 0 50px rgba(37,99,235,.25);
 }
-
-.stat small{
-  display:block;
-  color:#94a3b8;
-  font-size:9px;
-}
-
-.stat strong{
-  font-size:16px;
-}
-
-/* CANVAS */
 
 canvas{
-  position:absolute;
-
-  left:50%;
-  top:72px;
-
-  transform:translateX(-50%);
-
+  width:100%;
+  height:100%;
   display:block;
-
-  background:
-    linear-gradient(
-      rgba(15,23,42,.4),
-      rgba(2,6,23,.85)
-    );
-
-  box-shadow:
-    0 0 80px rgba(56,189,248,.08);
 }
 
-/* CONTROLS */
+.hud{
+  position:absolute;
+  top:15px;
+  left:15px;
+  right:15px;
+  display:flex;
+  justify-content:space-between;
+  pointer-events:none;
+  z-index:5;
+}
+
+.hud-box{
+  background:rgba(15,23,42,.85);
+  border:1px solid #334155;
+  padding:10px 16px;
+  border-radius:10px;
+  font-weight:bold;
+}
+
+.start-screen,
+.game-over{
+  position:absolute;
+  inset:0;
+  background:rgba(2,6,23,.88);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  text-align:center;
+  z-index:10;
+  padding:20px;
+}
+
+.game-over{
+  display:none;
+}
+
+.start-screen h1,
+.game-over h1{
+  font-size:42px;
+  color:#38bdf8;
+  margin-bottom:12px;
+}
+
+.start-screen p,
+.game-over p{
+  color:#cbd5e1;
+  margin-bottom:25px;
+}
+
+button{
+  border:0;
+  background:#2563eb;
+  color:white;
+  padding:14px 28px;
+  border-radius:10px;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#1d4ed8;
+  transform:translateY(-2px);
+}
 
 .controls{
   position:absolute;
-
-  bottom:18px;
-
-  left:0;
-  right:0;
-
+  bottom:15px;
+  left:50%;
+  transform:translateX(-50%);
   display:flex;
-
-  justify-content:center;
-
-  gap:15px;
-
-  z-index:30;
+  gap:20px;
+  z-index:6;
 }
 
 .control{
-  width:65px;
-  height:50px;
-
-  border-radius:14px;
-
-  border:1px solid #334155;
-
-  background:rgba(15,23,42,.9);
-
-  color:white;
-
-  font-size:20px;
-
-  cursor:pointer;
-}
-
-.control:active{
-  transform:scale(.94);
-  background:#2563eb;
-}
-
-.pause{
-  width:90px;
-}
-
-/* START */
-
-.overlay{
-  position:absolute;
-
-  inset:0;
-
-  z-index:100;
-
-  display:flex;
-
-  align-items:center;
-  justify-content:center;
-
-  text-align:center;
-
-  padding:20px;
-
-  background:rgba(2,6,23,.8);
-
-  backdrop-filter:blur(8px);
-}
-
-.panel{
-  width:min(480px,100%);
-
-  padding:35px 25px;
-
-  border-radius:24px;
-
-  background:#0f172a;
-
-  border:1px solid rgba(56,189,248,.25);
-
-  box-shadow:
-    0 30px 80px rgba(0,0,0,.55);
-}
-
-.panel h1{
-  font-size:38px;
-
-  margin-bottom:12px;
-
-  background:
-    linear-gradient(90deg,#38bdf8,#818cf8);
-
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-.panel p{
-  color:#94a3b8;
-
-  line-height:1.7;
-
-  margin-bottom:24px;
-}
-
-.start-btn{
-  width:100%;
-
-  padding:15px;
-
-  border:0;
-
+  width:70px;
+  height:55px;
   border-radius:12px;
-
-  background:#2563eb;
-
+  background:rgba(15,23,42,.8);
+  border:1px solid #334155;
   color:white;
-
-  font-size:17px;
-
-  font-weight:bold;
-
-  cursor:pointer;
+  font-size:25px;
+  user-select:none;
+  touch-action:none;
 }
-
-.start-btn:hover{
-  background:#1d4ed8;
-}
-
-/* MOBILE */
 
 @media(max-width:600px){
-
-  .topbar{
-    height:64px;
-    padding:8px 10px;
-  }
-
-  canvas{
-    top:64px;
+  header{
+    padding:0 15px;
   }
 
   .logo{
-    font-size:15px;
+    font-size:18px;
   }
 
-  .stats{
-    gap:5px;
+  .game-box{
+    height:calc(100vh - 100px);
+    border-radius:12px;
   }
 
-  .stat{
-    min-width:55px;
-    padding:6px;
-  }
-
-  .stat strong{
-    font-size:13px;
-  }
-
-  .controls{
-    bottom:10px;
-  }
-
-  .control{
-    width:58px;
-    height:48px;
-  }
-
-  .pause{
-    width:75px;
-  }
-
-  .panel h1{
-    font-size:31px;
+  .start-screen h1,
+  .game-over h1{
+    font-size:32px;
   }
 }
 </style>
@@ -295,87 +184,67 @@ canvas{
 
 <body>
 
-<div id="game">
+<header>
+  <div class="logo">🎮 Ahsan Web Studio</div>
+  <a href="index.html" class="back">← Home</a>
+</header>
 
-  <!-- TOP BAR -->
+<div class="game-wrapper">
 
-  <div class="topbar">
+  <div class="game-box">
 
-    <div class="logo">
-      🧱 AHSAN BREAKER
+    <canvas id="gameCanvas"></canvas>
+
+    <div class="hud">
+      <div class="hud-box">
+        🏆 Score: <span id="score">0</span>
+      </div>
+
+      <div class="hud-box">
+        🪙 Coins: <span id="coins">0</span>
+      </div>
     </div>
 
-    <div class="stats">
+    <div class="start-screen" id="startScreen">
 
-      <div class="stat">
-        <small>SCORE</small>
-        <strong id="score">0</strong>
-      </div>
+      <h1>🎯 Ball Catch</h1>
 
-      <div class="stat">
-        <small>COINS</small>
-        <strong id="coins">0</strong>
-      </div>
-
-      <div class="stat">
-        <small>LEVEL</small>
-        <strong id="level">1</strong>
-      </div>
-
-      <div class="stat">
-        <small>LIVES</small>
-        <strong id="lives">3</strong>
-      </div>
-
-    </div>
-
-  </div>
-
-  <!-- GAME CANVAS -->
-
-  <canvas id="canvas"></canvas>
-
-  <!-- CONTROLS -->
-
-  <div class="controls">
-
-    <button class="control" id="leftBtn">
-      ◀
-    </button>
-
-    <button class="control pause" id="pauseBtn">
-      ⏸ PAUSE
-    </button>
-
-    <button class="control" id="rightBtn">
-      ▶
-    </button>
-
-  </div>
-
-  <!-- START / GAME OVER -->
-
-  <div class="overlay" id="overlay">
-
-    <div class="panel">
-
-      <h1 id="title">
-        🧱 BRICK BREAKER
-      </h1>
-
-      <p id="message">
-        Break every brick, collect coins and
-        survive as many levels as possible.
-        <br><br>
-        Use ◀ ▶ or your keyboard to move the paddle.
+      <p>
+        Move the platform quickly and catch the falling balls!
       </p>
 
-      <button
-        class="start-btn"
-        id="startBtn"
-      >
-        🚀 START GAME
+      <button onclick="startGame()">
+        ▶ Start Game
       </button>
+
+    </div>
+
+    <div class="game-over" id="gameOver">
+
+      <h1>Game Over</h1>
+
+      <p>
+        Your Score:
+        <strong id="finalScore">0</strong>
+      </p>
+
+      <button onclick="restartGame()">
+        🔄 Play Again
+      </button>
+
+    </div>
+
+    <div class="controls">
+
+      <button
+        class="control"
+        id="leftBtn"
+      >◀</button>
+
+      <button
+        class="control"
+        id="rightBtn"
+      >▶</button>
 
     </div>
 
@@ -385,545 +254,147 @@ canvas{
 
 <script>
 
-/* =====================================================
-   AHSAN BRICK BREAKER
-===================================================== */
+const canvas = document.getElementById("gameCanvas");
+const ctx = canvas.getContext("2d");
 
-const canvas =
-  document.getElementById("canvas");
+let width;
+let height;
 
-const ctx =
-  canvas.getContext("2d");
+function resizeCanvas(){
 
-const scoreEl =
-  document.getElementById("score");
+  const rect = canvas.getBoundingClientRect();
 
-const coinsEl =
-  document.getElementById("coins");
+  width = canvas.width = rect.width;
+  height = canvas.height = rect.height;
 
-const levelEl =
-  document.getElementById("level");
+}
 
-const livesEl =
-  document.getElementById("lives");
+window.addEventListener("resize",resizeCanvas);
 
-const overlay =
-  document.getElementById("overlay");
+resizeCanvas();
 
-const title =
-  document.getElementById("title");
 
-const message =
-  document.getElementById("message");
+/* GAME VARIABLES */
 
-const startBtn =
-  document.getElementById("startBtn");
-
-const pauseBtn =
-  document.getElementById("pauseBtn");
-
-let W;
-let H;
-
-let running = false;
-let paused = false;
+let player;
+let ball;
 
 let score = 0;
 let coins = 0;
-let lives = 3;
-let level = 1;
 
-/* PADDLE */
-
-const paddle = {
-  width:95,
-  height:13,
-  x:0,
-  y:0,
-  speed:8
-};
-
-/* BALL */
-
-const ball = {
-  x:0,
-  y:0,
-  radius:8,
-  dx:4,
-  dy:-4
-};
-
-/* BRICKS */
-
-let bricks = [];
-
-let rows = 5;
-let cols = 7;
-
-let brickWidth;
-let brickHeight = 25;
-let brickGap = 7;
-
-/* INPUT */
+let gameRunning = false;
 
 let leftPressed = false;
 let rightPressed = false;
 
-/* POWERUPS */
 
-let powerups = [];
+/*
+  FAST PLAYER MOVEMENT
+  Increase this number if you want
+  the platform even faster.
+*/
 
-/* AUDIO */
-
-let audio = null;
-
-
-/* =====================================================
-   RESIZE
-===================================================== */
-
-function resize(){
-
-  const maxWidth =
-    Math.min(
-      window.innerWidth,
-      900
-    );
-
-  const maxHeight =
-    window.innerHeight - 150;
-
-  W = maxWidth;
-  H = Math.max(
-    450,
-    maxHeight
-  );
-
-  canvas.width = W;
-  canvas.height = H;
-
-  paddle.y =
-    H - 55;
-
-  paddle.x =
-    W/2 -
-    paddle.width/2;
-
-  if(!running){
-    resetBall();
-  }
-}
-
-window.addEventListener(
-  "resize",
-  resize
-);
-
-resize();
+const PLAYER_SPEED = 850;
 
 
-/* =====================================================
-   AUDIO
-===================================================== */
+/* PLAYER */
 
-function sound(type){
+function createPlayer(){
 
-  try{
+  player = {
 
-    if(!audio){
+    width:110,
+    height:18,
 
-      audio =
-        new (
-          window.AudioContext ||
-          window.webkitAudioContext
-        )();
+    x:width / 2 - 55,
 
-    }
+    y:height - 75
 
-    const osc =
-      audio.createOscillator();
-
-    const gain =
-      audio.createGain();
-
-    osc.connect(gain);
-
-    gain.connect(
-      audio.destination
-    );
-
-    if(type==="brick"){
-
-      osc.frequency.value=520;
-
-    }else if(type==="coin"){
-
-      osc.frequency.value=850;
-
-    }else if(type==="lose"){
-
-      osc.frequency.value=130;
-
-    }else{
-
-      osc.frequency.value=300;
-
-    }
-
-    gain.gain.value=.04;
-
-    osc.start();
-
-    osc.stop(
-      audio.currentTime+.07
-    );
-
-  }catch(e){}
+  };
 
 }
 
 
-/* =====================================================
-   RESET BALL
-===================================================== */
+/* BALL */
 
-function resetBall(){
+function createBall(){
 
-  ball.x =
-    W/2;
+  ball = {
 
-  ball.y =
-    H-80;
+    radius:13,
 
-  ball.dx =
-    (Math.random()>.5 ? 1 : -1)
-    * (3.5 + level*.25);
+    x:
+      Math.random() *
+      (width - 26) + 13,
 
-  ball.dy =
-    -(4 + level*.25);
-}
+    y:-20,
 
+    speed:260 + Math.random()*100
 
-/* =====================================================
-   CREATE BRICKS
-===================================================== */
-
-function createBricks(){
-
-  bricks=[];
-
-  cols =
-    Math.min(
-      7 + Math.floor(level/3),
-      10
-    );
-
-  rows =
-    Math.min(
-      4 + level,
-      8
-    );
-
-  brickWidth =
-    (
-      W -
-      40 -
-      (cols-1)*brickGap
-    ) / cols;
-
-  const colors=[
-    "#38bdf8",
-    "#818cf8",
-    "#a78bfa",
-    "#c084fc",
-    "#f472b6",
-    "#fb7185",
-    "#f59e0b",
-    "#22c55e"
-  ];
-
-  for(
-    let r=0;
-    r<rows;
-    r++
-  ){
-
-    for(
-      let c=0;
-      c<cols;
-      c++
-    ){
-
-      bricks.push({
-
-        x:
-          20 +
-          c*(brickWidth+brickGap),
-
-        y:
-          35 +
-          r*(brickHeight+brickGap),
-
-        width:
-          brickWidth,
-
-        height:
-          brickHeight,
-
-        alive:true,
-
-        color:
-          colors[
-            r % colors.length
-          ],
-
-        hits:
-          level >= 5 && r < 2
-          ? 2
-          : 1
-
-      });
-
-    }
-
-  }
+  };
 
 }
 
 
-/* =====================================================
-   START
-===================================================== */
+/* DRAW PLAYER */
 
-function startGame(){
-
-  score=0;
-  coins=0;
-  lives=3;
-  level=1;
-
-  updateHUD();
-
-  createBricks();
-
-  resetBall();
-
-  powerups=[];
-
-  running=true;
-  paused=false;
-
-  overlay.style.display="none";
-
-  pauseBtn.textContent =
-    "⏸ PAUSE";
-
-  sound("start");
-
-  requestAnimationFrame(loop);
-
-}
-
-
-/* =====================================================
-   UPDATE HUD
-===================================================== */
-
-function updateHUD(){
-
-  scoreEl.textContent =
-    score;
-
-  coinsEl.textContent =
-    coins;
-
-  levelEl.textContent =
-    level;
-
-  livesEl.textContent =
-    lives;
-
-}
-
-
-/* =====================================================
-   DRAW BACKGROUND
-===================================================== */
-
-function drawBackground(){
-
-  ctx.clearRect(
-    0,
-    0,
-    W,
-    H
-  );
-
-  /* stars */
-
-  for(
-    let i=0;
-    i<35;
-    i++
-  ){
-
-    const x =
-      (i*83)%W;
-
-    const y =
-      (i*47)%H;
-
-    ctx.fillStyle =
-      "rgba(255,255,255,.16)";
-
-    ctx.fillRect(
-      x,
-      y,
-      2,
-      2
-    );
-
-  }
-
-}
-
-
-/* =====================================================
-   DRAW BRICKS
-===================================================== */
-
-function drawBricks(){
-
-  bricks.forEach(
-    brick=>{
-
-      if(!brick.alive)
-        return;
-
-      ctx.save();
-
-      ctx.shadowBlur=12;
-      ctx.shadowColor=
-        brick.color;
-
-      ctx.fillStyle =
-        brick.color;
-
-      roundRect(
-        ctx,
-        brick.x,
-        brick.y,
-        brick.width,
-        brick.height,
-        7
-      );
-
-      ctx.fill();
-
-      ctx.shadowBlur=0;
-
-      /* shine */
-
-      ctx.fillStyle =
-        "rgba(255,255,255,.25)";
-
-      roundRect(
-        ctx,
-        brick.x+3,
-        brick.y+3,
-        brick.width-6,
-        4,
-        3
-      );
-
-      ctx.fill();
-
-      if(brick.hits>1){
-
-        ctx.fillStyle="white";
-
-        ctx.font="bold 10px Arial";
-
-        ctx.textAlign="center";
-
-        ctx.fillText(
-          "×2",
-          brick.x+brick.width/2,
-          brick.y+17
-        );
-
-      }
-
-      ctx.restore();
-
-    }
-  );
-
-}
-
-
-/* =====================================================
-   DRAW PADDLE
-===================================================== */
-
-function drawPaddle(){
-
-  ctx.save();
-
-  ctx.shadowBlur=20;
-
-  ctx.shadowColor=
-    "#38bdf8";
+function drawPlayer(){
 
   const gradient =
     ctx.createLinearGradient(
-      paddle.x,
-      paddle.y,
-      paddle.x+paddle.width,
-      paddle.y
+      player.x,
+      player.y,
+      player.x,
+      player.y + player.height
     );
 
-  gradient.addColorStop(
-    0,
-    "#2563eb"
-  );
+  gradient.addColorStop(0,"#38bdf8");
+  gradient.addColorStop(1,"#2563eb");
 
-  gradient.addColorStop(
-    .5,
-    "#38bdf8"
-  );
+  ctx.fillStyle = gradient;
 
-  gradient.addColorStop(
-    1,
-    "#6366f1"
-  );
+  ctx.shadowColor = "#38bdf8";
+  ctx.shadowBlur = 15;
 
-  ctx.fillStyle =
-    gradient;
+  ctx.beginPath();
 
-  roundRect(
-    ctx,
-    paddle.x,
-    paddle.y,
-    paddle.width,
-    paddle.height,
+  ctx.roundRect(
+    player.x,
+    player.y,
+    player.width,
+    player.height,
     8
   );
 
   ctx.fill();
 
-  ctx.restore();
+  ctx.shadowBlur = 0;
 
 }
 
 
-/* =====================================================
-   DRAW BALL
-===================================================== */
+/* DRAW BALL */
 
 function drawBall(){
 
-  ctx.save();
+  const gradient =
+    ctx.createRadialGradient(
+      ball.x - 4,
+      ball.y - 4,
+      2,
+      ball.x,
+      ball.y,
+      ball.radius
+    );
+
+  gradient.addColorStop(0,"#ffffff");
+  gradient.addColorStop(.25,"#facc15");
+  gradient.addColorStop(1,"#f97316");
+
+  ctx.fillStyle = gradient;
+
+  ctx.shadowColor = "#facc15";
+  ctx.shadowBlur = 20;
 
   ctx.beginPath();
 
@@ -932,653 +403,312 @@ function drawBall(){
     ball.y,
     ball.radius,
     0,
-    Math.PI*2
+    Math.PI * 2
   );
-
-  ctx.fillStyle =
-    "#ffffff";
-
-  ctx.shadowBlur=20;
-
-  ctx.shadowColor =
-    "#38bdf8";
 
   ctx.fill();
 
-  ctx.restore();
+  ctx.shadowBlur = 0;
 
 }
 
 
-/* =====================================================
-   DRAW POWERUPS
-===================================================== */
+/* BACKGROUND */
 
-function drawPowerups(){
+function drawBackground(){
 
-  powerups.forEach(
-    p=>{
+  ctx.clearRect(0,0,width,height);
 
-      ctx.save();
+  /* stars */
 
-      ctx.beginPath();
+  for(let i=0;i<35;i++){
 
-      ctx.arc(
-        p.x,
-        p.y,
-        12,
-        0,
-        Math.PI*2
-      );
+    const x =
+      (i * 97) % width;
 
-      ctx.fillStyle =
-        p.type==="coin"
-        ? "#facc15"
-        : "#22c55e";
+    const y =
+      (i * 53) % height;
 
-      ctx.shadowBlur=15;
+    ctx.fillStyle =
+      "rgba(255,255,255,.25)";
 
-      ctx.shadowColor =
-        ctx.fillStyle;
-
-      ctx.fill();
-
-      ctx.fillStyle =
-        "#020617";
-
-      ctx.font =
-        "bold 12px Arial";
-
-      ctx.textAlign="center";
-
-      ctx.textBaseline="middle";
-
-      ctx.fillText(
-        p.type==="coin"
-        ? "$"
-        : "+",
-        p.x,
-        p.y
-      );
-
-      ctx.restore();
-
-    }
-  );
-
-}
-
-
-/* =====================================================
-   ROUND RECT
-===================================================== */
-
-function roundRect(
-  context,
-  x,
-  y,
-  width,
-  height,
-  radius
-){
-
-  context.beginPath();
-
-  context.roundRect(
-    x,
-    y,
-    width,
-    height,
-    radius
-  );
-
-}
-
-
-/* =====================================================
-   MOVE PADDLE
-===================================================== */
-
-function movePaddle(){
-
-  if(leftPressed){
-
-    paddle.x -=
-      paddle.speed;
-
-  }
-
-  if(rightPressed){
-
-    paddle.x +=
-      paddle.speed;
-
-  }
-
-  if(
-    paddle.x < 0
-  ){
-
-    paddle.x=0;
-
-  }
-
-  if(
-    paddle.x+paddle.width > W
-  ){
-
-    paddle.x =
-      W-paddle.width;
+    ctx.fillRect(x,y,2,2);
 
   }
 
 }
 
 
-/* =====================================================
-   BALL
-===================================================== */
+/* KEYBOARD */
 
-function moveBall(){
+document.addEventListener("keydown",(e)=>{
 
-  ball.x +=
-    ball.dx;
-
-  ball.y +=
-    ball.dy;
-
-  /* WALL */
-
-  if(
-    ball.x-ball.radius <= 0 ||
-    ball.x+ball.radius >= W
-  ){
-
-    ball.dx *= -1;
-
-    sound("wall");
-
+  if(e.key==="ArrowLeft" || e.key.toLowerCase()==="a"){
+    leftPressed=true;
   }
 
-  if(
-    ball.y-ball.radius <= 0
-  ){
-
-    ball.dy *= -1;
-
-    sound("wall");
-
+  if(e.key==="ArrowRight" || e.key.toLowerCase()==="d"){
+    rightPressed=true;
   }
 
-  /* PADDLE */
+});
 
-  if(
+document.addEventListener("keyup",(e)=>{
 
-    ball.y+ball.radius >=
-      paddle.y &&
-
-    ball.y-ball.radius <=
-      paddle.y+paddle.height &&
-
-    ball.x >= paddle.x &&
-
-    ball.x <=
-      paddle.x+paddle.width &&
-
-    ball.dy > 0
-
-  ){
-
-    const hit =
-      (
-        ball.x -
-        (
-          paddle.x+
-          paddle.width/2
-        )
-      )
-      /
-      (paddle.width/2);
-
-    ball.dx =
-      hit * 6;
-
-    ball.dy =
-      -Math.abs(ball.dy);
-
-    sound("wall");
-
+  if(e.key==="ArrowLeft" || e.key.toLowerCase()==="a"){
+    leftPressed=false;
   }
 
-  /* BOTTOM */
-
-  if(
-    ball.y >
-    H+30
-  ){
-
-    lives--;
-
-    updateHUD();
-
-    sound("lose");
-
-    if(lives<=0){
-
-      gameOver();
-
-    }else{
-
-      resetBall();
-
-    }
-
+  if(e.key==="ArrowRight" || e.key.toLowerCase()==="d"){
+    rightPressed=false;
   }
 
-}
+});
 
 
-/* =====================================================
-   BRICK COLLISION
-===================================================== */
+/* MOBILE BUTTONS */
 
-function brickCollision(){
+function holdButton(button, direction){
 
-  for(
-    let i=0;
-    i<bricks.length;
-    i++
-  ){
+  button.addEventListener("pointerdown",(e)=>{
 
-    const brick =
-      bricks[i];
+    e.preventDefault();
 
-    if(!brick.alive)
-      continue;
-
-    if(
-
-      ball.x+ball.radius >
-        brick.x &&
-
-      ball.x-ball.radius <
-        brick.x+brick.width &&
-
-      ball.y+ball.radius >
-        brick.y &&
-
-      ball.y-ball.radius <
-        brick.y+brick.height
-
-    ){
-
-      ball.dy *= -1;
-
-      brick.hits--;
-
-      score +=
-        brick.hits<=0
-        ? 10*level
-        : 5;
-
-      sound("brick");
-
-      if(brick.hits<=0){
-
-        brick.alive=false;
-
-        /* chance of powerup */
-
-        if(
-          Math.random()<.16
-        ){
-
-          powerups.push({
-
-            x:
-              brick.x+
-              brick.width/2,
-
-            y:
-              brick.y+
-              brick.height/2,
-
-            type:
-              Math.random()<.55
-              ? "coin"
-              : "life"
-
-          });
-
-        }
-
-      }
-
-      updateHUD();
-
-      break;
-
-    }
-
-  }
-
-}
-
-
-/* =====================================================
-   POWERUPS
-===================================================== */
-
-function movePowerups(){
-
-  powerups.forEach(
-    p=>{
-
-      p.y += 2.8;
-
-      if(
-
-        p.y+12 >=
-          paddle.y &&
-
-        p.y-12 <=
-          paddle.y+
-          paddle.height &&
-
-        p.x >= paddle.x &&
-
-        p.x <=
-          paddle.x+
-          paddle.width
-
-      ){
-
-        if(p.type==="coin"){
-
-          coins++;
-
-          score+=25;
-
-        }else{
-
-          lives++;
-
-        }
-
-        sound("coin");
-
-        p.collected=true;
-
-        updateHUD();
-
-      }
-
-    }
-  );
-
-  powerups =
-    powerups.filter(
-      p =>
-        !p.collected &&
-        p.y < H+30
-    );
-
-}
-
-
-/* =====================================================
-   LEVEL CHECK
-===================================================== */
-
-function checkLevel(){
-
-  const remaining =
-    bricks.filter(
-      b=>b.alive
-    ).length;
-
-  if(remaining===0){
-
-    level++;
-
-    score +=
-      100*level;
-
-    createBricks();
-
-    resetBall();
-
-    updateHUD();
-
-    sound("coin");
-
-  }
-
-}
-
-
-/* =====================================================
-   GAME OVER
-===================================================== */
-
-function gameOver(){
-
-  running=false;
-
-  title.textContent =
-    "💥 GAME OVER";
-
-  message.innerHTML =
-    `
-      Final Score:
-      <strong>${score}</strong>
-      <br><br>
-      Coins Collected:
-      <strong>${coins}</strong>
-      <br><br>
-      Level Reached:
-      <strong>${level}</strong>
-    `;
-
-  startBtn.textContent =
-    "🔄 PLAY AGAIN";
-
-  overlay.style.display =
-    "flex";
-
-}
-
-
-/* =====================================================
-   PAUSE
-===================================================== */
-
-function togglePause(){
-
-  if(!running)
-    return;
-
-  paused=!paused;
-
-  pauseBtn.textContent =
-    paused
-    ? "▶ PLAY"
-    : "⏸ PAUSE";
-
-  if(!paused){
-
-    requestAnimationFrame(loop);
-
-  }
-
-}
-
-
-/* =====================================================
-   LOOP
-===================================================== */
-
-function loop(){
-
-  if(!running || paused)
-    return;
-
-  drawBackground();
-
-  movePaddle();
-
-  moveBall();
-
-  brickCollision();
-
-  movePowerups();
-
-  drawBricks();
-
-  drawPowerups();
-
-  drawPaddle();
-
-  drawBall();
-
-  checkLevel();
-
-  requestAnimationFrame(loop);
-
-}
-
-
-/* =====================================================
-   KEYBOARD
-===================================================== */
-
-document.addEventListener(
-  "keydown",
-  e=>{
-
-    if(
-      e.key==="ArrowLeft" ||
-      e.key.toLowerCase()==="a"
-    ){
-
+    if(direction==="left"){
       leftPressed=true;
-
-    }
-
-    if(
-      e.key==="ArrowRight" ||
-      e.key.toLowerCase()==="d"
-    ){
-
+    }else{
       rightPressed=true;
-
     }
 
-    if(
-      e.code==="Space"
-    ){
+  });
 
-      e.preventDefault();
+  button.addEventListener("pointerup",()=>{
 
-      togglePause();
-
-    }
-
-  }
-);
-
-document.addEventListener(
-  "keyup",
-  e=>{
-
-    if(
-      e.key==="ArrowLeft" ||
-      e.key.toLowerCase()==="a"
-    ){
-
+    if(direction==="left"){
       leftPressed=false;
-
-    }
-
-    if(
-      e.key==="ArrowRight" ||
-      e.key.toLowerCase()==="d"
-    ){
-
+    }else{
       rightPressed=false;
-
     }
 
-  }
-);
+  });
 
+  button.addEventListener("pointerleave",()=>{
 
-/* =====================================================
-   MOBILE CONTROLS
-===================================================== */
-
-function holdButton(
-  element,
-  start,
-  end
-){
-
-  element.addEventListener(
-    "pointerdown",
-    e=>{
-      e.preventDefault();
-      start();
+    if(direction==="left"){
+      leftPressed=false;
+    }else{
+      rightPressed=false;
     }
-  );
 
-  element.addEventListener(
-    "pointerup",
-    e=>{
-      e.preventDefault();
-      end();
-    }
-  );
-
-  element.addEventListener(
-    "pointercancel",
-    end
-  );
-
-  element.addEventListener(
-    "pointerleave",
-    end
-  );
+  });
 
 }
 
 holdButton(
   document.getElementById("leftBtn"),
-  ()=>leftPressed=true,
-  ()=>leftPressed=false
+  "left"
 );
 
 holdButton(
   document.getElementById("rightBtn"),
-  ()=>rightPressed=true,
-  ()=>rightPressed=false
+  "right"
 );
 
 
-/* =====================================================
-   BUTTONS
-===================================================== */
+/* GAME UPDATE */
 
-startBtn.addEventListener(
-  "click",
-  startGame
-);
+let lastTime=0;
 
-pauseBtn.addEventListener(
-  "click",
-  togglePause
-);
+function update(time){
+
+  if(!gameRunning){
+    requestAnimationFrame(update);
+    return;
+  }
+
+  const delta =
+    Math.min(
+      (time-lastTime)/1000,
+      .04
+    );
+
+  lastTime=time;
+
+
+  /* PLAYER MOVEMENT */
+
+  if(leftPressed){
+
+    player.x -=
+      PLAYER_SPEED * delta;
+
+  }
+
+  if(rightPressed){
+
+    player.x +=
+      PLAYER_SPEED * delta;
+
+  }
+
+
+  /* KEEP PLAYER INSIDE */
+
+  if(player.x<0){
+    player.x=0;
+  }
+
+  if(
+    player.x + player.width > width
+  ){
+
+    player.x =
+      width - player.width;
+
+  }
+
+
+  /* BALL */
+
+  ball.y +=
+    ball.speed * delta;
+
+
+  /* CATCH */
+
+  if(
+
+    ball.y + ball.radius >= player.y &&
+
+    ball.x >= player.x &&
+
+    ball.x <= player.x + player.width
+
+  ){
+
+    score++;
+
+    coins++;
+
+    document.getElementById(
+      "score"
+    ).textContent=score;
+
+    document.getElementById(
+      "coins"
+    ).textContent=coins;
+
+    createBall();
+
+    /*
+      Gradually increase difficulty
+    */
+
+    ball.speed +=
+      Math.min(score * 3,120);
+
+  }
+
+
+  /* MISS */
+
+  if(ball.y-ball.radius>height){
+
+    endGame();
+
+    return;
+
+  }
+
+
+  drawBackground();
+
+  drawPlayer();
+
+  drawBall();
+
+  requestAnimationFrame(update);
+
+}
+
+
+/* START */
+
+function startGame(){
+
+  score=0;
+  coins=0;
+
+  document.getElementById(
+    "score"
+  ).textContent=0;
+
+  document.getElementById(
+    "coins"
+  ).textContent=0;
+
+  document.getElementById(
+    "startScreen"
+  ).style.display="none";
+
+  document.getElementById(
+    "gameOver"
+  ).style.display="none";
+
+  createPlayer();
+
+  createBall();
+
+  gameRunning=true;
+
+  lastTime=performance.now();
+
+  requestAnimationFrame(update);
+
+}
+
+
+/* GAME OVER */
+
+function endGame(){
+
+  gameRunning=false;
+
+  document.getElementById(
+    "finalScore"
+  ).textContent=score;
+
+  document.getElementById(
+    "gameOver"
+  ).style.display="flex";
+
+}
+
+
+/* RESTART */
+
+function restartGame(){
+
+  document.getElementById(
+    "gameOver"
+  ).style.display="none";
+
+  startGame();
+
+}
+
+
+/* INITIAL */
+
+createPlayer();
+createBall();
+
+drawBackground();
+drawPlayer();
+drawBall();
 
 </script>
 
 </body>
 </html>
+```
