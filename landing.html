@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +22,7 @@
 
   <meta
     name="description"
-    content="High-converting and modern landing pages for products, services and promotions by Ahsan Web Studio."
+    content="Modern and responsive landing pages for products, services and promotions by Ahsan Web Studio."
   >
 
   <style>
@@ -40,14 +39,10 @@
 
     body {
       font-family: Arial, sans-serif;
-
       background: #0b1120;
-
       color: #f8fafc;
-
       transition: 0.3s ease;
     }
-
 
     /* =========================
        NAVBAR
@@ -55,13 +50,10 @@
 
     header {
       min-height: 72px;
-
       padding: 0 6%;
 
       display: flex;
-
       align-items: center;
-
       justify-content: space-between;
 
       background: #111827;
@@ -70,35 +62,26 @@
         1px solid rgba(255,255,255,0.06);
 
       position: sticky;
-
       top: 0;
-
-      z-index: 100;
+      z-index: 1000;
     }
 
     .logo {
       color: #38bdf8;
-
       font-size: 25px;
-
       font-weight: bold;
     }
 
     nav {
       display: flex;
-
       align-items: center;
-
       gap: 28px;
     }
 
     nav a {
       color: #f8fafc;
-
       text-decoration: none;
-
       font-size: 16px;
-
       transition: 0.3s;
     }
 
@@ -108,7 +91,6 @@
 
     .theme-btn {
       width: 42px;
-
       height: 42px;
 
       border-radius: 10px;
@@ -123,7 +105,6 @@
 
       cursor: pointer;
     }
-
 
     /* =========================
        HERO
@@ -192,7 +173,6 @@
 
     .hero h1 span {
       display: block;
-
       color: #38bdf8;
     }
 
@@ -214,6 +194,8 @@
       gap: 15px;
 
       flex-wrap: wrap;
+
+      align-items: center;
     }
 
     .btn {
@@ -232,6 +214,10 @@
       background: #2563eb;
 
       transition: 0.3s;
+
+      border: none;
+
+      cursor: pointer;
     }
 
     .btn:hover {
@@ -251,6 +237,63 @@
       color: #38bdf8;
     }
 
+    .btn-buy {
+      background: #16a34a;
+
+      box-shadow:
+        0 8px 25px
+        rgba(22,163,74,0.2);
+    }
+
+    .btn-buy:hover {
+      background: #15803d;
+
+      box-shadow:
+        0 12px 30px
+        rgba(22,163,74,0.35);
+    }
+
+    /* =========================
+       PRICE
+    ========================= */
+
+    .price-box {
+      margin-top: 28px;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 15px;
+
+      padding: 14px 20px;
+
+      border-radius: 15px;
+
+      background: rgba(15,23,42,0.8);
+
+      border:
+        1px solid rgba(56,189,248,0.2);
+
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .price {
+      color: #38bdf8;
+
+      font-size: 32px;
+
+      font-weight: bold;
+    }
+
+    .price-text {
+      color: #94a3b8;
+
+      font-size: 14px;
+
+      line-height: 1.4;
+    }
 
     /* =========================
        PREVIEW CARD
@@ -274,6 +317,8 @@
 
       display: flex;
 
+      flex-direction: column;
+
       align-items: center;
 
       justify-content: center;
@@ -295,7 +340,7 @@
 
       max-width: 440px;
 
-      max-height: 390px;
+      max-height: 350px;
 
       object-fit: contain;
 
@@ -308,6 +353,15 @@
       transform: scale(1.04);
     }
 
+    .preview-price {
+      margin-top: 20px;
+
+      font-size: 24px;
+
+      font-weight: bold;
+
+      color: #38bdf8;
+    }
 
     /* =========================
        BENEFITS
@@ -398,7 +452,6 @@
       line-height: 1.7;
     }
 
-
     /* =========================
        HOW IT WORKS
     ========================= */
@@ -426,6 +479,15 @@
       border:
         1px solid
         rgba(148,163,184,0.1);
+
+      transition: 0.3s;
+    }
+
+    .step:hover {
+      transform: translateY(-6px);
+
+      border-color:
+        rgba(56,189,248,0.35);
     }
 
     .step-number {
@@ -462,6 +524,125 @@
       line-height: 1.6;
     }
 
+    /* =========================
+       PRICING
+    ========================= */
+
+    .pricing-section {
+      padding: 80px 7%;
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          180deg,
+          #0b1120,
+          #0f172a
+        );
+    }
+
+    .pricing-card {
+      max-width: 500px;
+
+      margin: 45px auto 0;
+
+      padding: 40px 30px;
+
+      border-radius: 25px;
+
+      background: #111827;
+
+      border:
+        1px solid rgba(56,189,248,0.35);
+
+      box-shadow:
+        0 25px 70px rgba(0,0,0,0.3);
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .popular {
+      position: absolute;
+
+      top: 18px;
+
+      right: -38px;
+
+      padding: 7px 45px;
+
+      background: #2563eb;
+
+      color: white;
+
+      font-size: 12px;
+
+      font-weight: bold;
+
+      transform: rotate(45deg);
+    }
+
+    .pricing-card h3 {
+      font-size: 27px;
+
+      margin-bottom: 15px;
+    }
+
+    .pricing-price {
+      font-size: 55px;
+
+      font-weight: bold;
+
+      color: #38bdf8;
+
+      margin: 15px 0;
+    }
+
+    .pricing-price small {
+      font-size: 17px;
+
+      color: #94a3b8;
+
+      font-weight: normal;
+    }
+
+    .pricing-description {
+      color: #94a3b8;
+
+      line-height: 1.7;
+
+      margin-bottom: 25px;
+    }
+
+    .pricing-list {
+      list-style: none;
+
+      text-align: left;
+
+      margin-bottom: 30px;
+    }
+
+    .pricing-list li {
+      padding: 10px 0;
+
+      color: #cbd5e1;
+
+      border-bottom:
+        1px solid rgba(148,163,184,0.08);
+    }
+
+    .pricing-list li:last-child {
+      border-bottom: none;
+    }
+
+    .pricing-buy {
+      width: 100%;
+
+      text-align: center;
+
+      font-size: 17px;
+    }
 
     /* =========================
        CTA
@@ -503,7 +684,6 @@
       line-height: 1.7;
     }
 
-
     /* =========================
        FOOTER
     ========================= */
@@ -526,7 +706,6 @@
       color: #38bdf8;
     }
 
-
     /* =========================
        LIGHT MODE
     ========================= */
@@ -541,6 +720,7 @@
     body.light-mode .preview-card,
     body.light-mode .benefit,
     body.light-mode .step,
+    body.light-mode .pricing-card,
     body.light-mode footer {
       background: white;
     }
@@ -562,8 +742,24 @@
     body.light-mode .hero p,
     body.light-mode .benefit p,
     body.light-mode .step p,
-    body.light-mode .section-intro {
+    body.light-mode .section-intro,
+    body.light-mode .pricing-description {
       color: #64748b;
+    }
+
+    body.light-mode .price-box {
+      background: white;
+    }
+
+    body.light-mode .pricing-list li {
+      color: #475569;
+
+      border-color:
+        rgba(15,23,42,0.08);
+    }
+
+    body.light-mode .pricing-section {
+      background: #f8fafc;
     }
 
     body.light-mode .cta {
@@ -573,7 +769,6 @@
     body.light-mode .cta p {
       color: #475569;
     }
-
 
     /* =========================
        MOBILE
@@ -619,6 +814,14 @@
         justify-content: center;
       }
 
+      .price-box {
+        justify-content: center;
+
+        margin-left: auto;
+
+        margin-right: auto;
+      }
+
       .benefits,
       .steps {
         grid-template-columns: 1fr;
@@ -651,6 +854,10 @@
       .section h2,
       .cta h2 {
         font-size: 30px;
+      }
+
+      .pricing-price {
+        font-size: 45px;
       }
 
     }
@@ -689,6 +896,7 @@
         class="theme-btn"
         id="themeButton"
         onclick="toggleTheme()"
+        aria-label="Toggle theme"
       >
         🌙
       </button>
@@ -711,7 +919,10 @@
       <h1>
 
         Turn Visitors Into
-        <span>Customers.</span>
+
+        <span>
+          Customers.
+        </span>
 
       </h1>
 
@@ -723,22 +934,40 @@
 
       </p>
 
-
       <div class="buttons">
 
         <a
           href="contact.html"
-          class="btn"
+          class="btn btn-buy"
         >
-          🚀 Get Started
+          🛒 Buy Now — $3
         </a>
 
         <a
-          href="index.html#services"
+          href="#pricing"
           class="btn btn-outline"
         >
-          ← Back to Services
+          💰 View Price
         </a>
+
+      </div>
+
+
+      <div class="price-box">
+
+        <div class="price">
+          $3
+        </div>
+
+        <div class="price-text">
+
+          Professional Landing Page
+
+          <br>
+
+          Simple & Affordable
+
+        </div>
 
       </div>
 
@@ -751,6 +980,10 @@
         src="landing.png"
         alt="Landing Page Preview"
       >
+
+      <div class="preview-price">
+        Starting at $3
+      </div>
 
     </div>
 
@@ -922,6 +1155,98 @@
   </section>
 
 
+  <!-- PRICING -->
+
+  <section
+    class="pricing-section"
+    id="pricing"
+  >
+
+    <span class="section-label">
+      SIMPLE PRICING
+    </span>
+
+    <h2>
+      Get Your Landing Page
+    </h2>
+
+    <p class="section-intro">
+
+      Professional design without an expensive
+      price tag.
+
+    </p>
+
+
+    <div class="pricing-card">
+
+      <div class="popular">
+        BEST VALUE
+      </div>
+
+
+      <h3>
+        Landing Page
+      </h3>
+
+
+      <div class="pricing-price">
+        $3
+        <small>
+          / project
+        </small>
+      </div>
+
+
+      <p class="pricing-description">
+
+        A clean and modern landing page
+        designed for your product, service
+        or promotion.
+
+      </p>
+
+
+      <ul class="pricing-list">
+
+        <li>
+          ✅ Modern professional design
+        </li>
+
+        <li>
+          ✅ Mobile responsive layout
+        </li>
+
+        <li>
+          ✅ Fast and lightweight
+        </li>
+
+        <li>
+          ✅ Product or service focused
+        </li>
+
+        <li>
+          ✅ Easy-to-use structure
+        </li>
+
+      </ul>
+
+
+      <!-- BUY BUTTON -->
+
+      <a
+        href="contact.html"
+        class="btn btn-buy pricing-buy"
+      >
+        🛒 Buy Now — $3
+      </a>
+
+
+    </div>
+
+  </section>
+
+
   <!-- CTA -->
 
   <section class="cta">
@@ -935,12 +1260,24 @@
       your next idea or promotion.
     </p>
 
-    <a
-      href="contact.html"
-      class="btn"
-    >
-      📩 Contact Ahsan Web Studio
-    </a>
+
+    <div class="buttons">
+
+      <a
+        href="contact.html"
+        class="btn btn-buy"
+      >
+        🛒 Buy Landing Page — $3
+      </a>
+
+      <a
+        href="contact.html"
+        class="btn btn-outline"
+      >
+        📩 Contact Ahsan
+      </a>
+
+    </div>
 
   </section>
 
@@ -959,6 +1296,8 @@
 
   </footer>
 
+
+  <!-- DARK / LIGHT MODE -->
 
   <script>
 
