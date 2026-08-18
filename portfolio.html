@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +13,7 @@
   <link
     rel="icon"
     type="image/png"
-    href="favicon.png"
+    href="profile.png"
   >
 
   <title>
@@ -32,9 +31,6 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-    }
-
-    html {
       scroll-behavior: smooth;
     }
 
@@ -45,43 +41,51 @@
       transition: 0.3s ease;
     }
 
+
     /* =========================
-       NAVBAR
+       HEADER
     ========================= */
 
     header {
       min-height: 72px;
-      padding: 0 6%;
+      padding: 15px 6%;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      background: #111827;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: rgba(15,23,42,0.95);
+
+      border-bottom: 1px solid #1e293b;
 
       position: sticky;
       top: 0;
-      z-index: 100;
+
+      z-index: 1000;
+
+      backdrop-filter: blur(12px);
+
+      gap: 20px;
     }
 
     .logo {
       color: #38bdf8;
       font-size: 25px;
       font-weight: bold;
+      white-space: nowrap;
     }
 
     nav {
       display: flex;
-      gap: 28px;
+      gap: 22px;
       align-items: center;
     }
 
     nav a {
-      color: #f8fafc;
+      color: white;
       text-decoration: none;
-      font-size: 16px;
-      transition: 0.3s;
+      font-size: 15px;
+      transition: 0.25s;
     }
 
     nav a:hover {
@@ -90,50 +94,70 @@
 
     .theme-btn {
       border: 1px solid #334155;
-      background: #0f172a;
+
+      background: #111827;
       color: white;
 
       width: 42px;
       height: 42px;
 
       border-radius: 10px;
+
       cursor: pointer;
 
       font-size: 20px;
+
+      transition: 0.25s;
     }
+
+    .theme-btn:hover {
+      transform: translateY(-2px);
+      border-color: #38bdf8;
+    }
+
 
     /* =========================
        HERO
     ========================= */
 
     .hero {
+
       min-height: 620px;
 
       padding: 80px 7%;
 
       display: grid;
+
       grid-template-columns: 1.1fr 0.9fr;
 
       align-items: center;
+
       gap: 60px;
 
       background:
+
         radial-gradient(
           circle at 10% 20%,
-          rgba(56,189,248,0.12),
+          rgba(56,189,248,0.13),
           transparent 30%
         ),
+
         radial-gradient(
           circle at 90% 80%,
-          rgba(99,102,241,0.12),
+          rgba(37,99,235,0.14),
           transparent 30%
-        );
+        ),
+
+        #0b1120;
+
+      overflow: hidden;
     }
 
     .badge {
+
       display: inline-block;
 
-      padding: 8px 15px;
+      padding: 9px 16px;
 
       border-radius: 30px;
 
@@ -144,6 +168,7 @@
       border: 1px solid rgba(56,189,248,0.3);
 
       font-size: 13px;
+
       font-weight: bold;
 
       letter-spacing: 1px;
@@ -152,18 +177,36 @@
     }
 
     .hero h1 {
+
       font-size: clamp(42px, 6vw, 72px);
 
       line-height: 1.05;
 
       margin-bottom: 25px;
+
+      letter-spacing: -2px;
     }
 
     .hero h1 span {
-      color: #38bdf8;
+
+      display: block;
+
+      background:
+
+        linear-gradient(
+          90deg,
+          #38bdf8,
+          #60a5fa,
+          #818cf8
+        );
+
+      -webkit-background-clip: text;
+
+      -webkit-text-fill-color: transparent;
     }
 
     .hero p {
+
       max-width: 650px;
 
       color: #cbd5e1;
@@ -172,18 +215,22 @@
 
       line-height: 1.8;
 
-      margin-bottom: 30px;
+      margin-bottom: 18px;
     }
 
     .buttons {
+
       display: flex;
 
       gap: 15px;
 
       flex-wrap: wrap;
+
+      margin-top: 25px;
     }
 
     .btn {
+
       display: inline-block;
 
       padding: 14px 23px;
@@ -202,6 +249,9 @@
     }
 
     .btn:hover {
+
+      background: #1d4ed8;
+
       transform: translateY(-3px);
 
       box-shadow:
@@ -209,6 +259,7 @@
     }
 
     .btn-outline {
+
       background: transparent;
 
       border: 1px solid #38bdf8;
@@ -216,11 +267,20 @@
       color: #38bdf8;
     }
 
+    .btn-outline:hover {
+
+      background: #2563eb;
+
+      color: white;
+    }
+
+
     /* =========================
-       IMAGE CARD
+       PREVIEW CARD
     ========================= */
 
     .preview-card {
+
       min-height: 430px;
 
       padding: 25px;
@@ -229,31 +289,62 @@
 
       background: #111827;
 
-      border: 1px solid rgba(148,163,184,0.12);
+      border: 1px solid #1e293b;
 
       box-shadow:
-        0 25px 60px rgba(0,0,0,0.25);
+        0 25px 60px rgba(0,0,0,0.35);
 
       display: flex;
+
+      flex-direction: column;
 
       align-items: center;
 
       justify-content: center;
 
       transition: 0.4s;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .preview-card::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 220px;
+      height: 220px;
+
+      border-radius: 50%;
+
+      background: #38bdf8;
+
+      opacity: 0.08;
+
+      filter: blur(40px);
     }
 
     .preview-card:hover {
+
       transform: translateY(-8px);
 
-      border-color: rgba(56,189,248,0.35);
+      border-color: rgba(56,189,248,0.4);
     }
 
     .preview-card img {
+
+      position: relative;
+
+      z-index: 2;
+
       width: 100%;
+
       max-width: 420px;
 
-      max-height: 370px;
+      max-height: 330px;
 
       object-fit: contain;
 
@@ -263,19 +354,39 @@
     }
 
     .preview-card:hover img {
-      transform: scale(1.03);
+
+      transform: scale(1.04);
     }
 
+    .preview-title {
+
+      position: relative;
+
+      z-index: 2;
+
+      margin-top: 18px;
+
+      color: #38bdf8;
+
+      font-size: 18px;
+
+      font-weight: bold;
+    }
+
+
     /* =========================
-       FEATURES
+       SECTIONS
     ========================= */
 
     .section {
+
       padding: 80px 7%;
+
       text-align: center;
     }
 
     .section-label {
+
       color: #38bdf8;
 
       font-size: 13px;
@@ -290,12 +401,14 @@
     }
 
     .section h2 {
+
       font-size: 38px;
 
       margin-bottom: 15px;
     }
 
     .section-intro {
+
       color: #94a3b8;
 
       max-width: 650px;
@@ -303,9 +416,17 @@
       margin: 0 auto 45px;
 
       line-height: 1.7;
+
+      font-size: 17px;
     }
 
+
+    /* =========================
+       FEATURES
+    ========================= */
+
     .features {
+
       display: grid;
 
       grid-template-columns:
@@ -314,82 +435,238 @@
       gap: 25px;
 
       text-align: left;
+
+      max-width: 1200px;
+
+      margin: auto;
     }
 
     .feature {
+
       padding: 30px;
 
       background: #111827;
 
       border-radius: 20px;
 
-      border: 1px solid rgba(148,163,184,0.1);
+      border: 1px solid #1e293b;
 
       transition: 0.3s;
+
+      height: 100%;
     }
 
     .feature:hover {
+
       transform: translateY(-8px);
 
-      border-color: rgba(56,189,248,0.35);
+      border-color: rgba(56,189,248,0.4);
+
+      box-shadow:
+        0 15px 35px rgba(56,189,248,0.1);
     }
 
     .feature-icon {
+
       font-size: 32px;
 
       margin-bottom: 18px;
     }
 
     .feature h3 {
+
       margin-bottom: 12px;
+
+      font-size: 21px;
     }
 
     .feature p {
+
       color: #94a3b8;
 
       line-height: 1.7;
     }
 
+
     /* =========================
-       CTA
+       PRICING
     ========================= */
 
-    .cta {
-      margin: 30px 7% 80px;
+    .pricing-section {
 
-      padding: 55px 30px;
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(37,99,235,0.12),
+          transparent 35%
+        );
+    }
+
+    .pricing-card {
+
+      max-width: 420px;
+
+      margin: 30px auto 0;
+
+      padding: 40px 30px;
+
+      background: #111827;
+
+      border: 1px solid #38bdf8;
+
+      border-radius: 24px;
+
+      box-shadow:
+        0 20px 50px rgba(0,0,0,0.3);
+
+      position: relative;
+    }
+
+    .popular {
+
+      position: absolute;
+
+      top: -14px;
+
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      background: #2563eb;
+
+      color: white;
+
+      padding: 7px 18px;
+
+      border-radius: 20px;
+
+      font-size: 12px;
+
+      font-weight: bold;
+    }
+
+    .pricing-card h3 {
+
+      font-size: 25px;
+
+      margin-bottom: 15px;
+
+      color: #f8fafc;
+    }
+
+    .price {
+
+      font-size: 52px;
+
+      font-weight: bold;
+
+      color: #38bdf8;
+
+      margin: 10px 0;
+    }
+
+    .price small {
+
+      font-size: 16px;
+
+      color: #94a3b8;
+
+      font-weight: normal;
+    }
+
+    .pricing-card p {
+
+      color: #94a3b8;
+
+      line-height: 1.6;
+
+      margin-bottom: 22px;
+    }
+
+    .pricing-list {
+
+      list-style: none;
+
+      text-align: left;
+
+      margin: 25px 0;
+    }
+
+    .pricing-list li {
+
+      padding: 9px 0;
+
+      color: #cbd5e1;
+
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .pricing-list li:last-child {
+
+      border-bottom: none;
+    }
+
+
+    /* =========================
+       HIRE ME
+    ========================= */
+
+    .hire-section {
+
+      padding: 30px 7% 80px;
+    }
+
+    .hire-card {
+
+      max-width: 1100px;
+
+      margin: auto;
+
+      padding: 55px 35px;
 
       text-align: center;
 
       border-radius: 25px;
 
       background:
+
         linear-gradient(
           135deg,
           #172554,
           #0f172a
         );
 
-      border: 1px solid rgba(56,189,248,0.2);
+      border: 1px solid rgba(56,189,248,0.25);
+
+      box-shadow:
+        0 20px 50px rgba(0,0,0,0.25);
     }
 
-    .cta h2 {
-      font-size: 36px;
+    .hire-card h2 {
+
+      font-size: 38px;
 
       margin-bottom: 15px;
     }
 
-    .cta p {
+    .hire-card p {
+
       color: #cbd5e1;
 
-      margin-bottom: 25px;
+      max-width: 650px;
+
+      margin: 0 auto 25px;
+
+      line-height: 1.7;
     }
+
 
     /* =========================
        FOOTER
     ========================= */
 
     footer {
+
       padding: 30px 7%;
 
       text-align: center;
@@ -398,18 +675,21 @@
 
       color: #94a3b8;
 
-      border-top: 1px solid rgba(255,255,255,0.06);
+      border-top: 1px solid #1e293b;
     }
 
     footer strong {
+
       color: #38bdf8;
     }
+
 
     /* =========================
        LIGHT MODE
     ========================= */
 
     body.light-mode {
+
       background: #f8fafc;
 
       color: #0f172a;
@@ -418,37 +698,71 @@
     body.light-mode header,
     body.light-mode .preview-card,
     body.light-mode .feature,
+    body.light-mode .pricing-card,
     body.light-mode footer {
+
       background: white;
     }
 
     body.light-mode nav a {
+
       color: #0f172a;
     }
 
     body.light-mode nav a:hover {
+
       color: #2563eb;
     }
 
     body.light-mode .theme-btn {
+
       background: #f1f5f9;
 
       color: #0f172a;
     }
 
+    body.light-mode .hero {
+
+      background:
+
+        radial-gradient(
+          circle at 10% 20%,
+          rgba(37,99,235,0.08),
+          transparent 30%
+        ),
+
+        #f8fafc;
+    }
+
     body.light-mode .hero p,
     body.light-mode .feature p,
     body.light-mode .section-intro {
+
       color: #64748b;
     }
 
-    body.light-mode .cta {
+    body.light-mode .pricing-card p {
+
+      color: #64748b;
+    }
+
+    body.light-mode .pricing-list li {
+
+      color: #475569;
+
+      border-color: #e2e8f0;
+    }
+
+    body.light-mode .hire-card {
+
       background: #eff6ff;
     }
 
-    body.light-mode .cta p {
+    body.light-mode .hire-card p {
+
       color: #475569;
     }
+
 
     /* =========================
        MOBILE
@@ -457,24 +771,31 @@
     @media (max-width: 800px) {
 
       header {
+
         padding: 15px 5%;
 
         flex-wrap: wrap;
+
+        justify-content: center;
 
         gap: 15px;
       }
 
       nav {
+
         order: 3;
 
         width: 100%;
 
         justify-content: center;
 
-        gap: 18px;
+        flex-wrap: wrap;
+
+        gap: 16px;
       }
 
       .hero {
+
         grid-template-columns: 1fr;
 
         text-align: center;
@@ -483,45 +804,65 @@
       }
 
       .hero p {
+
         margin-left: auto;
+
         margin-right: auto;
       }
 
       .buttons {
+
         justify-content: center;
       }
 
       .features {
+
         grid-template-columns: 1fr;
       }
 
       .preview-card {
+
         min-height: 330px;
+      }
+
+      .hire-card h2 {
+
+        font-size: 30px;
       }
 
     }
 
+
     @media (max-width: 500px) {
 
       .logo {
+
         font-size: 20px;
       }
 
       nav {
+
         gap: 12px;
       }
 
       nav a {
+
         font-size: 14px;
       }
 
       .hero h1 {
+
         font-size: 42px;
       }
 
-      .section h2,
-      .cta h2 {
+      .section h2 {
+
         font-size: 30px;
+      }
+
+      .price {
+
+        font-size: 45px;
       }
 
     }
@@ -534,7 +875,9 @@
 <body>
 
 
-  <!-- NAVBAR -->
+  <!-- =========================
+       HEADER
+  ========================= -->
 
   <header>
 
@@ -569,7 +912,9 @@
   </header>
 
 
-  <!-- HERO -->
+  <!-- =========================
+       HERO
+  ========================= -->
 
   <section class="hero">
 
@@ -580,20 +925,36 @@
       </span>
 
       <h1>
+
         Build a Portfolio
-        <span>That Gets Noticed.</span>
+
+        <span>
+          That Gets Noticed.
+        </span>
+
       </h1>
 
       <p>
+
         Showcase your skills, projects and achievements
         with a clean, modern and mobile-friendly
         portfolio website.
+
       </p>
+
+      <p>
+
+        Perfect for students, freelancers, creators
+        and anyone who wants a professional online
+        presence.
+
+      </p>
+
 
       <div class="buttons">
 
         <a
-          href="contact.html"
+          href="#pricing"
           class="btn"
         >
           🚀 Get Started
@@ -618,12 +979,18 @@
         alt="Portfolio Website Preview"
       >
 
+      <div class="preview-title">
+        Modern Portfolio Website
+      </div>
+
     </div>
 
   </section>
 
 
-  <!-- FEATURES -->
+  <!-- =========================
+       FEATURES
+  ========================= -->
 
   <section class="section">
 
@@ -636,9 +1003,11 @@
     </h2>
 
     <p class="section-intro">
+
       A professional portfolio helps you present
       your work, skills and achievements in one
       impressive place.
+
     </p>
 
 
@@ -656,8 +1025,10 @@
         </h3>
 
         <p>
+
           Modern layouts that make your work easy
           to understand and enjoyable to explore.
+
         </p>
 
       </div>
@@ -674,8 +1045,10 @@
         </h3>
 
         <p>
+
           Your portfolio looks great on phones,
           tablets and desktop screens.
+
         </p>
 
       </div>
@@ -692,8 +1065,70 @@
         </h3>
 
         <p>
+
           A lightweight website designed to give
           visitors a smooth browsing experience.
+
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="feature-icon">
+          🧑‍💻
+        </div>
+
+        <h3>
+          Showcase Your Skills
+        </h3>
+
+        <p>
+
+          Display your skills, projects and
+          achievements professionally.
+
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="feature-icon">
+          📄
+        </div>
+
+        <h3>
+          Resume Ready
+        </h3>
+
+        <p>
+
+          Create a professional online profile
+          that you can share with others.
+
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="feature-icon">
+          🌐
+        </div>
+
+        <h3>
+          Online Presence
+        </h3>
+
+        <p>
+
+          Give yourself a professional place
+          on the internet to showcase your work.
+
         </p>
 
       </div>
@@ -704,34 +1139,138 @@
   </section>
 
 
-  <!-- CTA -->
+  <!-- =========================
+       PRICING
+  ========================= -->
 
-  <section class="cta">
+  <section
+    class="section pricing-section"
+    id="pricing"
+  >
+
+    <span class="section-label">
+      SIMPLE PRICING
+    </span>
 
     <h2>
-      Ready to Build Your Portfolio?
+      Portfolio Website Package
     </h2>
 
-    <p>
-      Let's create a professional online presence
-      that represents you and your work.
+    <p class="section-intro">
+
+      Professional design at an affordable price.
+
     </p>
 
-    <a
-      href="contact.html"
-      class="btn"
-    >
-      📩 Contact Ahsan Web Studio
-    </a>
+
+    <div class="pricing-card">
+
+      <div class="popular">
+        ⭐ POPULAR
+      </div>
+
+      <h3>
+        Portfolio Website
+      </h3>
+
+      <div class="price">
+        $3
+        <small>
+          / website
+        </small>
+      </div>
+
+      <p>
+        A clean and professional portfolio
+        website for your personal brand.
+      </p>
+
+
+      <ul class="pricing-list">
+
+        <li>
+          ✅ Modern responsive design
+        </li>
+
+        <li>
+          ✅ Mobile friendly
+        </li>
+
+        <li>
+          ✅ Skills & projects section
+        </li>
+
+        <li>
+          ✅ Contact section
+        </li>
+
+        <li>
+          ✅ Professional layout
+        </li>
+
+        <li>
+          ✅ Basic customization
+        </li>
+
+      </ul>
+
+
+      <a
+        href="contact.html"
+        class="btn"
+      >
+        🛒 Buy / Hire Me
+      </a>
+
+    </div>
 
   </section>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       HIRE ME
+  ========================= -->
+
+  <section class="hire-section">
+
+    <div class="hire-card">
+
+      <span class="section-label">
+        HIRE ME
+      </span>
+
+      <h2>
+        Ready to Build Your Portfolio?
+      </h2>
+
+      <p>
+
+        Tell me what kind of portfolio website
+        you need. I'll help you create a clean,
+        modern and professional online presence.
+
+      </p>
+
+      <a
+        href="contact.html"
+        class="btn"
+      >
+        📩 Hire Ahsan
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer>
 
     © 2026
+
     <strong>
       Ahsan Web Studio
     </strong>
@@ -741,17 +1280,27 @@
   </footer>
 
 
+  <!-- =========================
+       DARK / LIGHT MODE
+  ========================= -->
+
   <script>
 
     function toggleTheme() {
 
-      document.body.classList.toggle("light-mode");
+      document.body.classList.toggle(
+        "light-mode"
+      );
 
       const button =
-        document.getElementById("themeButton");
+        document.getElementById(
+          "themeButton"
+        );
 
       if (
-        document.body.classList.contains("light-mode")
+        document.body.classList.contains(
+          "light-mode"
+        )
       ) {
 
         button.textContent = "☀️";
@@ -770,4 +1319,3 @@
 </body>
 
 </html>
-
