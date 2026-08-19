@@ -5,23 +5,23 @@
 
   <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>MY Notes | Class 10</title>
 
-  <link
-    rel="icon"
-    type="image/png"
-    href="profile.png"
+  <link rel="icon" type="image/png" href="profile.png">
+
+  <meta
+    name="description"
+    content="Class 10 Biology Life Processes notes with diagrams, revision points and PDF."
   >
 
   <style>
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html {
@@ -29,57 +29,149 @@
     }
 
     body {
-      margin: 0;
-
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      background: #07111f;
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(
+          circle at 15% 20%,
+          rgba(20, 184, 166, 0.08),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 85% 80%,
+          rgba(37, 99, 235, 0.08),
+          transparent 30%
+        ),
+        #07111d;
 
       color: #f8fafc;
+      min-height: 100vh;
     }
 
 
     /* =========================
-       NOTES SECTION
+       HEADER
+    ========================= */
+
+    header {
+
+      min-height: 70px;
+
+      padding: 0 6%;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      background: rgba(7, 17, 29, 0.94);
+
+      border-bottom:
+        1px solid rgba(148, 163, 184, 0.12);
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
+      backdrop-filter: blur(15px);
+    }
+
+
+    .logo {
+
+      color: #38bdf8;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 24px;
+
+      font-weight: bold;
+    }
+
+
+    nav {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 25px;
+    }
+
+
+    nav a {
+
+      color: #f8fafc;
+
+      text-decoration: none;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 15px;
+
+      transition: 0.3s;
+    }
+
+
+    nav a:hover {
+
+      color: #2dd4bf;
+    }
+
+
+    .theme-btn {
+
+      width: 42px;
+
+      height: 42px;
+
+      border-radius: 10px;
+
+      border: 1px solid #334155;
+
+      background: #0f172a;
+
+      color: white;
+
+      font-size: 19px;
+
+      cursor: pointer;
+    }
+
+
+    /* =========================
+       MAIN NOTES SECTION
     ========================= */
 
     .notes-section {
 
-      min-height: 100vh;
+      min-height: calc(100vh - 70px);
 
-      padding: 80px 20px;
+      padding: 70px 25px 60px;
 
       background:
 
         radial-gradient(
-          circle at 20% 20%,
-          rgba(20,184,166,0.10),
-          transparent 35%
+          circle at 10% 15%,
+          rgba(20, 184, 166, 0.10),
+          transparent 32%
         ),
 
         radial-gradient(
-          circle at 85% 80%,
-          rgba(37,99,235,0.10),
-          transparent 35%
-        ),
-
-        #0b1120;
+          circle at 90% 80%,
+          rgba(37, 99, 235, 0.08),
+          transparent 32%
+        );
     }
 
 
-    /* =========================
-       HEADING
-    ========================= */
-
     .notes-heading {
 
-      max-width: 700px;
+      max-width: 850px;
 
-      margin:
-        0 auto 45px;
+      margin: 0 auto 55px;
 
       text-align: center;
     }
@@ -95,18 +187,19 @@
 
       font-weight: bold;
 
-      letter-spacing: 3px;
+      letter-spacing: 4px;
 
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
 
-    .notes-heading h2 {
+    .notes-heading h1 {
 
-      margin:
-        0 0 12px;
+      font-size: clamp(48px, 6vw, 72px);
 
-      font-size: 40px;
+      line-height: 1.1;
+
+      margin-bottom: 18px;
 
       color: #f8fafc;
     }
@@ -114,75 +207,83 @@
 
     .notes-heading p {
 
-      margin: 0;
+      max-width: 760px;
 
-      color: #94a3b8;
+      margin: auto;
 
-      line-height: 1.7;
+      color: #aeb8c8;
 
-      font-size: 16px;
+      line-height: 1.8;
+
+      font-size: 18px;
     }
 
 
     /* =========================
-       NOTES CARD
+       MAIN CARD
     ========================= */
 
     .notes-card {
 
-      max-width: 950px;
+      max-width: 1100px;
 
       margin: auto;
 
-      display: flex;
+      padding: 38px;
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
 
       align-items: center;
 
-      gap: 35px;
-
-      padding: 35px;
+      gap: 45px;
 
       background:
-        rgba(15,23,42,0.88);
+
+        linear-gradient(
+          145deg,
+          rgba(15, 28, 44, 0.96),
+          rgba(8, 20, 34, 0.96)
+        );
 
       border:
-        1px solid #1e293b;
 
-      border-radius: 24px;
+        1px solid rgba(56, 189, 248, 0.16);
+
+      border-radius: 28px;
 
       box-shadow:
-        0 20px 60px
-        rgba(0,0,0,0.30);
 
-      transition: 0.3s;
+        0 30px 90px rgba(0, 0, 0, 0.40);
+
+      transition: 0.35s;
     }
 
 
     .notes-card:hover {
 
-      transform:
-        translateY(-6px);
-
       border-color:
-        #2dd4bf;
+
+        rgba(45, 212, 191, 0.35);
 
       box-shadow:
-        0 25px 70px
-        rgba(20,184,166,0.12);
+
+        0 35px 100px rgba(0, 0, 0, 0.50);
     }
 
 
     /* =========================
-       HEART BOX
+       HEART AREA
     ========================= */
 
-    .notes-icon {
+    .heart-box {
 
-      min-width: 150px;
+      min-height: 500px;
 
-      width: 150px;
+      position: relative;
 
-      height: 150px;
+      overflow: hidden;
 
       display: flex;
 
@@ -196,360 +297,241 @@
 
         radial-gradient(
           circle at center,
-          rgba(45,212,191,0.16),
-          transparent 65%
-        ),
-
-        linear-gradient(
-          135deg,
-          rgba(20,184,166,0.18),
-          rgba(37,99,235,0.15)
+          rgba(20, 184, 166, 0.13),
+          rgba(3, 12, 22, 0.96) 68%
         );
 
       border:
-        1px solid
-        rgba(45,212,191,0.25);
 
-      overflow: hidden;
-
-      position: relative;
+        1px solid rgba(45, 212, 191, 0.30);
     }
 
 
-    /* =========================
-       3D HEART
-    ========================= */
+    /* Heart glow */
 
-    .heart-stage {
-
-      width: 120px;
-
-      height: 120px;
-
-      position: relative;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      perspective: 500px;
-    }
-
-
-    .heart {
-
-      width: 72px;
-
-      height: 72px;
-
-      position: relative;
-
-      transform:
-        rotate(-45deg);
-
-      animation:
-        heartbeat 1.05s
-        ease-in-out
-        infinite;
-
-      filter:
-        drop-shadow(
-          0 12px 10px
-          rgba(0,0,0,0.38)
-        );
-
-      background:
-
-        radial-gradient(
-          circle at 30% 25%,
-          #ff8a9a 0%,
-          #f43f5e 25%,
-          #dc143c 55%,
-          #9f1239 100%
-        );
-
-      border-radius:
-        12px 4px 10px 8px;
-
-      box-shadow:
-
-        inset
-        10px 8px 15px
-        rgba(255,255,255,0.20),
-
-        inset
-        -10px -10px 15px
-        rgba(80,0,20,0.30);
-    }
-
-
-    .heart::before {
-
-      content: "";
-
-      width: 72px;
-
-      height: 72px;
+    .heart-glow {
 
       position: absolute;
 
-      top: -36px;
+      width: 310px;
 
-      left: 0;
-
-      background:
-
-        radial-gradient(
-          circle at 35% 30%,
-          #ff8a9a 0%,
-          #f43f5e 30%,
-          #dc143c 60%,
-          #9f1239 100%
-        );
-
-      border-radius:
-        50%;
-
-      box-shadow:
-
-        inset
-        8px 6px 12px
-        rgba(255,255,255,0.18),
-
-        inset
-        -8px -8px 12px
-        rgba(80,0,20,0.25);
-    }
-
-
-    .heart::after {
-
-      content: "";
-
-      width: 72px;
-
-      height: 72px;
-
-      position: absolute;
-
-      top: 0;
-
-      left: 36px;
-
-      background:
-
-        radial-gradient(
-          circle at 30% 25%,
-          #ff8a9a 0%,
-          #f43f5e 30%,
-          #dc143c 60%,
-          #9f1239 100%
-        );
-
-      border-radius:
-        50%;
-
-      box-shadow:
-
-        inset
-        8px 6px 12px
-        rgba(255,255,255,0.18),
-
-        inset
-        -8px -8px 12px
-        rgba(80,0,20,0.25);
-    }
-
-
-    /* Heart highlight */
-
-    .heart-highlight {
-
-      position: absolute;
-
-      width: 18px;
-
-      height: 10px;
-
-      background:
-        rgba(255,255,255,0.55);
+      height: 310px;
 
       border-radius: 50%;
 
-      top: 30px;
+      background:
 
-      left: 43px;
+        radial-gradient(
+          circle,
+          rgba(239, 68, 68, 0.24),
+          rgba(239, 68, 68, 0.06),
+          transparent 70%
+        );
 
-      transform:
-        rotate(-45deg);
+      filter: blur(15px);
 
-      filter:
-        blur(1px);
+      animation: glowPulse 1.2s infinite;
+    }
+
+
+    /* Realistic heart image */
+
+    .heart-image {
+
+      position: relative;
 
       z-index: 5;
 
-      pointer-events: none;
-    }
+      width: 78%;
 
+      max-width: 390px;
 
-    /* Heart vessels */
+      height: auto;
 
-    .vessel {
+      object-fit: contain;
 
-      position: absolute;
+      filter:
 
-      background:
-        linear-gradient(
-          90deg,
-          #7f1d1d,
-          #ef4444
+        drop-shadow(
+          0 0 18px rgba(239, 68, 68, 0.20)
+        )
+
+        drop-shadow(
+          0 25px 35px rgba(0, 0, 0, 0.55)
         );
 
-      border-radius: 20px;
+      animation: heartBeat 1.15s infinite ease-in-out;
 
-      z-index: 6;
-
-      transform-origin:
-        left center;
-    }
-
-
-    .vessel-one {
-
-      width: 30px;
-
-      height: 8px;
-
-      top: 24px;
-
-      left: 50px;
-
-      transform:
-        rotate(-18deg);
-    }
-
-
-    .vessel-two {
-
-      width: 25px;
-
-      height: 7px;
-
-      top: 18px;
-
-      left: 67px;
-
-      transform:
-        rotate(25deg);
+      transform-origin: center center;
     }
 
 
     /* =========================
-       HEARTBEAT ANIMATION
+       HEART BEAT
     ========================= */
 
-    @keyframes heartbeat {
+    @keyframes heartBeat {
 
       0% {
-        transform:
-          rotate(-45deg)
-          scale(1);
+        transform: scale(1);
       }
 
       12% {
-        transform:
-          rotate(-45deg)
-          scale(1.10);
+        transform: scale(1.06);
       }
 
-      24% {
-        transform:
-          rotate(-45deg)
-          scale(0.98);
+      22% {
+        transform: scale(0.98);
       }
 
-      36% {
-        transform:
-          rotate(-45deg)
-          scale(1.08);
+      32% {
+        transform: scale(1.08);
       }
 
-      52% {
-        transform:
-          rotate(-45deg)
-          scale(1);
+      48% {
+        transform: scale(1);
       }
 
       100% {
-        transform:
-          rotate(-45deg)
-          scale(1);
+        transform: scale(1);
       }
+
+    }
+
+
+    @keyframes glowPulse {
+
+      0% {
+        transform: scale(0.95);
+        opacity: 0.65;
+      }
+
+      15% {
+        transform: scale(1.08);
+        opacity: 1;
+      }
+
+      30% {
+        transform: scale(0.98);
+        opacity: 0.75;
+      }
+
+      100% {
+        transform: scale(0.95);
+        opacity: 0.65;
+      }
+
     }
 
 
     /* =========================
-       SMALL PULSE RING
+       EKG LINE
     ========================= */
 
-    .pulse-ring {
+    .ekg {
 
       position: absolute;
 
-      width: 100px;
+      left: -10%;
 
-      height: 100px;
+      right: -10%;
 
-      border-radius: 50%;
+      bottom: 75px;
 
-      border:
-        1px solid
-        rgba(45,212,191,0.25);
+      height: 80px;
 
-      animation:
-        pulseRing 1.05s
-        ease-out
-        infinite;
+      z-index: 2;
+
+      opacity: 0.75;
+
+      overflow: hidden;
     }
 
 
-    @keyframes pulseRing {
+    .ekg svg {
 
-      0% {
-        transform:
-          scale(0.75);
+      width: 100%;
 
-        opacity:
-          0.65;
+      height: 100%;
+    }
+
+
+    .ekg path {
+
+      fill: none;
+
+      stroke: #2dd4bf;
+
+      stroke-width: 2;
+
+      stroke-linecap: round;
+
+      stroke-linejoin: round;
+
+      stroke-dasharray: 12 8;
+
+      animation: ekgMove 1.2s linear infinite;
+
+      filter:
+
+        drop-shadow(
+          0 0 5px rgba(45, 212, 191, 0.7)
+        );
+    }
+
+
+    @keyframes ekgMove {
+
+      to {
+        stroke-dashoffset: -100;
       }
 
-      70% {
-        transform:
-          scale(1.15);
-
-        opacity:
-          0;
-      }
-
-      100% {
-        transform:
-          scale(1.15);
-
-        opacity:
-          0;
-      }
     }
 
 
     /* =========================
-       NOTES CONTENT
+       HEART LABEL
+    ========================= */
+
+    .heart-label {
+
+      position: absolute;
+
+      top: 20px;
+
+      left: 20px;
+
+      z-index: 10;
+
+      padding: 7px 13px;
+
+      border-radius: 20px;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 11px;
+
+      font-weight: bold;
+
+      letter-spacing: 1px;
+
+      color: #5eead4;
+
+      background: rgba(15, 118, 110, 0.16);
+
+      border:
+
+        1px solid rgba(45, 212, 191, 0.30);
+    }
+
+
+    /* =========================
+       CONTENT
     ========================= */
 
     .notes-content {
 
-      flex: 1;
+      padding: 10px;
     }
 
 
@@ -557,19 +539,21 @@
 
       display: inline-block;
 
-      padding:
-        6px 12px;
+      padding: 7px 14px;
 
-      border-radius: 20px;
-
-      background:
-        rgba(45,212,191,0.10);
-
-      border:
-        1px solid
-        rgba(45,212,191,0.25);
+      border-radius: 25px;
 
       color: #5eead4;
+
+      background:
+
+        rgba(45, 212, 191, 0.10);
+
+      border:
+
+        1px solid rgba(45, 212, 191, 0.25);
+
+      font-family: Arial, sans-serif;
 
       font-size: 12px;
 
@@ -577,25 +561,27 @@
     }
 
 
-    .notes-content h3 {
+    .notes-content h2 {
 
-      margin:
-        12px 0 8px;
+      font-size: clamp(40px, 5vw, 58px);
 
-      font-size: 30px;
+      margin: 18px 0 15px;
 
       color: #f8fafc;
+
+      line-height: 1.05;
     }
 
 
-    .notes-content p {
+    .notes-content > p {
 
       color: #cbd5e1;
 
-      line-height: 1.7;
+      font-size: 18px;
 
-      margin:
-        0 0 18px;
+      line-height: 1.8;
+
+      margin-bottom: 25px;
     }
 
 
@@ -605,31 +591,45 @@
 
     .notes-features {
 
-      display: flex;
+      display: grid;
 
-      flex-wrap: wrap;
+      grid-template-columns: 1fr 1fr;
 
-      gap: 10px;
+      gap: 12px;
 
-      margin-bottom: 22px;
+      margin-bottom: 30px;
     }
 
 
-    .notes-features span {
+    .feature {
 
-      padding:
-        8px 12px;
+      padding: 12px 14px;
 
-      border-radius: 8px;
+      border-radius: 10px;
 
-      background: #111827;
+      background:
+
+        rgba(15, 23, 42, 0.75);
 
       border:
-        1px solid #1e293b;
+
+        1px solid rgba(148, 163, 184, 0.12);
 
       color: #cbd5e1;
 
-      font-size: 13px;
+      font-family: Arial, sans-serif;
+
+      font-size: 14px;
+
+      transition: 0.25s;
+    }
+
+
+    .feature:hover {
+
+      border-color: #2dd4bf;
+
+      transform: translateY(-2px);
     }
 
 
@@ -643,24 +643,29 @@
 
       flex-wrap: wrap;
 
-      gap: 12px;
+      gap: 13px;
     }
 
 
     .notes-btn {
 
-      display: inline-block;
+      display: inline-flex;
 
-      padding:
-        13px 20px;
+      align-items: center;
 
-      border-radius: 9px;
+      justify-content: center;
+
+      padding: 14px 22px;
+
+      border-radius: 10px;
 
       background: #0f766e;
 
       color: white;
 
       text-decoration: none;
+
+      font-family: Arial, sans-serif;
 
       font-weight: bold;
 
@@ -672,21 +677,20 @@
 
       background: #0d9488;
 
-      transform:
-        translateY(-2px);
+      transform: translateY(-3px);
 
       box-shadow:
-        0 10px 25px
-        rgba(20,184,166,0.20);
+
+        0 12px 30px rgba(20, 184, 166, 0.22);
     }
 
 
     .notes-btn-outline {
 
-      background:
-        transparent;
+      background: transparent;
 
       border:
+
         1px solid #2dd4bf;
 
       color: #5eead4;
@@ -702,71 +706,186 @@
 
 
     /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+
+      padding: 35px 20px;
+
+      text-align: center;
+
+      background: #050c16;
+
+      border-top:
+
+        1px solid rgba(148, 163, 184, 0.10);
+
+      color: #64748b;
+
+      font-family: Arial, sans-serif;
+    }
+
+
+    footer strong {
+
+      color: #2dd4bf;
+
+      letter-spacing: 2px;
+    }
+
+
+    /* =========================
        MOBILE
     ========================= */
 
-    @media (max-width: 700px) {
+    @media (max-width: 850px) {
 
-      .notes-section {
+      header {
 
-        padding:
-          60px 18px;
+        padding: 15px 5%;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
       }
 
 
-      .notes-heading h2 {
+      nav {
 
-        font-size: 32px;
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 15px;
+
+        flex-wrap: wrap;
+      }
+
+
+      .notes-section {
+
+        padding: 55px 18px;
       }
 
 
       .notes-card {
 
-        flex-direction:
-          column;
+        grid-template-columns: 1fr;
+
+        padding: 22px;
+
+        gap: 25px;
+      }
+
+
+      .heart-box {
+
+        min-height: 390px;
+      }
+
+
+      .heart-image {
+
+        width: 80%;
+
+        max-width: 330px;
+      }
+
+
+      .notes-content {
 
         text-align: center;
 
-        padding: 25px;
-      }
-
-
-      .notes-icon {
-
-        min-width: 120px;
-
-        width: 120px;
-
-        height: 120px;
-      }
-
-
-      .heart-stage {
-
-        transform:
-          scale(0.82);
+        padding: 5px;
       }
 
 
       .notes-features {
 
-        justify-content:
-          center;
+        grid-template-columns: 1fr 1fr;
       }
 
 
       .notes-buttons {
 
-        justify-content:
-          center;
+        justify-content: center;
+      }
+
+    }
+
+
+    @media (max-width: 500px) {
+
+      .logo {
+
+        font-size: 20px;
+      }
+
+
+      nav {
+
+        gap: 10px;
+      }
+
+
+      nav a {
+
+        font-size: 13px;
+      }
+
+
+      .notes-heading h1 {
+
+        font-size: 45px;
+      }
+
+
+      .notes-heading p {
+
+        font-size: 15px;
+      }
+
+
+      .heart-box {
+
+        min-height: 330px;
+      }
+
+
+      .heart-image {
+
+        width: 88%;
+      }
+
+
+      .notes-content h2 {
+
+        font-size: 40px;
+      }
+
+
+      .notes-content > p {
+
+        font-size: 16px;
+      }
+
+
+      .notes-features {
+
+        grid-template-columns: 1fr;
+      }
+
+
+      .notes-buttons {
+
+        flex-direction: column;
       }
 
 
       .notes-btn {
 
         width: 100%;
-
-        text-align: center;
       }
 
     }
@@ -780,13 +899,56 @@
 
 
   <!-- =========================
-       LIFE PROCESSES NOTES
+       HEADER
   ========================= -->
 
-  <section
-    class="notes-section"
-    id="class10-notes"
-  >
+  <header>
+
+    <div class="logo">
+      Ahsan Web Studio
+    </div>
+
+
+    <nav>
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="index.html#services">
+        Services
+      </a>
+
+      <a href="notes.html">
+        Notes
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+      <button
+        class="theme-btn"
+        onclick="toggleTheme()"
+        id="themeButton"
+      >
+        🌙
+      </button>
+
+    </nav>
+
+  </header>
+
+
+  <!-- =========================
+       CLASS 10 NOTES
+  ========================= -->
+
+  <section class="notes-section" id="class10-notes">
 
 
     <div class="notes-heading">
@@ -796,9 +958,9 @@
       </span>
 
 
-      <h2>
+      <h1>
         MY Notes
-      </h2>
+      </h1>
 
 
       <p>
@@ -810,28 +972,83 @@
     </div>
 
 
+    <!-- =========================
+         LIFE PROCESSES CARD
+    ========================= -->
+
     <div class="notes-card">
 
 
-      <!-- PUMPING HEART -->
+      <!-- HEART -->
 
-      <div class="notes-icon">
+      <div class="heart-box">
 
-        <div class="heart-stage">
 
-          <div class="pulse-ring"></div>
+        <div class="heart-label">
+          ❤️ LIFE PROCESSES
+        </div>
 
-          <div class="heart">
 
-            <div class="heart-highlight"></div>
+        <div class="heart-glow"></div>
 
-            <div class="vessel vessel-one"></div>
 
-            <div class="vessel vessel-two"></div>
+        <!-- EKG -->
 
-          </div>
+        <div class="ekg">
+
+          <svg
+            viewBox="0 0 1000 100"
+            preserveAspectRatio="none"
+          >
+
+            <path
+              d="
+              M0 55
+              L120 55
+              L145 55
+              L160 20
+              L175 80
+              L190 45
+              L210 55
+              L330 55
+              L350 55
+              L365 15
+              L380 82
+              L395 45
+              L415 55
+              L535 55
+              L555 55
+              L570 20
+              L585 80
+              L600 45
+              L620 55
+              L740 55
+              L760 55
+              L775 15
+              L790 82
+              L805 45
+              L825 55
+              L1000 55
+              "
+            ></path>
+
+          </svg>
 
         </div>
+
+
+        <!--
+          IMPORTANT:
+          Apni heart image ka naam heart.png rakho
+          aur isi folder me upload karo.
+        -->
+
+        <img
+          src="heart.png"
+          alt="Human anatomical heart"
+          class="heart-image"
+        >
+
 
       </div>
 
@@ -846,9 +1063,9 @@
         </span>
 
 
-        <h3>
+        <h2>
           Life Processes
-        </h3>
+        </h2>
 
 
         <p>
@@ -858,26 +1075,35 @@
         </p>
 
 
+        <!-- FEATURES -->
+
         <div class="notes-features">
 
-          <span>
+
+          <div class="feature">
             📖 Detailed Notes
-          </span>
+          </div>
 
-          <span>
+
+          <div class="feature">
             🧬 Diagrams
-          </span>
+          </div>
 
-          <span>
+
+          <div class="feature">
             ⭐ Exam Focus
-          </span>
+          </div>
 
-          <span>
+
+          <div class="feature">
             📊 Quick Revision
-          </span>
+          </div>
+
 
         </div>
 
+
+        <!-- BUTTONS -->
 
         <div class="notes-buttons">
 
@@ -910,6 +1136,59 @@
 
 
   </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <strong>
+      AHSAN WEB STUDIO
+    </strong>
+
+    <br><br>
+
+    © 2026 All Rights Reserved.
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+    function toggleTheme() {
+
+      document.body.classList.toggle(
+        "light-mode"
+      );
+
+      const button =
+        document.getElementById(
+          "themeButton"
+        );
+
+      if (
+        document.body.classList.contains(
+          "light-mode"
+        )
+      ) {
+
+        button.textContent = "☀️";
+
+      } else {
+
+        button.textContent = "🌙";
+
+      }
+
+    }
+
+  </script>
 
 
 </body>
