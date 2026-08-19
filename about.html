@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>About Ahsan | Ahsan Web Studio</title>
-<link rel="icon" type="image/png" href="/ahsan-website/profile.png">
+
+  <link rel="icon" type="image/png" href="/ahsan-website/profile.png">
+
   <meta
     name="description"
     content="Learn more about Ahsan, a Class 10 student interested in web development and technology."
@@ -99,6 +100,7 @@
 
       cursor: pointer;
     }
+
 
     /* =========================
        HERO
@@ -222,6 +224,7 @@
       color: #38bdf8;
     }
 
+
     /* =========================
        PROFILE CARD
     ========================= */
@@ -315,6 +318,7 @@
       max-width: 380px;
     }
 
+
     /* =========================
        SECTION
     ========================= */
@@ -354,6 +358,7 @@
 
       line-height: 1.7;
     }
+
 
     /* =========================
        INFO CARDS
@@ -412,6 +417,188 @@
       line-height: 1.7;
     }
 
+
+    /* =========================
+       CLASS 10 NOTES
+    ========================= */
+
+    .class10-card {
+
+      max-width: 950px;
+
+      margin: 0 auto;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 30px;
+
+      padding: 32px;
+
+      text-align: left;
+
+      text-decoration: none;
+
+      color: inherit;
+
+      background: #111827;
+
+      border:
+        1px solid rgba(148, 163, 184, 0.1);
+
+      border-radius: 24px;
+
+      box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.30);
+
+      transition: 0.3s ease;
+    }
+
+    .class10-card:hover {
+
+      transform: translateY(-7px);
+
+      border-color:
+        rgba(56, 189, 248, 0.45);
+
+      box-shadow:
+        0 25px 70px rgba(56, 189, 248, 0.12);
+    }
+
+    .class10-icon {
+
+      min-width: 120px;
+
+      width: 120px;
+
+      height: 120px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 24px;
+
+      font-size: 52px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #2563eb,
+          #38bdf8
+        );
+
+      box-shadow:
+        0 15px 40px rgba(37, 99, 235, 0.25);
+
+      transition: 0.3s;
+    }
+
+    .class10-card:hover .class10-icon {
+
+      transform:
+        scale(1.05);
+    }
+
+    .class10-content {
+
+      flex: 1;
+    }
+
+    .class10-badge {
+
+      display: inline-block;
+
+      padding: 6px 12px;
+
+      border-radius: 20px;
+
+      background:
+        rgba(56, 189, 248, 0.08);
+
+      border:
+        1px solid rgba(56, 189, 248, 0.25);
+
+      color: #7dd3fc;
+
+      font-size: 12px;
+
+      font-weight: bold;
+
+      letter-spacing: 1px;
+    }
+
+    .class10-content h3 {
+
+      margin: 12px 0 8px;
+
+      font-size: 28px;
+    }
+
+    .class10-content p {
+
+      color: #94a3b8;
+
+      line-height: 1.7;
+
+      margin-bottom: 18px;
+    }
+
+    .class10-tags {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 9px;
+
+      margin-bottom: 18px;
+    }
+
+    .class10-tags span {
+
+      padding: 7px 11px;
+
+      border-radius: 8px;
+
+      background: #0b1120;
+
+      border:
+        1px solid #1e293b;
+
+      color: #cbd5e1;
+
+      font-size: 12px;
+    }
+
+    .class10-open {
+
+      color: #38bdf8;
+
+      font-weight: bold;
+
+      font-size: 15px;
+    }
+
+    .class10-open span {
+
+      display: inline-block;
+
+      margin-left: 6px;
+
+      transition: 0.2s;
+    }
+
+    .class10-card:hover .class10-open span {
+
+      transform:
+        translateX(5px);
+    }
+
+
     /* =========================
        JOURNEY
     ========================= */
@@ -430,6 +617,7 @@
     }
 
     .journey-card {
+
       padding: 30px;
 
       text-align: center;
@@ -443,6 +631,7 @@
     }
 
     .journey-number {
+
       width: 48px;
       height: 48px;
 
@@ -462,20 +651,24 @@
     }
 
     .journey-card h3 {
+
       margin-bottom: 10px;
     }
 
     .journey-card p {
+
       color: #94a3b8;
 
       line-height: 1.6;
     }
+
 
     /* =========================
        CTA
     ========================= */
 
     .cta {
+
       margin: 20px 7% 80px;
 
       padding: 60px 30px;
@@ -496,12 +689,14 @@
     }
 
     .cta h2 {
+
       font-size: 36px;
 
       margin-bottom: 15px;
     }
 
     .cta p {
+
       color: #cbd5e1;
 
       margin-bottom: 25px;
@@ -509,11 +704,13 @@
       line-height: 1.7;
     }
 
+
     /* =========================
        FOOTER
     ========================= */
 
     footer {
+
       padding: 30px 7%;
 
       text-align: center;
@@ -527,20 +724,24 @@
     }
 
     footer strong {
+
       color: #38bdf8;
     }
+
 
     /* =========================
        LIGHT MODE
     ========================= */
 
     body.light-mode {
+
       background: #f8fafc;
 
       color: #0f172a;
     }
 
     body.light-mode .hero {
+
       background:
         radial-gradient(
           circle at 10% 20%,
@@ -555,6 +756,7 @@
     body.light-mode .card,
     body.light-mode .journey-card,
     body.light-mode footer {
+
       background: white;
     }
 
@@ -562,29 +764,63 @@
     body.light-mode .card p,
     body.light-mode .journey-card p,
     body.light-mode .intro {
+
       color: #64748b;
     }
 
     body.light-mode .profile-card {
+
       border-color: #e2e8f0;
     }
 
     body.light-mode .card,
     body.light-mode .journey-card {
+
       border-color: #e2e8f0;
     }
 
     body.light-mode .cta {
+
       background: #eff6ff;
     }
 
     body.light-mode .cta p {
+
       color: #475569;
     }
 
     body.light-mode header {
+
       background: rgba(15, 23, 42, 0.96);
     }
+
+
+    /* CLASS 10 LIGHT MODE */
+
+    body.light-mode .class10-card {
+
+      background: white;
+
+      border-color: #e2e8f0;
+
+      box-shadow:
+        0 20px 50px rgba(15, 23, 42, 0.08);
+    }
+
+    body.light-mode .class10-content p {
+
+      color: #64748b;
+    }
+
+    body.light-mode .class10-tags span {
+
+      background: #f8fafc;
+
+      border-color: #e2e8f0;
+
+      color: #475569;
+    }
+
 
     /* =========================
        MOBILE
@@ -593,6 +829,7 @@
     @media (max-width: 850px) {
 
       header {
+
         padding: 15px 5%;
 
         flex-wrap: wrap;
@@ -601,6 +838,7 @@
       }
 
       nav {
+
         width: 100%;
 
         justify-content: center;
@@ -611,6 +849,7 @@
       }
 
       .hero {
+
         grid-template-columns: 1fr;
 
         text-align: center;
@@ -619,51 +858,93 @@
       }
 
       .hero p {
+
         margin-left: auto;
 
         margin-right: auto;
       }
 
       .buttons {
+
         justify-content: center;
       }
 
       .cards,
       .journey {
+
         grid-template-columns: 1fr;
       }
 
       .section {
+
         padding: 65px 6%;
       }
 
     }
 
+
+    @media (max-width: 650px) {
+
+      .class10-card {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 25px 20px;
+      }
+
+      .class10-icon {
+
+        min-width: 105px;
+
+        width: 105px;
+
+        height: 105px;
+
+        font-size: 45px;
+      }
+
+      .class10-tags {
+
+        justify-content: center;
+      }
+
+    }
+
+
     @media (max-width: 500px) {
 
       .logo {
+
         font-size: 20px;
       }
 
       nav {
+
         gap: 12px;
       }
 
       nav a {
+
         font-size: 13px;
       }
 
       .hero h1 {
+
         font-size: 42px;
       }
 
       .section h2,
       .cta h2 {
+
         font-size: 30px;
       }
 
       .btn {
+
         width: 100%;
+
         text-align: center;
       }
 
@@ -804,9 +1085,11 @@
     </h2>
 
     <p class="intro">
+
       My goal is to keep learning new skills,
       build useful projects and grow as a
       developer while continuing my studies.
+
     </p>
 
 
@@ -824,9 +1107,11 @@
         </h3>
 
         <p>
+
           I'm currently studying in Class 10 and
           working on my studies while developing
           my interest in technology.
+
         </p>
 
       </div>
@@ -843,9 +1128,11 @@
         </h3>
 
         <p>
+
           I enjoy creating modern websites using
           HTML, CSS and JavaScript and learning
           new web technologies.
+
         </p>
 
       </div>
@@ -862,14 +1149,102 @@
         </h3>
 
         <p>
+
           Every project gives me a chance to learn
           something new and improve my skills.
+
         </p>
 
       </div>
 
 
     </div>
+
+  </section>
+
+
+  <!-- CLASS 10 NOTES -->
+
+  <section class="section">
+
+    <span class="section-label">
+      MY STUDY NOTES
+    </span>
+
+    <h2>
+      Class 10 Notes
+    </h2>
+
+    <p class="intro">
+
+      I'm currently studying in Class 10, so I've created
+      a dedicated section for my study notes and revision material.
+
+    </p>
+
+
+    <a
+      href="class10.html"
+      class="class10-card"
+    >
+
+      <div class="class10-icon">
+        📚
+      </div>
+
+
+      <div class="class10-content">
+
+        <span class="class10-badge">
+          CLASS 10
+        </span>
+
+        <h3>
+          Class 10 Study Notes
+        </h3>
+
+        <p>
+
+          Explore my Class 10 notes, subject-wise study material,
+          chapter notes and revision resources.
+
+        </p>
+
+
+        <div class="class10-tags">
+
+          <span>
+            📖 Notes
+          </span>
+
+          <span>
+            🧬 Biology
+          </span>
+
+          <span>
+            🧮 Mathematics
+          </span>
+
+          <span>
+            🔬 Science
+          </span>
+
+        </div>
+
+
+        <div class="class10-open">
+
+          Open Class 10 Notes
+
+          <span>
+            →
+          </span>
+
+        </div>
+
+      </div>
+
+    </a>
 
   </section>
 
@@ -887,8 +1262,10 @@
     </h2>
 
     <p class="intro">
+
       A simple journey of learning, building and
       improving.
+
     </p>
 
 
@@ -906,8 +1283,10 @@
         </h3>
 
         <p>
+
           Focus on Class 10 studies and strengthen
           my basic knowledge.
+
         </p>
 
       </div>
@@ -924,8 +1303,10 @@
         </h3>
 
         <p>
+
           Create websites and small projects to
           practice my development skills.
+
         </p>
 
       </div>
@@ -942,8 +1323,10 @@
         </h3>
 
         <p>
+
           Keep learning new technologies and work
           toward becoming a better developer.
+
         </p>
 
       </div>
@@ -963,8 +1346,10 @@
     </h2>
 
     <p>
+
       Visit the Notes section to explore study
       material and useful resources.
+
     </p>
 
     <a
@@ -982,6 +1367,7 @@
   <footer>
 
     © 2026
+
     <strong>
       Ahsan Web Studio
     </strong>
@@ -1026,4 +1412,3 @@
 </body>
 
 </html>
-
