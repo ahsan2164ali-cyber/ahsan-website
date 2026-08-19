@@ -2,379 +2,916 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>MY Notes</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <link rel="icon" type="image/png" href="profile.png">
+  <title>MY Notes | Class 10</title>
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="profile.png"
+  >
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      background: #07111f;
+
+      color: #f8fafc;
+    }
+
+
+    /* =========================
+       NOTES SECTION
+    ========================= */
+
+    .notes-section {
+
+      min-height: 100vh;
+
+      padding: 80px 20px;
+
+      background:
+
+        radial-gradient(
+          circle at 20% 20%,
+          rgba(20,184,166,0.10),
+          transparent 35%
+        ),
+
+        radial-gradient(
+          circle at 85% 80%,
+          rgba(37,99,235,0.10),
+          transparent 35%
+        ),
+
+        #0b1120;
+    }
+
+
+    /* =========================
+       HEADING
+    ========================= */
+
+    .notes-heading {
+
+      max-width: 700px;
+
+      margin:
+        0 auto 45px;
+
+      text-align: center;
+    }
+
+
+    .notes-label {
+
+      display: inline-block;
+
+      color: #2dd4bf;
+
+      font-size: 13px;
+
+      font-weight: bold;
+
+      letter-spacing: 3px;
+
+      margin-bottom: 12px;
+    }
+
+
+    .notes-heading h2 {
+
+      margin:
+        0 0 12px;
+
+      font-size: 40px;
+
+      color: #f8fafc;
+    }
+
+
+    .notes-heading p {
+
+      margin: 0;
+
+      color: #94a3b8;
+
+      line-height: 1.7;
+
+      font-size: 16px;
+    }
+
+
+    /* =========================
+       NOTES CARD
+    ========================= */
+
+    .notes-card {
+
+      max-width: 950px;
+
+      margin: auto;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 35px;
+
+      padding: 35px;
+
+      background:
+        rgba(15,23,42,0.88);
+
+      border:
+        1px solid #1e293b;
+
+      border-radius: 24px;
+
+      box-shadow:
+        0 20px 60px
+        rgba(0,0,0,0.30);
+
+      transition: 0.3s;
+    }
+
+
+    .notes-card:hover {
+
+      transform:
+        translateY(-6px);
+
+      border-color:
+        #2dd4bf;
+
+      box-shadow:
+        0 25px 70px
+        rgba(20,184,166,0.12);
+    }
+
+
+    /* =========================
+       HEART BOX
+    ========================= */
+
+    .notes-icon {
+
+      min-width: 150px;
+
+      width: 150px;
+
+      height: 150px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 25px;
+
+      background:
+
+        radial-gradient(
+          circle at center,
+          rgba(45,212,191,0.16),
+          transparent 65%
+        ),
+
+        linear-gradient(
+          135deg,
+          rgba(20,184,166,0.18),
+          rgba(37,99,235,0.15)
+        );
+
+      border:
+        1px solid
+        rgba(45,212,191,0.25);
+
+      overflow: hidden;
+
+      position: relative;
+    }
+
+
+    /* =========================
+       3D HEART
+    ========================= */
+
+    .heart-stage {
+
+      width: 120px;
+
+      height: 120px;
+
+      position: relative;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      perspective: 500px;
+    }
+
+
+    .heart {
+
+      width: 72px;
+
+      height: 72px;
+
+      position: relative;
+
+      transform:
+        rotate(-45deg);
+
+      animation:
+        heartbeat 1.05s
+        ease-in-out
+        infinite;
+
+      filter:
+        drop-shadow(
+          0 12px 10px
+          rgba(0,0,0,0.38)
+        );
+
+      background:
+
+        radial-gradient(
+          circle at 30% 25%,
+          #ff8a9a 0%,
+          #f43f5e 25%,
+          #dc143c 55%,
+          #9f1239 100%
+        );
+
+      border-radius:
+        12px 4px 10px 8px;
+
+      box-shadow:
+
+        inset
+        10px 8px 15px
+        rgba(255,255,255,0.20),
+
+        inset
+        -10px -10px 15px
+        rgba(80,0,20,0.30);
+    }
+
+
+    .heart::before {
+
+      content: "";
+
+      width: 72px;
+
+      height: 72px;
+
+      position: absolute;
+
+      top: -36px;
+
+      left: 0;
+
+      background:
+
+        radial-gradient(
+          circle at 35% 30%,
+          #ff8a9a 0%,
+          #f43f5e 30%,
+          #dc143c 60%,
+          #9f1239 100%
+        );
+
+      border-radius:
+        50%;
+
+      box-shadow:
+
+        inset
+        8px 6px 12px
+        rgba(255,255,255,0.18),
+
+        inset
+        -8px -8px 12px
+        rgba(80,0,20,0.25);
+    }
+
+
+    .heart::after {
+
+      content: "";
+
+      width: 72px;
+
+      height: 72px;
+
+      position: absolute;
+
+      top: 0;
+
+      left: 36px;
+
+      background:
+
+        radial-gradient(
+          circle at 30% 25%,
+          #ff8a9a 0%,
+          #f43f5e 30%,
+          #dc143c 60%,
+          #9f1239 100%
+        );
+
+      border-radius:
+        50%;
+
+      box-shadow:
+
+        inset
+        8px 6px 12px
+        rgba(255,255,255,0.18),
+
+        inset
+        -8px -8px 12px
+        rgba(80,0,20,0.25);
+    }
+
+
+    /* Heart highlight */
+
+    .heart-highlight {
+
+      position: absolute;
+
+      width: 18px;
+
+      height: 10px;
+
+      background:
+        rgba(255,255,255,0.55);
+
+      border-radius: 50%;
+
+      top: 30px;
+
+      left: 43px;
+
+      transform:
+        rotate(-45deg);
+
+      filter:
+        blur(1px);
+
+      z-index: 5;
+
+      pointer-events: none;
+    }
+
+
+    /* Heart vessels */
+
+    .vessel {
+
+      position: absolute;
+
+      background:
+        linear-gradient(
+          90deg,
+          #7f1d1d,
+          #ef4444
+        );
+
+      border-radius: 20px;
+
+      z-index: 6;
+
+      transform-origin:
+        left center;
+    }
+
+
+    .vessel-one {
+
+      width: 30px;
+
+      height: 8px;
+
+      top: 24px;
+
+      left: 50px;
+
+      transform:
+        rotate(-18deg);
+    }
+
+
+    .vessel-two {
+
+      width: 25px;
+
+      height: 7px;
+
+      top: 18px;
+
+      left: 67px;
+
+      transform:
+        rotate(25deg);
+    }
+
+
+    /* =========================
+       HEARTBEAT ANIMATION
+    ========================= */
+
+    @keyframes heartbeat {
+
+      0% {
+        transform:
+          rotate(-45deg)
+          scale(1);
+      }
+
+      12% {
+        transform:
+          rotate(-45deg)
+          scale(1.10);
+      }
+
+      24% {
+        transform:
+          rotate(-45deg)
+          scale(0.98);
+      }
+
+      36% {
+        transform:
+          rotate(-45deg)
+          scale(1.08);
+      }
+
+      52% {
+        transform:
+          rotate(-45deg)
+          scale(1);
+      }
+
+      100% {
+        transform:
+          rotate(-45deg)
+          scale(1);
+      }
+    }
+
+
+    /* =========================
+       SMALL PULSE RING
+    ========================= */
+
+    .pulse-ring {
+
+      position: absolute;
+
+      width: 100px;
+
+      height: 100px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid
+        rgba(45,212,191,0.25);
+
+      animation:
+        pulseRing 1.05s
+        ease-out
+        infinite;
+    }
+
+
+    @keyframes pulseRing {
+
+      0% {
+        transform:
+          scale(0.75);
+
+        opacity:
+          0.65;
+      }
+
+      70% {
+        transform:
+          scale(1.15);
+
+        opacity:
+          0;
+      }
+
+      100% {
+        transform:
+          scale(1.15);
+
+        opacity:
+          0;
+      }
+    }
+
+
+    /* =========================
+       NOTES CONTENT
+    ========================= */
+
+    .notes-content {
+
+      flex: 1;
+    }
+
+
+    .notes-badge {
+
+      display: inline-block;
+
+      padding:
+        6px 12px;
+
+      border-radius: 20px;
+
+      background:
+        rgba(45,212,191,0.10);
+
+      border:
+        1px solid
+        rgba(45,212,191,0.25);
+
+      color: #5eead4;
+
+      font-size: 12px;
+
+      font-weight: bold;
+    }
+
+
+    .notes-content h3 {
+
+      margin:
+        12px 0 8px;
+
+      font-size: 30px;
+
+      color: #f8fafc;
+    }
+
+
+    .notes-content p {
+
+      color: #cbd5e1;
+
+      line-height: 1.7;
+
+      margin:
+        0 0 18px;
+    }
+
+
+    /* =========================
+       FEATURES
+    ========================= */
+
+    .notes-features {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-bottom: 22px;
+    }
+
+
+    .notes-features span {
+
+      padding:
+        8px 12px;
+
+      border-radius: 8px;
+
+      background: #111827;
+
+      border:
+        1px solid #1e293b;
+
+      color: #cbd5e1;
+
+      font-size: 13px;
+    }
+
+
+    /* =========================
+       BUTTONS
+    ========================= */
+
+    .notes-buttons {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+    }
+
+
+    .notes-btn {
+
+      display: inline-block;
+
+      padding:
+        13px 20px;
+
+      border-radius: 9px;
+
+      background: #0f766e;
+
+      color: white;
+
+      text-decoration: none;
+
+      font-weight: bold;
+
+      transition: 0.25s;
+    }
+
+
+    .notes-btn:hover {
+
+      background: #0d9488;
+
+      transform:
+        translateY(-2px);
+
+      box-shadow:
+        0 10px 25px
+        rgba(20,184,166,0.20);
+    }
+
+
+    .notes-btn-outline {
+
+      background:
+        transparent;
+
+      border:
+        1px solid #2dd4bf;
+
+      color: #5eead4;
+    }
+
+
+    .notes-btn-outline:hover {
+
+      background: #0f766e;
+
+      color: white;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 700px) {
+
+      .notes-section {
+
+        padding:
+          60px 18px;
+      }
+
+
+      .notes-heading h2 {
+
+        font-size: 32px;
+      }
+
+
+      .notes-card {
+
+        flex-direction:
+          column;
+
+        text-align: center;
+
+        padding: 25px;
+      }
+
+
+      .notes-icon {
+
+        min-width: 120px;
+
+        width: 120px;
+
+        height: 120px;
+      }
+
+
+      .heart-stage {
+
+        transform:
+          scale(0.82);
+      }
+
+
+      .notes-features {
+
+        justify-content:
+          center;
+      }
+
+
+      .notes-buttons {
+
+        justify-content:
+          center;
+      }
+
+
+      .notes-btn {
+
+        width: 100%;
+
+        text-align: center;
+      }
+
+    }
+
+  </style>
+
 </head>
+
 
 <body>
 
-  <!-- tumhara existing class 10 notes code yahan rahega -->
+
+  <!-- =========================
+       LIFE PROCESSES NOTES
+  ========================= -->
+
+  <section
+    class="notes-section"
+    id="class10-notes"
+  >
+
+
+    <div class="notes-heading">
+
+      <span class="notes-label">
+        CLASS 10
+      </span>
+
+
+      <h2>
+        MY Notes
+      </h2>
+
+
+      <p>
+        Complete revision notes with diagrams,
+        important concepts, quick revision points
+        and exam-focused questions.
+      </p>
+
+    </div>
+
+
+    <div class="notes-card">
+
+
+      <!-- PUMPING HEART -->
+
+      <div class="notes-icon">
+
+        <div class="heart-stage">
+
+          <div class="pulse-ring"></div>
+
+          <div class="heart">
+
+            <div class="heart-highlight"></div>
+
+            <div class="vessel vessel-one"></div>
+
+            <div class="vessel vessel-two"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- CONTENT -->
+
+      <div class="notes-content">
+
+
+        <span class="notes-badge">
+          Biology • Chapter 1
+        </span>
+
+
+        <h3>
+          Life Processes
+        </h3>
+
+
+        <p>
+          Nutrition, Respiration, Transportation
+          and Excretion — explained with simple
+          notes and diagrams for Class 10 revision.
+        </p>
+
+
+        <div class="notes-features">
+
+          <span>
+            📖 Detailed Notes
+          </span>
+
+          <span>
+            🧬 Diagrams
+          </span>
+
+          <span>
+            ⭐ Exam Focus
+          </span>
+
+          <span>
+            📊 Quick Revision
+          </span>
+
+        </div>
+
+
+        <div class="notes-buttons">
+
+
+          <a
+            href="class10_biology_life_processes_notes.pdf"
+            target="_blank"
+            class="notes-btn"
+          >
+            📖 Read Notes
+          </a>
+
+
+          <a
+            href="class10_biology_life_processes_notes.pdf"
+            download
+            class="notes-btn notes-btn-outline"
+          >
+            ⬇️ Download PDF
+          </a>
+
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
 
 </body>
 
 </html>
-<!-- LIFE PROCESSES NOTES -->
-<section class="notes-section">
-
-  <div class="notes-heading">
-    <span class="notes-label">CLASS 10</span>
-
-    <h2>MY Notes</h2>
-  
-
-    <p>
-      Complete revision notes with diagrams, important concepts,
-      quick revision points and exam-focused questions.
-    </p>
-  </div>
-
-  <div class="notes-card">
-
-    <div class="notes-icon">
-  <div class="life-visual">
-    <div class="life-plant">🌿</div>
-    <div class="life-lungs">🫁</div>
-    <div class="life-heart">❤️</div>
-    <div class="life-kidney">🫘</div>
-  </div>
-</div>
-
-    <div class="notes-content">
-
-      <span class="notes-badge">
-        Biology • Chapter 1
-      </span>
-
-      <h3>
-        Life Processes
-      </h3>
-
-      <p>
-        Nutrition, Respiration, Transportation and Excretion —
-        explained with simple notes and diagrams for Class 10 revision.
-      </p>
-
-      <div class="notes-features">
-        <span>📖 Detailed Notes</span>
-        <span>🧬 Diagrams</span>
-        <span>⭐ Exam Focus</span>
-        <span>📊 Quick Revision</span>
-      </div>
-
-      <div class="notes-buttons">
-
-        <a
-          href="class10_biology_life_processes_notes.pdf"
-          target="_blank"
-          class="notes-btn"
-        >
-          📖 Read Notes
-        </a>
-
-        <a
-          href="class10_biology_life_processes_notes.pdf"
-          download
-          class="notes-btn notes-btn-outline"
-        >
-          ⬇️ Download PDF
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<style>
-
-.notes-section {
-  padding: 80px 20px;
-  background:
-    radial-gradient(
-      circle at 20% 20%,
-      rgba(20,184,166,0.10),
-      transparent 35%
-    ),
-    #0b1120;
-}
-
-.notes-heading {
-  max-width: 700px;
-  margin: 0 auto 45px;
-  text-align: center;
-}
-
-.notes-label {
-  display: inline-block;
-  color: #2dd4bf;
-  font-size: 13px;
-  font-weight: bold;
-  letter-spacing: 3px;
-  margin-bottom: 12px;
-}
-
-.notes-heading h2 {
-  margin: 0 0 12px;
-  font-size: 40px;
-  color: #f8fafc;
-}
-
-.notes-heading p {
-  margin: 0;
-  color: #94a3b8;
-  line-height: 1.7;
-  font-size: 16px;
-}
-
-.notes-card {
-  max-width: 950px;
-  margin: auto;
-
-  display: flex;
-  align-items: center;
-  gap: 35px;
-
-  padding: 35px;
-
-  background: rgba(15,23,42,0.85);
-
-  border: 1px solid #1e293b;
-
-  border-radius: 24px;
-
-  box-shadow:
-    0 20px 60px rgba(0,0,0,0.30);
-
-  transition: 0.3s;
-}
-
-.notes-card:hover {
-  transform: translateY(-6px);
-
-  border-color: #2dd4bf;
-
-  box-shadow:
-    0 25px 70px rgba(20,184,166,0.12);
-}
-
-.notes-icon {
-  min-width: 150px;
-  height: 150px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 25px;
-
-  font-size: 70px;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(20,184,166,0.18),
-      rgba(37,99,235,0.15)
-    );
-
-  border: 1px solid rgba(45,212,191,0.25);
-}
-
-.notes-content {
-  flex: 1;
-}
-
-.notes-badge {
-  display: inline-block;
-
-  padding: 6px 12px;
-
-  border-radius: 20px;
-
-  background: rgba(45,212,191,0.10);
-
-  border: 1px solid rgba(45,212,191,0.25);
-
-  color: #5eead4;
-
-  font-size: 12px;
-
-  font-weight: bold;
-}
-
-.notes-content h3 {
-  margin: 12px 0 8px;
-
-  font-size: 30px;
-
-  color: #f8fafc;
-}
-
-.notes-content p {
-  color: #cbd5e1;
-
-  line-height: 1.7;
-
-  margin: 0 0 18px;
-}
-
-.notes-features {
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 10px;
-
-  margin-bottom: 22px;
-}
-
-.notes-features span {
-  padding: 8px 12px;
-
-  border-radius: 8px;
-
-  background: #111827;
-
-  border: 1px solid #1e293b;
-
-  color: #cbd5e1;
-
-  font-size: 13px;
-}
-
-.notes-buttons {
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 12px;
-}
-
-.notes-btn {
-  display: inline-block;
-
-  padding: 13px 20px;
-
-  border-radius: 9px;
-
-  background: #0f766e;
-
-  color: white;
-
-  text-decoration: none;
-
-  font-weight: bold;
-
-  transition: 0.25s;
-}
-
-.notes-btn:hover {
-  background: #0d9488;
-
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 10px 25px rgba(20,184,166,0.20);
-}
-
-.notes-btn-outline {
-  background: transparent;
-
-  border: 1px solid #2dd4bf;
-
-  color: #5eead4;
-}
-
-.notes-btn-outline:hover {
-  background: #0f766e;
-
-  color: white;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-  .notes-section {
-    padding: 60px 18px;
-  }
-
-  .notes-heading h2 {
-    font-size: 32px;
-  }
-
-  .notes-card {
-    flex-direction: column;
-
-    text-align: center;
-
-    padding: 25px;
-  }
-
-  .notes-icon {
-    min-width: 120px;
-    width: 120px;
-
-    height: 120px;
-
-    font-size: 55px;
-  }
-
-  .notes-features {
-    justify-content: center;
-  }
-
-  .notes-buttons {
-    justify-content: center;
-  }
-
-  .notes-btn {
-    width: 100%;
-  }
-
-}
-.life-visual {
-  width: 125px;
-  height: 125px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.life-visual > div {
-  position: absolute;
-  filter: drop-shadow(0 5px 8px rgba(0,0,0,0.25));
-}
-
-.life-plant {
-  font-size: 42px;
-  top: 2px;
-  left: 5px;
-}
-
-.life-lungs {
-  font-size: 40px;
-  top: 8px;
-  right: 0;
-}
-
-.life-heart {
-  font-size: 38px;
-  bottom: 5px;
-  left: 15px;
-}
-
-.life-kidney {
-  font-size: 38px;
-  bottom: 0;
-  right: 8px;
-}
-</style>
