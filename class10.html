@@ -30,20 +30,24 @@
 
     body {
       font-family: Georgia, "Times New Roman", serif;
+
       background:
         radial-gradient(
           circle at 15% 20%,
           rgba(20, 184, 166, 0.08),
           transparent 30%
         ),
+
         radial-gradient(
           circle at 85% 80%,
           rgba(37, 99, 235, 0.08),
           transparent 30%
         ),
+
         #07111d;
 
       color: #f8fafc;
+
       min-height: 100vh;
     }
 
@@ -307,15 +311,17 @@
     }
 
 
-    /* Heart glow */
+    /* =========================
+       RED HEART GLOW
+    ========================= */
 
     .heart-glow {
 
       position: absolute;
 
-      width: 310px;
+      width: 360px;
 
-      height: 310px;
+      height: 360px;
 
       border-radius: 50%;
 
@@ -323,18 +329,24 @@
 
         radial-gradient(
           circle,
-          rgba(239, 68, 68, 0.24),
-          rgba(239, 68, 68, 0.06),
-          transparent 70%
+          rgba(239, 68, 68, 0.30),
+          rgba(239, 68, 68, 0.12) 35%,
+          rgba(239, 68, 68, 0.03) 60%,
+          transparent 75%
         );
 
-      filter: blur(15px);
+      filter: blur(18px);
 
-      animation: glowPulse 1.2s infinite;
+      animation:
+        glowPulse 1.15s infinite ease-in-out;
+
+      z-index: 1;
     }
 
 
-    /* Realistic heart image */
+    /* =========================
+       HEART IMAGE
+    ========================= */
 
     .heart-image {
 
@@ -342,83 +354,130 @@
 
       z-index: 5;
 
-      width: 78%;
+      width: 82%;
 
-      max-width: 390px;
+      max-width: 430px;
 
       height: auto;
 
       object-fit: contain;
 
+      display: block;
+
       filter:
 
         drop-shadow(
-          0 0 18px rgba(239, 68, 68, 0.20)
+          0 0 22px rgba(239, 68, 68, 0.28)
         )
 
         drop-shadow(
-          0 25px 35px rgba(0, 0, 0, 0.55)
+          0 25px 35px rgba(0, 0, 0, 0.60)
         );
 
-      animation: heartBeat 1.15s infinite ease-in-out;
+      animation:
+        heartBeat 1.15s infinite ease-in-out;
 
       transform-origin: center center;
     }
 
 
     /* =========================
-       HEART BEAT
+       HEART PUMPING
     ========================= */
 
     @keyframes heartBeat {
 
       0% {
-        transform: scale(1);
+
+        transform:
+          scale(1);
       }
 
-      12% {
-        transform: scale(1.06);
+      10% {
+
+        transform:
+          scale(1.08);
       }
 
-      22% {
-        transform: scale(0.98);
+      20% {
+
+        transform:
+          scale(0.99);
       }
 
-      32% {
-        transform: scale(1.08);
+      30% {
+
+        transform:
+          scale(1.10);
       }
 
-      48% {
-        transform: scale(1);
+      45% {
+
+        transform:
+          scale(1);
       }
 
       100% {
-        transform: scale(1);
+
+        transform:
+          scale(1);
       }
 
     }
 
 
+    /* =========================
+       GLOW PUMPING
+    ========================= */
+
     @keyframes glowPulse {
 
       0% {
-        transform: scale(0.95);
-        opacity: 0.65;
+
+        transform:
+          scale(0.90);
+
+        opacity: 0.55;
       }
 
-      15% {
-        transform: scale(1.08);
+      10% {
+
+        transform:
+          scale(1.08);
+
         opacity: 1;
       }
 
+      20% {
+
+        transform:
+          scale(0.94);
+
+        opacity: 0.65;
+      }
+
       30% {
-        transform: scale(0.98);
-        opacity: 0.75;
+
+        transform:
+          scale(1.12);
+
+        opacity: 1;
+      }
+
+      45% {
+
+        transform:
+          scale(0.95);
+
+        opacity: 0.65;
       }
 
       100% {
-        transform: scale(0.95);
-        opacity: 0.65;
+
+        transform:
+          scale(0.90);
+
+        opacity: 0.55;
       }
 
     }
@@ -436,9 +495,9 @@
 
       right: -10%;
 
-      bottom: 75px;
+      bottom: 65px;
 
-      height: 80px;
+      height: 90px;
 
       z-index: 2;
 
@@ -470,7 +529,8 @@
 
       stroke-dasharray: 12 8;
 
-      animation: ekgMove 1.2s linear infinite;
+      animation:
+        ekgMove 1.2s linear infinite;
 
       filter:
 
@@ -483,6 +543,7 @@
     @keyframes ekgMove {
 
       to {
+
         stroke-dashoffset: -100;
       }
 
@@ -517,10 +578,10 @@
 
       color: #5eead4;
 
-      background: rgba(15, 118, 110, 0.16);
+      background:
+        rgba(15, 118, 110, 0.16);
 
       border:
-
         1px solid rgba(45, 212, 191, 0.30);
     }
 
@@ -546,11 +607,9 @@
       color: #5eead4;
 
       background:
-
         rgba(45, 212, 191, 0.10);
 
       border:
-
         1px solid rgba(45, 212, 191, 0.25);
 
       font-family: Arial, sans-serif;
@@ -608,11 +667,9 @@
       border-radius: 10px;
 
       background:
-
         rgba(15, 23, 42, 0.75);
 
       border:
-
         1px solid rgba(148, 163, 184, 0.12);
 
       color: #cbd5e1;
@@ -680,7 +737,6 @@
       transform: translateY(-3px);
 
       box-shadow:
-
         0 12px 30px rgba(20, 184, 166, 0.22);
     }
 
@@ -690,7 +746,6 @@
       background: transparent;
 
       border:
-
         1px solid #2dd4bf;
 
       color: #5eead4;
@@ -718,7 +773,6 @@
       background: #050c16;
 
       border-top:
-
         1px solid rgba(148, 163, 184, 0.10);
 
       color: #64748b;
@@ -948,7 +1002,10 @@
        CLASS 10 NOTES
   ========================= -->
 
-  <section class="notes-section" id="class10-notes">
+  <section
+    class="notes-section"
+    id="class10-notes"
+  >
 
 
     <div class="notes-heading">
@@ -979,7 +1036,9 @@
     <div class="notes-card">
 
 
-      <!-- HEART -->
+      <!-- =========================
+           HEART AREA
+      ========================= -->
 
       <div class="heart-box">
 
@@ -1039,13 +1098,13 @@
 
         <!--
           IMPORTANT:
-          Apni heart image ka naam heart.png rakho
-          aur isi folder me upload karo.
+          heart.png ko class10.html ke
+          SAME FOLDER me upload karna hai.
         -->
 
         <img
           src="heart.png"
-          alt="Human anatomical heart"
+          alt="Realistic human anatomical heart"
           class="heart-image"
         >
 
@@ -1053,7 +1112,9 @@
       </div>
 
 
-      <!-- CONTENT -->
+      <!-- =========================
+           CONTENT
+      ========================= -->
 
       <div class="notes-content">
 
