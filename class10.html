@@ -35,8 +35,13 @@
   <div class="notes-card">
 
     <div class="notes-icon">
-      🧬
-    </div>
+  <div class="life-visual">
+    <div class="life-plant">🌿</div>
+    <div class="life-lungs">🫁</div>
+    <div class="life-heart">❤️</div>
+    <div class="life-kidney">🫘</div>
+  </div>
+</div>
 
     <div class="notes-content">
 
@@ -335,5 +340,41 @@
   }
 
 }
+.life-visual {
+  width: 125px;
+  height: 125px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.life-visual > div {
+  position: absolute;
+  filter: drop-shadow(0 5px 8px rgba(0,0,0,0.25));
+}
+
+.life-plant {
+  font-size: 42px;
+  top: 2px;
+  left: 5px;
+}
+
+.life-lungs {
+  font-size: 40px;
+  top: 8px;
+  right: 0;
+}
+
+.life-heart {
+  font-size: 38px;
+  bottom: 5px;
+  left: 15px;
+}
+
+.life-kidney {
+  font-size: 38px;
+  bottom: 0;
+  right: 8px;
+}
 </style>
