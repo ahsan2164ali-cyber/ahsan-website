@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,7 +52,6 @@
       min-height: 100vh;
     }
 
-
     /* =========================
        HEADER
     ========================= */
@@ -82,7 +82,6 @@
       backdrop-filter: blur(15px);
     }
 
-
     .logo {
 
       color: #38bdf8;
@@ -94,7 +93,6 @@
       font-weight: bold;
     }
 
-
     nav {
 
       display: flex;
@@ -103,7 +101,6 @@
 
       gap: 25px;
     }
-
 
     nav a {
 
@@ -118,12 +115,10 @@
       transition: 0.3s;
     }
 
-
     nav a:hover {
 
       color: #2dd4bf;
     }
-
 
     .theme-btn {
 
@@ -143,7 +138,6 @@
 
       cursor: pointer;
     }
-
 
     /* =========================
        MAIN NOTES SECTION
@@ -170,7 +164,6 @@
         );
     }
 
-
     .notes-heading {
 
       max-width: 850px;
@@ -179,7 +172,6 @@
 
       text-align: center;
     }
-
 
     .notes-label {
 
@@ -196,7 +188,6 @@
       margin-bottom: 14px;
     }
 
-
     .notes-heading h1 {
 
       font-size: clamp(48px, 6vw, 72px);
@@ -207,7 +198,6 @@
 
       color: #f8fafc;
     }
-
 
     .notes-heading p {
 
@@ -221,7 +211,6 @@
 
       font-size: 18px;
     }
-
 
     /* =========================
        MAIN CARD
@@ -252,30 +241,24 @@
         );
 
       border:
-
         1px solid rgba(56, 189, 248, 0.16);
 
       border-radius: 28px;
 
       box-shadow:
-
         0 30px 90px rgba(0, 0, 0, 0.40);
 
       transition: 0.35s;
     }
 
-
     .notes-card:hover {
 
       border-color:
-
         rgba(45, 212, 191, 0.35);
 
       box-shadow:
-
         0 35px 100px rgba(0, 0, 0, 0.50);
     }
-
 
     /* =========================
        HEART AREA
@@ -306,13 +289,11 @@
         );
 
       border:
-
         1px solid rgba(45, 212, 191, 0.30);
     }
 
-
     /* =========================
-       RED HEART GLOW
+       HEART GLOW
     ========================= */
 
     .heart-glow {
@@ -342,7 +323,6 @@
 
       z-index: 1;
     }
-
 
     /* =========================
        HEART IMAGE
@@ -380,7 +360,6 @@
       transform-origin: center center;
     }
 
-
     /* =========================
        HEART PUMPING
     ========================= */
@@ -388,43 +367,30 @@
     @keyframes heartBeat {
 
       0% {
-
-        transform:
-          scale(1);
+        transform: scale(1);
       }
 
       10% {
-
-        transform:
-          scale(1.08);
+        transform: scale(1.08);
       }
 
       20% {
-
-        transform:
-          scale(0.99);
+        transform: scale(0.99);
       }
 
       30% {
-
-        transform:
-          scale(1.10);
+        transform: scale(1.10);
       }
 
       45% {
-
-        transform:
-          scale(1);
+        transform: scale(1);
       }
 
       100% {
-
-        transform:
-          scale(1);
+        transform: scale(1);
       }
 
     }
-
 
     /* =========================
        GLOW PUMPING
@@ -433,55 +399,36 @@
     @keyframes glowPulse {
 
       0% {
-
-        transform:
-          scale(0.90);
-
+        transform: scale(0.90);
         opacity: 0.55;
       }
 
       10% {
-
-        transform:
-          scale(1.08);
-
+        transform: scale(1.08);
         opacity: 1;
       }
 
       20% {
-
-        transform:
-          scale(0.94);
-
+        transform: scale(0.94);
         opacity: 0.65;
       }
 
       30% {
-
-        transform:
-          scale(1.12);
-
+        transform: scale(1.12);
         opacity: 1;
       }
 
       45% {
-
-        transform:
-          scale(0.95);
-
+        transform: scale(0.95);
         opacity: 0.65;
       }
 
       100% {
-
-        transform:
-          scale(0.90);
-
+        transform: scale(0.90);
         opacity: 0.55;
       }
 
     }
-
 
     /* =========================
        EKG LINE
@@ -506,14 +453,12 @@
       overflow: hidden;
     }
 
-
     .ekg svg {
 
       width: 100%;
 
       height: 100%;
     }
-
 
     .ekg path {
 
@@ -533,22 +478,18 @@
         ekgMove 1.2s linear infinite;
 
       filter:
-
         drop-shadow(
           0 0 5px rgba(45, 212, 191, 0.7)
         );
     }
 
-
     @keyframes ekgMove {
 
       to {
-
         stroke-dashoffset: -100;
       }
 
     }
-
 
     /* =========================
        HEART LABEL
@@ -585,7 +526,6 @@
         1px solid rgba(45, 212, 191, 0.30);
     }
 
-
     /* =========================
        CONTENT
     ========================= */
@@ -594,7 +534,6 @@
 
       padding: 10px;
     }
-
 
     .notes-badge {
 
@@ -619,7 +558,6 @@
       font-weight: bold;
     }
 
-
     .notes-content h2 {
 
       font-size: clamp(40px, 5vw, 58px);
@@ -631,7 +569,6 @@
       line-height: 1.05;
     }
 
-
     .notes-content > p {
 
       color: #cbd5e1;
@@ -642,7 +579,6 @@
 
       margin-bottom: 25px;
     }
-
 
     /* =========================
        FEATURES
@@ -658,7 +594,6 @@
 
       margin-bottom: 30px;
     }
-
 
     .feature {
 
@@ -681,14 +616,12 @@
       transition: 0.25s;
     }
 
-
     .feature:hover {
 
       border-color: #2dd4bf;
 
       transform: translateY(-2px);
     }
-
 
     /* =========================
        BUTTONS
@@ -702,7 +635,6 @@
 
       gap: 13px;
     }
-
 
     .notes-btn {
 
@@ -729,7 +661,6 @@
       transition: 0.25s;
     }
 
-
     .notes-btn:hover {
 
       background: #0d9488;
@@ -739,7 +670,6 @@
       box-shadow:
         0 12px 30px rgba(20, 184, 166, 0.22);
     }
-
 
     .notes-btn-outline {
 
@@ -751,14 +681,12 @@
       color: #5eead4;
     }
 
-
     .notes-btn-outline:hover {
 
       background: #0f766e;
 
       color: white;
     }
-
 
     /* =========================
        FOOTER
@@ -780,14 +708,12 @@
       font-family: Arial, sans-serif;
     }
 
-
     footer strong {
 
       color: #2dd4bf;
 
       letter-spacing: 2px;
     }
-
 
     /* =========================
        MOBILE
@@ -804,7 +730,6 @@
         gap: 15px;
       }
 
-
       nav {
 
         width: 100%;
@@ -816,12 +741,10 @@
         flex-wrap: wrap;
       }
 
-
       .notes-section {
 
         padding: 55px 18px;
       }
-
 
       .notes-card {
 
@@ -832,12 +755,10 @@
         gap: 25px;
       }
 
-
       .heart-box {
 
         min-height: 390px;
       }
-
 
       .heart-image {
 
@@ -846,7 +767,6 @@
         max-width: 330px;
       }
 
-
       .notes-content {
 
         text-align: center;
@@ -854,12 +774,10 @@
         padding: 5px;
       }
 
-
       .notes-features {
 
         grid-template-columns: 1fr 1fr;
       }
-
 
       .notes-buttons {
 
@@ -868,7 +786,6 @@
 
     }
 
-
     @media (max-width: 500px) {
 
       .logo {
@@ -876,66 +793,55 @@
         font-size: 20px;
       }
 
-
       nav {
 
         gap: 10px;
       }
-
 
       nav a {
 
         font-size: 13px;
       }
 
-
       .notes-heading h1 {
 
         font-size: 45px;
       }
-
 
       .notes-heading p {
 
         font-size: 15px;
       }
 
-
       .heart-box {
 
         min-height: 330px;
       }
-
 
       .heart-image {
 
         width: 88%;
       }
 
-
       .notes-content h2 {
 
         font-size: 40px;
       }
-
 
       .notes-content > p {
 
         font-size: 16px;
       }
 
-
       .notes-features {
 
         grid-template-columns: 1fr;
       }
 
-
       .notes-buttons {
 
         flex-direction: column;
       }
-
 
       .notes-btn {
 
@@ -948,9 +854,7 @@
 
 </head>
 
-
 <body>
-
 
   <!-- =========================
        HEADER
@@ -961,7 +865,6 @@
     <div class="logo">
       Ahsan Web Studio
     </div>
-
 
     <nav>
 
@@ -997,7 +900,6 @@
 
   </header>
 
-
   <!-- =========================
        CLASS 10 NOTES
   ========================= -->
@@ -1007,18 +909,15 @@
     id="class10-notes"
   >
 
-
     <div class="notes-heading">
 
       <span class="notes-label">
         CLASS 10
       </span>
 
-
       <h1>
         MY Notes
       </h1>
-
 
       <p>
         Complete revision notes with diagrams,
@@ -1028,13 +927,11 @@
 
     </div>
 
-
     <!-- =========================
          LIFE PROCESSES CARD
     ========================= -->
 
     <div class="notes-card">
-
 
       <!-- =========================
            HEART AREA
@@ -1042,14 +939,11 @@
 
       <div class="heart-box">
 
-
         <div class="heart-label">
           ❤️ LIFE PROCESSES
         </div>
 
-
         <div class="heart-glow"></div>
-
 
         <!-- EKG -->
 
@@ -1095,22 +989,22 @@
 
         </div>
 
-
-        <!--
-          IMPORTANT:
-          heart.png ko class10.html ke
-          SAME FOLDER me upload karna hai.
-        -->
+        <!-- =========================
+             YOUR HEART IMAGE
+             
+             IMPORTANT:
+             GitHub filename:
+             ChatGPT Image Aug 19, 2026,
+             01_23_35 PM.png
+        ========================= -->
 
         <img
-          src="heart.png"
+          src="ChatGPT%20Image%20Aug%2019%2C%202026%2C%2001_23_35%20PM.png"
           alt="Realistic human anatomical heart"
           class="heart-image"
         >
 
-
       </div>
-
 
       <!-- =========================
            CONTENT
@@ -1118,16 +1012,13 @@
 
       <div class="notes-content">
 
-
         <span class="notes-badge">
           Biology • Chapter 1
         </span>
 
-
         <h2>
           Life Processes
         </h2>
-
 
         <p>
           Nutrition, Respiration, Transportation
@@ -1135,39 +1026,31 @@
           notes and diagrams for Class 10 revision.
         </p>
 
-
         <!-- FEATURES -->
 
         <div class="notes-features">
-
 
           <div class="feature">
             📖 Detailed Notes
           </div>
 
-
           <div class="feature">
             🧬 Diagrams
           </div>
-
 
           <div class="feature">
             ⭐ Exam Focus
           </div>
 
-
           <div class="feature">
             📊 Quick Revision
           </div>
 
-
         </div>
-
 
         <!-- BUTTONS -->
 
         <div class="notes-buttons">
-
 
           <a
             href="class10_biology_life_processes_notes.pdf"
@@ -1177,7 +1060,6 @@
             📖 Read Notes
           </a>
 
-
           <a
             href="class10_biology_life_processes_notes.pdf"
             download
@@ -1186,18 +1068,13 @@
             ⬇️ Download PDF
           </a>
 
-
         </div>
-
 
       </div>
 
-
     </div>
 
-
   </section>
-
 
   <!-- =========================
        FOOTER
@@ -1214,7 +1091,6 @@
     © 2026 All Rights Reserved.
 
   </footer>
-
 
   <!-- =========================
        JAVASCRIPT
@@ -1251,7 +1127,7 @@
 
   </script>
 
-
 </body>
 
 </html>
+```
