@@ -2511,6 +2511,41 @@ footer::before {
 .btn:hover::before {
   left: 140%;
 }
+    /* =====================================
+   STEP 11 — PREMIUM TYPING TEXT
+===================================== */
+
+#typing-text {
+  color: #38bdf8;
+
+  text-shadow:
+    0 0 8px rgba(56, 189, 248, 0.45),
+    0 0 20px rgba(45, 212, 191, 0.25);
+
+  transition: text-shadow 0.3s ease;
+}
+
+.cursor {
+  color: #2dd4bf;
+
+  font-weight: bold;
+
+  animation: cursorBlink 0.8s infinite;
+}
+
+@keyframes cursorBlink {
+
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+
+}
   </style>
 </head>
 
