@@ -2336,6 +2336,60 @@ header nav a:hover {
 .service-card:hover::before {
   opacity: 1;
 }
+    /* =====================================
+   STEP 7 — PREMIUM ABOUT SECTION
+===================================== */
+
+.about {
+  position: relative;
+  overflow: hidden;
+}
+
+.about::before {
+  content: "";
+
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  top: 20%;
+  left: -150px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(45, 212, 191, 0.12),
+      transparent 70%
+    );
+
+  filter: blur(25px);
+
+  pointer-events: none;
+
+  animation: aboutGlow 7s ease-in-out infinite;
+}
+
+@keyframes aboutGlow {
+
+  0% {
+    transform: translateX(0) scale(0.9);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translateX(180px) scale(1.15);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(0) scale(0.9);
+    opacity: 0.5;
+  }
+
+}
   </style>
 </head>
 
