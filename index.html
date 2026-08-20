@@ -2546,6 +2546,45 @@ footer::before {
   }
 
 }
+    /* =====================================
+   STEP 12 — MOUSE FOLLOW GLOW
+===================================== */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(56, 189, 248, 0.12),
+      transparent 70%
+    );
+
+  filter: blur(20px);
+
+  left: var(--mouse-x, 50%);
+  top: var(--mouse-y, 50%);
+
+  transform: translate(-50%, -50%);
+
+  pointer-events: none;
+
+  transition:
+    left 0.15s ease,
+    top 0.15s ease;
+}
   </style>
 </head>
 
