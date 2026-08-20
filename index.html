@@ -27,101 +27,411 @@
 
   <style>
 
-/* =========================
-   WELCOME LOGO ANIMATION
-========================= */
+css
+/* =====================================
+   LOGO PIECES JOINING ANIMATION
+===================================== */
 
-.welcome-photo {
-  width: 180px;
-  height: 180px;
-  object-fit: contain;
-  display: block;
+.logo-assembly {
+
+  position: relative;
+
+  width: 190px;
+  height: 190px;
+
   margin: 0 auto 25px;
 
-  /* Starting position */
-  opacity: 0;
-  transform: scale(0.25) rotate(-20deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  /* Smooth premium animation */
-  animation:
-    welcomeLogoIn 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards,
-    welcomeLogoGlow 2s ease-in-out 1.8s infinite alternate;
-
-  filter:
-    drop-shadow(0 0 0 rgba(56, 189, 248, 0))
-    drop-shadow(0 0 0 rgba(45, 212, 191, 0));
 }
 
 
-/* Logo comes in, rotates and joins/settles */
-@keyframes welcomeLogoIn {
+/* Sabhi logo pieces */
+
+.logo-piece {
+
+  position: absolute;
+
+  width: 190px;
+  height: 190px;
+
+  object-fit: contain;
+
+  display: block;
+
+  /* Pehle hidden */
+
+  opacity: 0;
+
+  /* Smooth joining */
+
+  animation-duration: 2.2s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: forwards;
+
+  filter:
+    drop-shadow(0 0 10px rgba(56,189,248,0.15));
+}
+
+
+/* =====================================
+   PIECE 1
+   Top Left
+===================================== */
+
+.piece-1 {
+
+  clip-path: polygon(
+    0 0,
+    50% 0,
+    50% 50%,
+    0 50%
+  );
+
+  animation-name: joinPiece1;
+}
+
+
+/* =====================================
+   PIECE 2
+   Top Right
+===================================== */
+
+.piece-2 {
+
+  clip-path: polygon(
+    50% 0,
+    100% 0,
+    100% 50%,
+    50% 50%
+  );
+
+  animation-name: joinPiece2;
+}
+
+
+/* =====================================
+   PIECE 3
+   Bottom Left
+===================================== */
+
+.piece-3 {
+
+  clip-path: polygon(
+    0 50%,
+    50% 50%,
+    50% 100%,
+    0 100%
+  );
+
+  animation-name: joinPiece3;
+}
+
+
+/* =====================================
+   PIECE 4
+   Bottom Right
+===================================== */
+
+.piece-4 {
+
+  clip-path: polygon(
+    50% 50%,
+    100% 50%,
+    100% 100%,
+    50% 100%
+  );
+
+  animation-name: joinPiece4;
+}
+
+
+/* =====================================
+   TOP LEFT PIECE
+===================================== */
+
+@keyframes joinPiece1 {
 
   0% {
+
     opacity: 0;
+
     transform:
-      scale(0.25)
-      rotate(-25deg)
-      translateY(-80px);
+      translate(-180px, -140px)
+      rotate(-35deg)
+      scale(0.65);
+
   }
 
-  45% {
+  35% {
+
     opacity: 1;
-    transform:
-      scale(1.12)
-      rotate(8deg)
-      translateY(10px);
+
   }
 
   70% {
+
     transform:
-      scale(0.94)
-      rotate(-3deg)
-      translateY(0);
+      translate(18px, 15px)
+      rotate(8deg)
+      scale(1.03);
+
   }
 
-  85% {
+  88% {
+
     transform:
-      scale(1.04)
-      rotate(1deg)
-      translateY(0);
+      translate(-4px, -3px)
+      rotate(-2deg)
+      scale(0.99);
+
   }
 
   100% {
+
     opacity: 1;
+
     transform:
-      scale(1)
+      translate(0, 0)
       rotate(0deg)
-      translateY(0);
+      scale(1);
+
   }
+
 }
 
 
-/* Soft continuous glow after joining */
-@keyframes welcomeLogoGlow {
+/* =====================================
+   TOP RIGHT PIECE
+===================================== */
+
+@keyframes joinPiece2 {
 
   0% {
-    filter:
-      drop-shadow(0 0 8px rgba(56, 189, 248, 0.25))
-      drop-shadow(0 0 15px rgba(45, 212, 191, 0.10));
+
+    opacity: 0;
+
+    transform:
+      translate(180px, -130px)
+      rotate(35deg)
+      scale(0.65);
+
+  }
+
+  35% {
+
+    opacity: 1;
+
+  }
+
+  70% {
+
+    transform:
+      translate(-18px, 15px)
+      rotate(-8deg)
+      scale(1.03);
+
+  }
+
+  88% {
+
+    transform:
+      translate(4px, -3px)
+      rotate(2deg)
+      scale(0.99);
+
   }
 
   100% {
-    filter:
-      drop-shadow(0 0 22px rgba(56, 189, 248, 0.65))
-      drop-shadow(0 0 40px rgba(45, 212, 191, 0.30));
+
+    opacity: 1;
+
+    transform:
+      translate(0, 0)
+      rotate(0deg)
+      scale(1);
+
   }
+
+}
+
+
+/* =====================================
+   BOTTOM LEFT PIECE
+===================================== */
+
+@keyframes joinPiece3 {
+
+  0% {
+
+    opacity: 0;
+
+    transform:
+      translate(-170px, 150px)
+      rotate(30deg)
+      scale(0.65);
+
+  }
+
+  35% {
+
+    opacity: 1;
+
+  }
+
+  70% {
+
+    transform:
+      translate(18px, -15px)
+      rotate(-7deg)
+      scale(1.03);
+
+  }
+
+  88% {
+
+    transform:
+      translate(-4px, 3px)
+      rotate(2deg)
+      scale(0.99);
+
+  }
+
+  100% {
+
+    opacity: 1;
+
+    transform:
+      translate(0, 0)
+      rotate(0deg)
+      scale(1);
+
+  }
+
+}
+
+
+/* =====================================
+   BOTTOM RIGHT PIECE
+===================================== */
+
+@keyframes joinPiece4 {
+
+  0% {
+
+    opacity: 0;
+
+    transform:
+      translate(175px, 155px)
+      rotate(-32deg)
+      scale(0.65);
+
+  }
+
+  35% {
+
+    opacity: 1;
+
+  }
+
+  70% {
+
+    transform:
+      translate(-18px, -15px)
+      rotate(7deg)
+      scale(1.03);
+
+  }
+
+  88% {
+
+    transform:
+      translate(4px, 3px)
+      rotate(-2deg)
+      scale(0.99);
+
+  }
+
+  100% {
+
+    opacity: 1;
+
+    transform:
+      translate(0, 0)
+      rotate(0deg)
+      scale(1);
+
+  }
+
+}
+
+
+/* =====================================
+   WELCOME TEXT
+===================================== */
+
+.welcome-content h1,
+.welcome-content h2,
+.welcome-content p {
+
+  opacity: 0;
+
+  animation:
+    welcomeTextIn
+    1s
+    ease-out
+    1.8s
+    forwards;
+
+}
+
+
+@keyframes welcomeTextIn {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(25px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+
+  }
+
 }
 
 
 /* Mobile */
+
 @media (max-width: 600px) {
 
-  .welcome-photo {
-    width: 145px;
-    height: 145px;
+  .logo-assembly {
+
+    width: 150px;
+    height: 150px;
+
+  }
+
+  .logo-piece {
+
+    width: 150px;
+    height: 150px;
+
   }
 
 }
+
+
 
     * {
       box-sizing: border-box;
@@ -1374,17 +1684,42 @@ body.light-mode .price strong {
 <body>
 
 
- <!-- WELCOME SCREEN -->
+ ```html
+<!-- WELCOME SCREEN -->
 
 <div class="welcome-screen">
 
   <div class="welcome-content">
 
-    <img
-      src="ChatGPT%20Image%20Aug%2020%2C%202026%2C%2012_35_39%20PM.png"
-      alt="Ahsan Web Studio Logo"
-      class="welcome-photo"
-    >
+    <!-- LOGO JOINING ANIMATION -->
+
+    <div class="logo-assembly">
+
+      <img
+        src="ChatGPT%20Image%20Aug%2020%2C%202026%2C%2012_35_39%20PM.png"
+        class="logo-piece piece-1"
+        alt=""
+      >
+
+      <img
+        src="ChatGPT%20Image%20Aug%2020%2C%202026%2C%2012_35_39%20PM.png"
+        class="logo-piece piece-2"
+        alt=""
+      >
+
+      <img
+        src="ChatGPT%20Image%20Aug%2020%2C%202026%2C%2012_35_39%20PM.png"
+        class="logo-piece piece-3"
+        alt=""
+      >
+
+      <img
+        src="ChatGPT%20Image%20Aug%2020%2C%202026%2C%2012_35_39%20PM.png"
+        class="logo-piece piece-4"
+        alt=""
+      >
+
+    </div>
 
     <h1>Welcome to</h1>
 
@@ -1397,6 +1732,8 @@ body.light-mode .price strong {
   </div>
 
 </div>
+```
+
 
   <!-- HEADER -->
 
