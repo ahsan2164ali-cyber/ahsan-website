@@ -26,7 +26,103 @@
 </script>
 
   <style>
+<style>
+/* =========================
+   WELCOME LOGO ANIMATION
+========================= */
 
+.welcome-photo {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 25px;
+
+  /* Starting position */
+  opacity: 0;
+  transform: scale(0.25) rotate(-20deg);
+
+  /* Smooth premium animation */
+  animation:
+    welcomeLogoIn 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+    welcomeLogoGlow 2s ease-in-out 1.8s infinite alternate;
+
+  filter:
+    drop-shadow(0 0 0 rgba(56, 189, 248, 0))
+    drop-shadow(0 0 0 rgba(45, 212, 191, 0));
+}
+
+
+/* Logo comes in, rotates and joins/settles */
+@keyframes welcomeLogoIn {
+
+  0% {
+    opacity: 0;
+    transform:
+      scale(0.25)
+      rotate(-25deg)
+      translateY(-80px);
+  }
+
+  45% {
+    opacity: 1;
+    transform:
+      scale(1.12)
+      rotate(8deg)
+      translateY(10px);
+  }
+
+  70% {
+    transform:
+      scale(0.94)
+      rotate(-3deg)
+      translateY(0);
+  }
+
+  85% {
+    transform:
+      scale(1.04)
+      rotate(1deg)
+      translateY(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform:
+      scale(1)
+      rotate(0deg)
+      translateY(0);
+  }
+}
+
+
+/* Soft continuous glow after joining */
+@keyframes welcomeLogoGlow {
+
+  0% {
+    filter:
+      drop-shadow(0 0 8px rgba(56, 189, 248, 0.25))
+      drop-shadow(0 0 15px rgba(45, 212, 191, 0.10));
+  }
+
+  100% {
+    filter:
+      drop-shadow(0 0 22px rgba(56, 189, 248, 0.65))
+      drop-shadow(0 0 40px rgba(45, 212, 191, 0.30));
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  .welcome-photo {
+    width: 145px;
+    height: 145px;
+  }
+
+}
+</style>
     * {
       box-sizing: border-box;
       scroll-behavior: smooth;
