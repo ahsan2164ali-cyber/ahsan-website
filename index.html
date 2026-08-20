@@ -2239,6 +2239,46 @@ body.light-mode .price strong {
   }
 
 }
+    /* =====================================
+   STEP 5 — PREMIUM GLASS HEADER
+===================================== */
+
+header {
+  background: rgba(7, 17, 29, 0.72) !important;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-bottom:
+    1px solid rgba(56, 189, 248, 0.18) !important;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.18);
+
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+header:hover {
+  background: rgba(7, 17, 29, 0.84) !important;
+
+  box-shadow:
+    0 10px 35px rgba(56, 189, 248, 0.10);
+}
+
+/* Navbar links */
+
+header nav a {
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+header nav a:hover {
+  color: #38bdf8 !important;
+  transform: translateY(-2px);
+}
   </style>
 </head>
 
