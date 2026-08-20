@@ -526,131 +526,76 @@
 /* =====================================
    SMOKE TEXT AFTER LOGO JOINING
 ===================================== */
+
+.welcome-content h1,
+.welcome-content h2,
+.welcome-content p {
+
+  opacity: 0;
+
+  animation:
+    smokeTextIn
+    1.6s
+    ease-out
+    1.9s
+    forwards;
+
+}
+
+
 /* =====================================
-   REAL SMOKE TEXT EFFECT
+   SMOKE / DHUAAN TEXT EFFECT
 ===================================== */
 
-.welcome-text-smoke {
-  position: relative;
-  display: inline-block;
-  opacity: 0;
-
-  animation:
-    smokeTextAppear
-    1.8s
-    ease-out
-    2.15s
-    forwards;
-}
-
-/* Smoke layer */
-.welcome-text-smoke::before {
-
-  content: "";
-
-  position: absolute;
-
-  top: 50%;
-  right: -90px;
-
-  width: 180px;
-  height: 90px;
-
-  pointer-events: none;
-
-  background:
-    radial-gradient(
-      ellipse,
-      rgba(255,255,255,0.22),
-      rgba(148,163,184,0.12) 35%,
-      transparent 72%
-    );
-
-  filter: blur(18px);
-
-  opacity: 0;
-
-  animation:
-    smokeMove
-    1.8s
-    ease-out
-    2.05s
-    forwards;
-}
-
-
-/* Extra smoke */
-.welcome-text-smoke::after {
-
-  content: "";
-
-  position: absolute;
-
-  top: 20%;
-  right: -130px;
-
-  width: 220px;
-  height: 130px;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(255,255,255,0.14),
-      rgba(100,116,139,0.08) 40%,
-      transparent 72%
-    );
-
-  filter: blur(25px);
-
-  opacity: 0;
-
-  pointer-events: none;
-
-  animation:
-    smokeMove2
-    2s
-    ease-out
-    2.2s
-    forwards;
-}
-
-
-/* Text appears through smoke */
-
-@keyframes smokeTextAppear {
+@keyframes smokeTextIn {
 
   0% {
 
     opacity: 0;
 
     transform:
-      translateX(35px)
+      translateY(18px)
       scale(0.96);
 
     filter:
       blur(14px);
 
+    letter-spacing: 8px;
+
   }
 
-  35% {
+  25% {
 
     opacity: 0.25;
 
     filter:
-      blur(9px);
+      blur(10px);
 
   }
 
-  65% {
+  50% {
 
-    opacity: 0.75;
+    opacity: 0.65;
 
     transform:
-      translateX(5px)
-      scale(1.01);
+      translateY(-4px)
+      scale(1.02);
 
     filter:
-      blur(3px);
+      blur(5px);
+
+    letter-spacing: 4px;
+
+  }
+
+  75% {
+
+    opacity: 0.9;
+
+    filter:
+      blur(2px);
+
+    letter-spacing: 2px;
 
   }
 
@@ -659,102 +604,100 @@
     opacity: 1;
 
     transform:
-      translateX(0)
+      translateY(0)
       scale(1);
 
     filter:
       blur(0);
 
+    letter-spacing: normal;
+
   }
 
 }
 
 
-/* Smoke coming from RIGHT */
+/* =====================================
+   SMOKE FEEL - TEXT GLOW
+===================================== */
 
-@keyframes smokeMove {
+.welcome-content h1 {
+
+  text-shadow:
+    0 0 8px rgba(255,255,255,0.20),
+    0 0 25px rgba(56,189,248,0.20);
+
+}
+
+
+.welcome-content h2 {
+
+  text-shadow:
+    0 0 8px rgba(56,189,248,0.35),
+    0 0 25px rgba(45,212,191,0.25),
+    0 0 45px rgba(56,189,248,0.15);
+
+}
+
+
+.welcome-content p {
+
+  text-shadow:
+    0 0 12px rgba(203,213,225,0.18);
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+
+  .welcome-content h1 {
+    font-size: 30px;
+  }
+
+  .welcome-content h2 {
+    font-size: 34px;
+  }
+
+  .welcome-content p {
+    font-size: 15px;
+  }
+
+}
 
   0% {
 
     opacity: 0;
 
     transform:
-      translateX(120px)
-      scale(0.45);
+      translateY(30px);
+
+    filter: blur(5px);
 
   }
 
-  25% {
+  70% {
 
     opacity: 0.8;
 
-  }
-
-  60% {
-
-    opacity: 0.45;
-
     transform:
-      translateX(40px)
-      translateY(-8px)
-      scale(1.15);
+      translateY(-3px);
+
+    filter: blur(0);
 
   }
 
   100% {
 
-    opacity: 0;
+    opacity: 1;
 
     transform:
-      translateX(-15px)
-      translateY(-20px)
-      scale(1.5);
+      translateY(0);
 
-  }
-
-}
-
-
-/* Second smoke cloud */
-
-@keyframes smokeMove2 {
-
-  0% {
-
-    opacity: 0;
-
-    transform:
-      translateX(150px)
-      translateY(15px)
-      scale(0.4);
-
-  }
-
-  30% {
-
-    opacity: 0.65;
-
-  }
-
-  65% {
-
-    opacity: 0.3;
-
-    transform:
-      translateX(50px)
-      translateY(-15px)
-      scale(1.2);
-
-  }
-
-  100% {
-
-    opacity: 0;
-
-    transform:
-      translateX(-20px)
-      translateY(-30px)
-      scale(1.6);
+    filter: blur(0);
 
   }
 
@@ -2072,15 +2015,17 @@ body.light-mode .price strong {
         alt=""
       >
 
-   <div class="welcome-text-smoke">
+    </div>
 
-  <h1>Welcome to</h1>
+    <h1>Welcome to</h1>
 
-  <h2>Ahsan Web Studio</h2>
+    <h2>Ahsan Web Studio</h2>
 
-  <p>
-    Creative • Modern • Simple Websites
-  </p>
+    <p>
+      Creative • Modern • Simple Websites
+    </p>
+
+  </div>
 
 </div>
 
