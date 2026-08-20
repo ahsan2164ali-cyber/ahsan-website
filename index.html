@@ -2122,6 +2122,85 @@ body.light-mode .price strong {
 .hero-buttons .btn:hover::after {
   left: 140%;
 }
+    /* =====================================
+   STEP 3 — PREMIUM PROFILE CARD
+===================================== */
+
+.premium-profile-card {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+
+  animation: profileFloat 4s ease-in-out infinite;
+}
+
+.premium-profile-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: -100%;
+  left: -60%;
+
+  width: 40%;
+  height: 300%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.10),
+    transparent
+  );
+
+  transform: rotate(25deg);
+
+  animation: profileShine 5s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+.premium-profile-card:hover {
+  transform: translateY(-10px) scale(1.02);
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.35),
+    0 0 35px rgba(56,189,248,0.15);
+}
+
+@keyframes profileFloat {
+
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes profileShine {
+
+  0% {
+    left: -60%;
+  }
+
+  45% {
+    left: 130%;
+  }
+
+  100% {
+    left: 130%;
+  }
+
+}
   </style>
 </head>
 
