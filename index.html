@@ -2444,6 +2444,22 @@ footer::before {
   }
 
 }
+    /* =====================================
+   STEP 9 — SMOOTH SECTION REVEAL
+===================================== */
+
+.reveal-section {
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.reveal-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
   </style>
 </head>
 
@@ -2664,10 +2680,10 @@ footer::before {
 
   <!-- ABOUT -->
 
-  <div
-    class="section"
-    id="about"
-  >
+ <div
+  class="section reveal-section"
+  id="about"
+>
 
     <h1>
       About Me
@@ -3416,6 +3432,37 @@ footer::before {
 
   </script>
 
+<script>
+const revealSections =
+  document.querySelectorAll(".reveal-section");
 
+const revealObserver =
+  new IntersectionObserver(
+    (entries) => {
+
+      entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+
+          entry.target.classList.add("show");
+
+          revealObserver.unobserve(
+            entry.target
+          );
+
+        }
+
+      });
+
+    },
+    {
+      threshold: 0.15
+    }
+  );
+
+revealSections.forEach((section) => {
+  revealObserver.observe(section);
+});
+</script>
 </body>
 </html>
