@@ -1973,6 +1973,60 @@ body.light-mode .price {
 body.light-mode .price strong {
   color: #2563eb;
 }
+    
+    /* =====================================
+   STEP 1 — PREMIUM HERO GLOW
+===================================== */
+
+.premium-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-hero::before {
+  content: "";
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  top: 5%;
+  left: 35%;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.16),
+    rgba(45, 212, 191, 0.08) 35%,
+    transparent 70%
+  );
+
+  filter: blur(25px);
+
+  pointer-events: none;
+
+  animation: heroGlowMove 6s ease-in-out infinite;
+}
+
+@keyframes heroGlowMove {
+
+  0% {
+    transform: translate(-80px, -20px) scale(0.9);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translate(80px, 30px) scale(1.15);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-80px, -20px) scale(0.9);
+    opacity: 0.5;
+  }
+
+}
   </style>
 </head>
 
