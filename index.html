@@ -2390,6 +2390,60 @@ header nav a:hover {
   }
 
 }
+    /* =====================================
+   STEP 8 — PREMIUM FOOTER GLOW
+===================================== */
+
+footer {
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 100px;
+
+  left: 50%;
+  bottom: -55px;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(45, 212, 191, 0.18),
+      transparent 70%
+    );
+
+  filter: blur(18px);
+
+  animation: footerGlow 4s ease-in-out infinite;
+}
+
+@keyframes footerGlow {
+
+  0% {
+    opacity: 0.35;
+    transform: translateX(-50%) scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.15);
+  }
+
+  100% {
+    opacity: 0.35;
+    transform: translateX(-50%) scale(0.8);
+  }
+
+}
   </style>
 </head>
 
