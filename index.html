@@ -26,10 +26,8 @@
 </script>
 
   <style>
-
-css
 /* =====================================
-   LOGO PIECES JOINING ANIMATION
+   UNIQUE LOGO JOINING ANIMATION
 ===================================== */
 
 .logo-assembly {
@@ -39,7 +37,7 @@ css
   width: 190px;
   height: 190px;
 
-  margin: 0 auto 25px;
+  margin: 0 auto 28px;
 
   display: flex;
   align-items: center;
@@ -48,11 +46,16 @@ css
 }
 
 
-/* Sabhi logo pieces */
+/* =====================================
+   LOGO PIECES
+===================================== */
 
 .logo-piece {
 
   position: absolute;
+
+  top: 0;
+  left: 0;
 
   width: 190px;
   height: 190px;
@@ -61,24 +64,25 @@ css
 
   display: block;
 
-  /* Pehle hidden */
-
   opacity: 0;
 
-  /* Smooth joining */
+  animation-duration: 2.4s;
 
-  animation-duration: 2.2s;
-  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-timing-function:
+    cubic-bezier(0.16, 1, 0.3, 1);
+
   animation-fill-mode: forwards;
 
   filter:
-    drop-shadow(0 0 10px rgba(56,189,248,0.15));
+    drop-shadow(
+      0 0 8px rgba(56,189,248,0.10)
+    );
+
 }
 
 
 /* =====================================
-   PIECE 1
-   Top Left
+   TOP LEFT
 ===================================== */
 
 .piece-1 {
@@ -90,13 +94,13 @@ css
     0 50%
   );
 
-  animation-name: joinPiece1;
+  animation-name: logoPiece1;
+
 }
 
 
 /* =====================================
-   PIECE 2
-   Top Right
+   TOP RIGHT
 ===================================== */
 
 .piece-2 {
@@ -108,13 +112,13 @@ css
     50% 50%
   );
 
-  animation-name: joinPiece2;
+  animation-name: logoPiece2;
+
 }
 
 
 /* =====================================
-   PIECE 3
-   Bottom Left
+   BOTTOM LEFT
 ===================================== */
 
 .piece-3 {
@@ -126,13 +130,13 @@ css
     0 100%
   );
 
-  animation-name: joinPiece3;
+  animation-name: logoPiece3;
+
 }
 
 
 /* =====================================
-   PIECE 4
-   Bottom Right
+   BOTTOM RIGHT
 ===================================== */
 
 .piece-4 {
@@ -144,48 +148,64 @@ css
     50% 100%
   );
 
-  animation-name: joinPiece4;
+  animation-name: logoPiece4;
+
 }
 
 
 /* =====================================
-   TOP LEFT PIECE
+   TOP LEFT ANIMATION
 ===================================== */
 
-@keyframes joinPiece1 {
+@keyframes logoPiece1 {
 
   0% {
 
     opacity: 0;
 
     transform:
-      translate(-180px, -140px)
-      rotate(-35deg)
-      scale(0.65);
+      translate(-230px, -180px)
+      rotate(-55deg)
+      scale(0.45);
+
+    filter:
+      blur(5px)
+      drop-shadow(
+        0 0 20px rgba(56,189,248,0.35)
+      );
 
   }
 
-  35% {
+  25% {
 
     opacity: 1;
 
   }
 
-  70% {
+  55% {
 
     transform:
-      translate(18px, 15px)
-      rotate(8deg)
-      scale(1.03);
+      translate(28px, 22px)
+      rotate(12deg)
+      scale(1.08);
+
+  }
+
+  72% {
+
+    transform:
+      translate(-9px, -7px)
+      rotate(-4deg)
+      scale(0.98);
 
   }
 
   88% {
 
     transform:
-      translate(-4px, -3px)
-      rotate(-2deg)
-      scale(0.99);
+      translate(3px, 2px)
+      rotate(1deg)
+      scale(1.01);
 
   }
 
@@ -198,49 +218,70 @@ css
       rotate(0deg)
       scale(1);
 
+    filter:
+      blur(0)
+      drop-shadow(
+        0 0 14px rgba(56,189,248,0.18)
+      );
+
   }
 
 }
 
 
 /* =====================================
-   TOP RIGHT PIECE
+   TOP RIGHT ANIMATION
 ===================================== */
 
-@keyframes joinPiece2 {
+@keyframes logoPiece2 {
 
   0% {
 
     opacity: 0;
 
     transform:
-      translate(180px, -130px)
-      rotate(35deg)
-      scale(0.65);
+      translate(230px, -175px)
+      rotate(55deg)
+      scale(0.45);
+
+    filter:
+      blur(5px)
+      drop-shadow(
+        0 0 20px rgba(45,212,191,0.35)
+      );
 
   }
 
-  35% {
+  25% {
 
     opacity: 1;
 
   }
 
-  70% {
+  55% {
 
     transform:
-      translate(-18px, 15px)
-      rotate(-8deg)
-      scale(1.03);
+      translate(-28px, 22px)
+      rotate(-12deg)
+      scale(1.08);
+
+  }
+
+  72% {
+
+    transform:
+      translate(9px, -7px)
+      rotate(4deg)
+      scale(0.98);
 
   }
 
   88% {
 
     transform:
-      translate(4px, -3px)
-      rotate(2deg)
-      scale(0.99);
+      translate(-3px, 2px)
+      rotate(-1deg)
+      scale(1.01);
 
   }
 
@@ -253,49 +294,70 @@ css
       rotate(0deg)
       scale(1);
 
+    filter:
+      blur(0)
+      drop-shadow(
+        0 0 14px rgba(45,212,191,0.18)
+      );
+
   }
 
 }
 
 
 /* =====================================
-   BOTTOM LEFT PIECE
+   BOTTOM LEFT ANIMATION
 ===================================== */
 
-@keyframes joinPiece3 {
+@keyframes logoPiece3 {
 
   0% {
 
     opacity: 0;
 
     transform:
-      translate(-170px, 150px)
-      rotate(30deg)
-      scale(0.65);
+      translate(-220px, 185px)
+      rotate(48deg)
+      scale(0.45);
+
+    filter:
+      blur(5px)
+      drop-shadow(
+        0 0 20px rgba(96,165,250,0.35)
+      );
 
   }
 
-  35% {
+  25% {
 
     opacity: 1;
 
   }
 
-  70% {
+  55% {
 
     transform:
-      translate(18px, -15px)
-      rotate(-7deg)
-      scale(1.03);
+      translate(28px, -22px)
+      rotate(-11deg)
+      scale(1.08);
+
+  }
+
+  72% {
+
+    transform:
+      translate(-9px, 7px)
+      rotate(4deg)
+      scale(0.98);
 
   }
 
   88% {
 
     transform:
-      translate(-4px, 3px)
-      rotate(2deg)
-      scale(0.99);
+      translate(3px, -2px)
+      rotate(-1deg)
+      scale(1.01);
 
   }
 
@@ -308,49 +370,70 @@ css
       rotate(0deg)
       scale(1);
 
+    filter:
+      blur(0)
+      drop-shadow(
+        0 0 14px rgba(96,165,250,0.18)
+      );
+
   }
 
 }
 
 
 /* =====================================
-   BOTTOM RIGHT PIECE
+   BOTTOM RIGHT ANIMATION
 ===================================== */
 
-@keyframes joinPiece4 {
+@keyframes logoPiece4 {
 
   0% {
 
     opacity: 0;
 
     transform:
-      translate(175px, 155px)
-      rotate(-32deg)
-      scale(0.65);
+      translate(225px, 190px)
+      rotate(-50deg)
+      scale(0.45);
+
+    filter:
+      blur(5px)
+      drop-shadow(
+        0 0 20px rgba(20,184,166,0.35)
+      );
 
   }
 
-  35% {
+  25% {
 
     opacity: 1;
 
   }
 
-  70% {
+  55% {
 
     transform:
-      translate(-18px, -15px)
-      rotate(7deg)
-      scale(1.03);
+      translate(-28px, -22px)
+      rotate(11deg)
+      scale(1.08);
+
+  }
+
+  72% {
+
+    transform:
+      translate(9px, 7px)
+      rotate(-4deg)
+      scale(0.98);
 
   }
 
   88% {
 
     transform:
-      translate(4px, 3px)
-      rotate(-2deg)
-      scale(0.99);
+      translate(-3px, -2px)
+      rotate(1deg)
+      scale(1.01);
 
   }
 
@@ -362,6 +445,74 @@ css
       translate(0, 0)
       rotate(0deg)
       scale(1);
+
+    filter:
+      blur(0)
+      drop-shadow(
+        0 0 14px rgba(20,184,166,0.18)
+      );
+
+  }
+
+}
+
+
+/* =====================================
+   LOGO FINAL GLOW
+===================================== */
+
+.logo-assembly::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 150px;
+  height: 150px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(56,189,248,0.16),
+      rgba(45,212,191,0.07) 40%,
+      transparent 72%
+    );
+
+  z-index: -1;
+
+  opacity: 0;
+
+  animation:
+    logoGlow 1.2s ease-out 1.65s forwards;
+
+}
+
+
+@keyframes logoGlow {
+
+  0% {
+
+    opacity: 0;
+
+    transform: scale(0.45);
+
+  }
+
+  60% {
+
+    opacity: 0.9;
+
+    transform: scale(1.15);
+
+  }
+
+  100% {
+
+    opacity: 0;
+
+    transform: scale(1.35);
 
   }
 
@@ -380,52 +531,87 @@ css
 
   animation:
     welcomeTextIn
-    1s
-    ease-out
-    1.8s
+    0.9s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    1.85s
     forwards;
 
 }
 
 
+/* =====================================
+   TEXT ANIMATION
+===================================== */
+
 @keyframes welcomeTextIn {
 
-  from {
+  0% {
 
     opacity: 0;
 
     transform:
-      translateY(25px);
+      translateY(30px);
+
+    filter: blur(5px);
 
   }
 
-  to {
+  70% {
+
+    opacity: 0.8;
+
+    transform:
+      translateY(-3px);
+
+    filter: blur(0);
+
+  }
+
+  100% {
 
     opacity: 1;
 
     transform:
       translateY(0);
 
+    filter: blur(0);
+
   }
 
 }
 
 
-/* Mobile */
+/* =====================================
+   MOBILE
+===================================== */
 
 @media (max-width: 600px) {
 
   .logo-assembly {
 
     width: 150px;
+
     height: 150px;
 
+    margin-bottom: 22px;
+
   }
+
 
   .logo-piece {
 
     width: 150px;
+
     height: 150px;
+
+  }
+
+
+  .logo-assembly::after {
+
+    width: 120px;
+
+    height: 120px;
 
   }
 
