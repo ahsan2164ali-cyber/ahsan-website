@@ -2460,6 +2460,57 @@ footer::before {
   opacity: 1;
   transform: translateY(0);
 }
+    /* =====================================
+   STEP 10 — PREMIUM BUTTON EFFECT
+===================================== */
+
+.btn {
+  position: relative;
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 30px rgba(56, 189, 248, 0.20);
+}
+
+/* Moving shine */
+
+.btn::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 70%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.22),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.6s ease;
+
+  pointer-events: none;
+}
+
+.btn:hover::before {
+  left: 140%;
+}
   </style>
 </head>
 
